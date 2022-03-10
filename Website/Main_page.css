@@ -1,8 +1,44 @@
-h1{
+header{
     text-align: left;
+    color: green;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    gap: 1500px;
+
 }
+#header_left{
+    display: flex;
+}
+
+
+
+#header_right{
+    display: flex;
+    gap: 20px;
+
+
+}
+
+#login{
+    width: 110px;
+    height: 40px;
+    background-color:#D5F3CA;
+}
+
+#register{
+    width: 110px;
+    height: 40px;
+    background-color: #045b25;
+    color: white;
+}
+
 body{
     background-color: #EEFFE8;
+}
+
+img{
+    border-radius: 25px;
 }
 
 h2{
@@ -38,19 +74,28 @@ button{
     padding-bottom: 50px;
 }
 
+.product_cards{
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
 
 .card1{
-    background-color: #beffbe;
+    background-color: #4ff54f;
+    border-radius: 25px;
 }
 .card2 {
-    background-color: #beffbe;
+    background-color: #4ff54f;
+    border-radius: 25px;
 }
 
 .card3 {
-    background-color: #beffbe;
+    background-color: #4ff54f;
+    border-radius: 25px;
 }
 .card4 {
-    background-color: #beffbe;
+    background-color: #4ff54f;
+    border-radius: 25px;
 }
 
 .popular_button{
@@ -91,12 +136,37 @@ button{
 .related_text{
     text-align: left;
 }
+
+.person_cards{
+    display: flex;
+    column-gap: 64px;
+    justify-content: center;
+
+
+}
+
+.person{
+    text-align: center;
+}
+
+.person_image{
+    border-radius: 50%;
+    display: block;
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.customer_feedback{
+    background-color: #DCFBD0;
+}
+
+
 .for_dogs{
     display: flex;
     justify-content: center;
     padding-top:50px;
     padding-bottom: 50px;
-    background-color: #DCFBD0;
+    background-color: #EEFFE8;
 }
 #button1{
     width: 110px;
@@ -115,6 +185,7 @@ footer{
     display: flex;
     gap: 400px;
     justify-content: center;
+    background-color: #DCFBD0;
 }
 #footer_left{
     display: flex;
