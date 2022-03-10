@@ -1,6 +1,9 @@
 h1{
     text-align: left;
 }
+body{
+    background-color: #EEFFE8;
+}
 
 h2{
     text-align: center;
@@ -12,6 +15,7 @@ h2{
     margin-right: auto;
     width: 50%;
     padding-bottom: 100px;
+
 }
 
 button{
@@ -20,7 +24,9 @@ button{
     align-items: center;
 }
 
-
+.popular-products{
+    background-color: #DCFBD0;
+}
 
 
 .cards{
@@ -28,10 +34,11 @@ button{
     display: flex;
     column-gap: 32px;
     justify-content: center;
-
-
-
+    align-self: center;
+    padding-bottom: 50px;
 }
+
+
 .card1{
     background-color: #beffbe;
 }
@@ -46,11 +53,23 @@ button{
     background-color: #beffbe;
 }
 
+.popular_button{
+    margin: auto;
+    width: 110px;
+    height: 40px;
+    font-size: 10px
+
+}
+
+
+
 .product\&services{
     display: flex;
     justify-content: center;
     padding-top: 50px;
     position: relative;
+    align-self: center;
+    background-color: #EEFFE8;
 
 
 }
@@ -59,24 +78,25 @@ button{
     justify-content: center;
     position: relative;
     padding-top: 50px;
+    background-color: #DCFBD0;
 
 }
-#text{
-    background-color: #95f895;
-}
-
 .Related_companies{
     display: flex;
     justify-content: center;
     position: relative;
     padding-top: 50px;
+    background-color: #EEFFE8;
+}
+.related_text{
+    text-align: left;
 }
 .for_dogs{
     display: flex;
     justify-content: center;
     padding-top:50px;
-    height: 40px;
-    line-height: 40px;
+    padding-bottom: 50px;
+    background-color: #DCFBD0;
 }
 #button1{
     width: 110px;
