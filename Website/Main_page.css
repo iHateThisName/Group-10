@@ -2,12 +2,12 @@
 * {
     /*This makes the css easier to work with*/
 
-    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    /*font-size: 62.5%;/* /* This will reset 1rem to 10px, default 16px */
     margin: 0; /* Setting the default margin to 0 */
     padding: 0; /* Setting the default padding to 0 */
     box-sizing: border-box; /* The box sizing we are used to */
 
-    font-family: sans-serif;
+    font-size: 1rem;
 }
 
 header{
@@ -30,8 +30,8 @@ header{
 }
 #login, #register {
     width: 6rem;
-    color: darkgreen;
-    background-color:#D5F3CA;
+    color: #044c1f;
+    background-color:White;
 
 }
 
@@ -47,9 +47,38 @@ body{
 img{
     border-radius: 25px;
 }
+.Landing_Page{
+    width: 80%;
+    margin: 4% 10% 5% 10%;
+
+}
+
+.Landing_Page img{
+    width: 100%;
+}
+/* This is temporary, needs to be fixed later */
+.Text_wrapper{
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    color: white;
+    text-shadow: black;
+
+}
+
+.Text_wrapper h1{
+    text-align: center;
+
+}
+
+h1{
+    font-size: 2rem;
+}
 
 h2{
     text-align: center;
+    font-size: 1.5rem;
 }
 .hero_section{
 
@@ -69,6 +98,8 @@ button{
 
 .popular-products{
     background-color: #DCFBD0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 
@@ -79,11 +110,11 @@ button{
     justify-content: center;
     align-self: center;
     padding-bottom: 50px;
+    padding-top: 1rem;
 }
 
 .product_cards{
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
+    border-radius: 25px 25px 0px 0px;
 }
 
 
@@ -118,27 +149,33 @@ button{
 .product\&services{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 50px;
     position: relative;
     align-self: center;
     background-color: #EEFFE8;
+    gap: 2rem;
 
 
 }
 .about_us{
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     padding-top: 50px;
     background-color: #DCFBD0;
+    gap: 2rem;
 
 }
 .Related_companies{
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     padding-top: 50px;
     background-color: #EEFFE8;
+    gap: 2rem;
 }
 .related_text{
     text-align: left;
@@ -148,6 +185,7 @@ button{
     display: flex;
     column-gap: 64px;
     justify-content: center;
+    padding-top: 2rem;
 
 
 }
@@ -165,6 +203,7 @@ button{
 
 .customer_feedback{
     background-color: #DCFBD0;
+    padding-top: 2rem;
 }
 
 
@@ -174,17 +213,22 @@ button{
     padding-top:50px;
     padding-bottom: 50px;
     background-color: #EEFFE8;
+    gap: 2rem;
 }
 #button1{
     width: 110px;
     height: 40px;
     font-size: 10px;
+    background-color: #044c1f;
+    color: white;
 }
 
 #button2{
     width: 110px;
     height: 40px;
     font-size: 10px;
+    background-color: white;
+    color: #044c1f;
 }
 
 
@@ -196,7 +240,7 @@ footer{
 }
 #footer_left{
     display: flex;
-    gap: 200px;
+    gap: 100px;
 }
 #footer_right{
     display: flex;
