@@ -1,0 +1,106 @@
+h1{
+    text-align: left;
+}
+
+h2{
+    text-align: center;
+}
+.hero_section{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 100px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.cards{
+    text-align: center;
+    display: flex;
+    column-gap: 32px;
+    justify-content: center;
+
+
+
+}
+.card1{
+    background-color: #beffbe;
+}
+.card2 {
+    background-color: #beffbe;
+}
+
+.card3 {
+    background-color: #beffbe;
+}
+.card4 {
+    background-color: #beffbe;
+}
+
+.product\&services{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    position: relative;
+
+
+}
+.about_us{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+
+}
+#text{
+    background-color: #95f895;
+}
+
+.Related_companies{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+}
+.for_dogs{
+    display: flex;
+    justify-content: center;
+    padding-top:50px;
+    height: 40px;
+    line-height: 40px;
+}
+#button1{
+    width: 110px;
+    height: 40px;
+    font-size: 10px;
+}
+
+#button2{
+    width: 110px;
+    height: 40px;
+    font-size: 10px;
+}
+
+
+footer{
+    display: flex;
+    gap: 400px;
+    justify-content: center;
+}
+#footer_left{
+    display: flex;
+    gap: 200px;
+}
+#footer_right{
+    display: flex;
+    gap: 200px;
+}
