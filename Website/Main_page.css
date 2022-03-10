@@ -112,7 +112,7 @@ button{
     padding-bottom: 50px;
     padding-top: 1rem;
 }
-
+/*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
 .product_cards{
     border-radius: 25px 25px 0px 0px;
 }
