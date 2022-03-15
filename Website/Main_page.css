@@ -2,12 +2,18 @@
 * {
     /*This makes the css easier to work with*/
 
-    /*font-size: 62.5%;/* /* This will reset 1rem to 10px, default 16px */
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
     margin: 0; /* Setting the default margin to 0 */
     padding: 0; /* Setting the default padding to 0 */
     box-sizing: border-box; /* The box sizing we are used to */
 
-    font-size: 1rem;
+    /*font-size: 1rem;*/
+}
+p{
+    font-size: 2rem;
+}
+h, h2, h3, h4, h5 {
+    font-size: 2rem;
 }
 
 header{
@@ -22,6 +28,7 @@ header{
     padding: 1.5rem;
 
 }
+
 
 #header_right {
     display: flex;
@@ -119,20 +126,20 @@ button{
 
 
 .card1{
-    background-color: #4ff54f;
+    background-color: #5bc91c;
     border-radius: 25px;
 }
 .card2 {
-    background-color: #4ff54f;
+    background-color: #5bc91c;
     border-radius: 25px;
 }
 
 .card3 {
-    background-color: #4ff54f;
+    background-color: #5bc91c;
     border-radius: 25px;
 }
 .card4 {
-    background-color: #4ff54f;
+    background-color: #5bc91c;
     border-radius: 25px;
 }
 
