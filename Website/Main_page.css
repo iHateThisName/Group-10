@@ -10,9 +10,11 @@
 
     /*font-size: 1rem;*/
 }
-p{
+
+p {
     font-size: 2rem;
 }
+
 
 h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
@@ -22,7 +24,6 @@ header{
     font-family: 'Montserrat', sans-serif;
     background-color: white;
     font-size: 4rem;
-    font-weight: 800;
 
     display: flex;
     flex-direction: row;
@@ -32,29 +33,46 @@ header{
     align-items: center;
     letter-spacing: -0.015em;
 
-    color: #476F57;;
+
 
     border: 1px solid rgba(0, 0, 0, 0.8);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 
 }
 
+
+
+
 #header_left h1 {
     font-weight: 800;
+    color: #476F57;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #header_left h2 {
     display: flex;
     flex-direction: row;
+    font-weight: 400;
+    color: #8A8A8A;
 }
 
 #header_right {
     font-size: 1.6rem;
+    font-weight: 400;
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
 }
+
+#header_right h4 {
+    font-weight: 500;
+ }
+
+
+
 #login, #register {
     font-family: 'Montserrat', sans-serif;
     width: 130px;
@@ -121,15 +139,19 @@ body{
     color: #FFFFFF;
 }
 
+
+
 /* This is temporary, needs to be fixed later */
 .Text_wrapper h5{
 
     color: white;
     position: absolute;
-    width: 1392px;
+    text-align: center;
+    margin: auto;
+    width: 75%;
     height: 80px;
     left: 187px;
-    top: 580px;
+    top: 55rem;
     font-weight: lighter;
     font-size: 6rem;
 
