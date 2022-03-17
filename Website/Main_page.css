@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Montserrat-ExtraBold';
-    src: local(Montserrat);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 * {
     /*This makes the css easier to work with*/
@@ -22,10 +19,10 @@ h1, h2, h3, h4, h5 {
 }
 
 header{
-    font-family: 'Montserrat-ExtraBold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 800;
 
     display: flex;
     flex-direction: row;
@@ -44,7 +41,7 @@ header{
 }
 
 #header_left h1 {
-    font-weight: bolder;
+    font-weight: 800;
 }
 
 #header_right {
@@ -54,7 +51,7 @@ header{
     gap: 3rem;
 }
 #login, #register {
-    font-family: 'Montserrat-Medium', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 6rem;
     color: #044c1f;
     background: #D5F3CA;
@@ -69,7 +66,7 @@ header{
 }
 
 body{
-    font-family: 'Montserrat-Medium', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #EEFFE8;
 }
 
