@@ -230,6 +230,13 @@ button{
 
 }
 
+.cards img {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+
+}
+
 .popular_button{
     margin: auto;
     width: 110px;
@@ -298,6 +305,10 @@ button{
 .customer_feedback{
     background-color: #DCFBD0;
     padding-top: 2rem;
+}
+
+.product\&services img,.about_us img,.Related_companies img {
+    border-radius: 2.5rem;
 }
 
 
