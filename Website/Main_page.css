@@ -17,7 +17,7 @@ p{
     font-size: 2rem;
 }
 
-h, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
@@ -149,25 +149,17 @@ button{
     padding-top: 1rem;
 }
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
-.product_cards{
+.product_cards img {
     border-radius: 25px 25px;
 }
-
-
-.card1{
-    background-color: #5bc91c;
-    border-radius: 25px;
-}
-.card2 {
-    background-color: #5bc91c;
-    border-radius: 25px;
+.popular-products {
+    overflow: scroll;
 }
 
-.card3 {
-    background-color: #5bc91c;
-    border-radius: 25px;
-}
-.card4 {
+
+
+
+.cards {
     background-color: #5bc91c;
     border-radius: 25px;
 }
@@ -270,17 +262,27 @@ button{
 }
 
 
-footer{
-    display: flex;
-    gap: 400px;
-    justify-content: center;
+footer {
     background-color: #DCFBD0;
-}
-#footer_left{
+    font-size: 1rem;
     display: flex;
-    gap: 100px;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 1.2rem;
+
 }
-#footer_right{
+#footer_left, #footer_right{
     display: flex;
-    gap: 200px;
+    gap: 25%;
+
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
