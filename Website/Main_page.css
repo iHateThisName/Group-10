@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Montserrat-ExtraBold';
-    src: local(Montserrat);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 * {
     /*This makes the css easier to work with*/
@@ -17,15 +14,15 @@ p{
     font-size: 2rem;
 }
 
-h, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
 header{
-    font-family: 'Montserrat-ExtraBold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 800;
 
     display: flex;
     flex-direction: row;
@@ -44,7 +41,12 @@ header{
 }
 
 #header_left h1 {
-    font-weight: bolder;
+    font-weight: 800;
+}
+
+#header_left h7 {
+    display: flex;
+    flex-direction: row;
 }
 
 #header_right {
@@ -54,13 +56,18 @@ header{
     gap: 3rem;
 }
 #login, #register {
-    font-family: 'Montserrat-Medium', sans-serif;
-    width: 6rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 130px;
+    height: 40px;
     color: #044c1f;
     background: #D5F3CA;
     border-radius: 10px;
     font-size: 1.3rem;
 
+}
+
+#header_right h4 {
+    top: 20px;
 }
 
 #register{
@@ -69,7 +76,7 @@ header{
 }
 
 body{
-    font-family: 'Montserrat-Medium', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #EEFFE8;
 }
 
@@ -85,18 +92,52 @@ img{
 .Landing_Page img{
     width: 100%;
 }
-/* This is temporary, needs to be fixed later */
-.Text_wrapper{
-    width: 100%;
+
+
+
+.Landing_Page button {
     position: absolute;
-    top: 70%;
-    left: 0;
+    width: 192px;
+    height: 52px;
+    left: 744px;
+    top: 752px;
+    background: #476F57;
+    border-radius: 6px;
+}
+
+#store {
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+}
+
+/* This is temporary, needs to be fixed later */
+.Text_wrapper h5{
+
     color: white;
-    text-shadow: black;
+    position: absolute;
+    width: 1392px;
+    height: 80px;
+    left: 187px;
+    top: 580px;
+    font-weight: lighter;
+    font-size: 6rem;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+
 
 }
 
-.Text_wrapper h1{
+.Text_wrapper h5{
     text-align: center;
 
 }
@@ -150,13 +191,22 @@ button{
 
 }
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
+<<<<<<< HEAD
 .product_cards{
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     background-color: white;
+=======
+.product_cards img {
+    border-radius: 25px 25px;
+>>>>>>> 3a5ac0947163dbe67a92b7830e1c9bc5861d4835
+}
+.popular-products {
+    overflow: scroll;
 }
 
 
+<<<<<<< HEAD
 #card1, #card2, #card3, #card4, img{
     background-color: #5bc91c;
     border-bottom-left-radius: 0px;
@@ -165,6 +215,12 @@ button{
 }
 #card1, #card2, #card3, #card4 {
     background-color: white;
+=======
+
+
+.cards {
+    background-color: #5bc91c;
+>>>>>>> 3a5ac0947163dbe67a92b7830e1c9bc5861d4835
     border-radius: 25px;
 
 }
@@ -266,17 +322,27 @@ button{
 }
 
 
-footer{
-    display: flex;
-    gap: 400px;
-    justify-content: center;
+footer {
     background-color: #DCFBD0;
-}
-#footer_left{
+    font-size: 1rem;
     display: flex;
-    gap: 100px;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 1.2rem;
+
 }
-#footer_right{
+#footer_left, #footer_right{
     display: flex;
-    gap: 200px;
+    gap: 25%;
+
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
