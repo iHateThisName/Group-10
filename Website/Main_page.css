@@ -147,31 +147,27 @@ button{
     align-self: center;
     padding-bottom: 50px;
     padding-top: 1rem;
+
 }
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
 .product_cards{
-    border-radius: 25px 25px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: white;
 }
 
 
-.card1{
+#card1, #card2, #card3, #card4, img{
     background-color: #5bc91c;
-    border-radius: 25px;
-}
-.card2 {
-    background-color: #5bc91c;
-    border-radius: 25px;
-}
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 
-.card3 {
-    background-color: #5bc91c;
-    border-radius: 25px;
 }
-.card4 {
-    background-color: #5bc91c;
+#card1, #card2, #card3, #card4 {
+    background-color: white;
     border-radius: 25px;
-}
 
+}
 .popular_button{
     margin: auto;
     width: 110px;
