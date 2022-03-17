@@ -7,8 +7,9 @@
     margin: 0; /* Setting the default margin to 0 */
     padding: 0; /* Setting the default padding to 0 */
     box-sizing: border-box; /* The box sizing we are used to */
+    font-family: 'Montserrat', sans-serif;
 
-    /*font-size: 1rem;*/
+
 }
 
 p {
@@ -20,18 +21,19 @@ h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
-header{
-    font-family: 'Montserrat', sans-serif;
+header {
     background-color: white;
     font-size: 4rem;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.2rem;
 
     align-items: center;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.1rem;
 
 
 
@@ -74,19 +76,15 @@ header{
 
 
 #login, #register {
-    font-family: 'Montserrat', sans-serif;
     width: 130px;
     height: 40px;
     color: #044c1f;
     background: #D5F3CA;
     border-radius: 10px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 
 }
 
-#header_right h4 {
-    top: 20px;
-}
 
 #register{
     background-color: #044c1f;
@@ -94,7 +92,6 @@ header{
 }
 
 body{
-    font-family: 'Montserrat', sans-serif;
     background-color: #EEFFE8;
 }
 
@@ -126,10 +123,9 @@ body{
 
 #store {
 
-    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 24px;
     display: flex;
     align-items: center;
