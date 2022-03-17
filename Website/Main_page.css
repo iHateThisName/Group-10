@@ -191,12 +191,12 @@ button{
 
 }
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
-<<<<<<< HEAD
-.product_cards{
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    background-color: white;
-=======
+
+.product_cards {
+     border-top-right-radius: 25px;
+     border-top-left-radius: 25px;
+     background-color: white;
+ }
 .product_cards img {
     border-radius: 25px 25px;
 >>>>>>> 3a5ac0947163dbe67a92b7830e1c9bc5861d4835
@@ -206,21 +206,21 @@ button{
 }
 
 
-<<<<<<< HEAD
+ HEAD
 #card1, #card2, #card3, #card4, img{
-    background-color: #5bc91c;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 
 }
 #card1, #card2, #card3, #card4 {
     background-color: white;
-=======
+    border-radius: 25px;
+
+}
+
 
 
 .cards {
-    background-color: #5bc91c;
->>>>>>> 3a5ac0947163dbe67a92b7830e1c9bc5861d4835
     border-radius: 25px;
 
 }
