@@ -252,7 +252,7 @@ button{
     position: relative;
     align-self: center;
     background-color: rgba(255, 255, 255, 0.73);
-    gap: 2rem;
+    gap: 10rem;
     padding-bottom: 10rem;
 
 
@@ -264,11 +264,23 @@ button{
     position: relative;
     padding-top: 10rem;
     background-color: rgba(255, 255, 255, 0.2);
-    gap: 2rem;
+    gap: 10rem;
     padding-bottom: 10rem;
+}
 
+.about_us button {
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin-top: 5rem;
 
 }
+
 .Related_companies{
     display: flex;
     justify-content: center;
@@ -276,7 +288,7 @@ button{
     position: relative;
     padding-top: 10rem;
     background-color: rgba(255, 255, 255, 0.73);
-    gap: 2rem;
+    gap: 10rem;
     padding-bottom: 10rem;
 }
 .related_text{
@@ -317,25 +329,36 @@ button{
 .for_dogs{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 20rem;
     padding-bottom: 20rem;
     background-color: rgba(255, 255, 255, 0.73);
-    gap: 2rem;
+    gap: 5rem;
 }
+
+.for_dogs h2{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
 #button1{
-    width: 110px;
-    height: 40px;
-    font-size: 10px;
-    background-color: #044c1f;
+    background: #476F57;
     color: white;
-    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin-left: 30rem;
 }
 
 #button2{
-    width: 110px;
-    height: 40px;
-    font-size: 10px;
-    background-color: white;
+    width: 15rem;
+    height: 5rem;
+    font-weight: 500;
+    font-size: 1.7rem;
+    background-color: #D5F3CA;
     color: #044c1f;
     border-radius: 10px;
 }
@@ -354,7 +377,8 @@ footer {
 }
 #footer_left, #footer_right{
     display: flex;
-    gap: 25%;
+    gap: 70%;
+    margin-left: -15rem;
 
 }
 
@@ -364,6 +388,6 @@ footer h1 {
 }
 
 footer h2 {
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 530;
 }
