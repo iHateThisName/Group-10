@@ -377,8 +377,7 @@ footer {
 }
 #footer_left, #footer_right{
     display: flex;
-    gap: 70%;
-    margin-left: -15rem;
+    gap: 25%;
 
 }
 
