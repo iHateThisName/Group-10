@@ -103,3 +103,39 @@ h2{
     font-size: 2rem;
 
 }
+
+#About_us{
+    text-align: center;
+    background: #476F57;
+}
+
+body{
+    background-color: #EEFFE8;
+}
+
+img{
+    border-radius: 2.5rem;
+    width: 50rem;
+    height: 35rem;
+}
+
+.Dedicated_and_helpful{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 10rem;
+    padding: 1rem 5rem 10rem;
+}
+
+.Location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.73);
+    gap: 10rem;
+    padding: 1rem 5rem 10rem;
+}
