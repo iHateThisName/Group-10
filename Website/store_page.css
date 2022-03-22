@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+* {
+    /*This makes the css easier to work with*/
+
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+h1, h2, h3, h4, h5 {
+    font-size: 1.8rem;
+}
+
+header {
+    background-color: white;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+
+
+}
+
+#header_left h1 {
+    font-weight: 800;
+    letter-spacing: -0.5rem;
+    color: #476F57;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
+}
+
+#header_right h4 {
+    font-weight: 500;
+}
