@@ -92,3 +92,59 @@ header {
     color: white;
 }
 
+.all_section {
+    max-height: 40rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.all_section img {
+    width: 100%;
+    position: relative;
+    bottom: 45rem;
+}
+
+.TextOnImage {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
+.TextOnImage h1 {
+    color: white;
+    font-max-size: 10rem;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.TextOnImage h2 {
+    color: white;
+    font-size: 3rem;
+    margin-top: -15%;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.TextOnImage button {
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+
+}
+
