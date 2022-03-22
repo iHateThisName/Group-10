@@ -148,3 +148,51 @@ header {
 
 }
 
+.popular-products {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: scroll;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cards{
+    text-align: center;
+    display: flex;
+    column-gap: 32px;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 50px;
+    padding-top: 1rem;
+
+}
+
+.product_cards {
+    border-radius: 2.5rem 2.5rem;
+    background-color: white;
+}
+
+.popular-products h2 {
+    padding-bottom: 2rem;
+    font-size: 4rem;
+}
+
+
+#card1, #card2, #card3, #card4 {
+    border-radius: 25px;
+    background-color: white;
+
+}
+
+.cards img {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+
+}
+
+.for_men {
+
+}
+
