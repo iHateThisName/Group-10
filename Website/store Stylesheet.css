@@ -11,6 +11,10 @@
 
 }
 
+p {
+    font-size: 1.8rem;
+}
+
 h1{
     font-size: 6rem;
     font-weight: 700;
@@ -54,7 +58,6 @@ header {
     letter-spacing: -0.5rem;
     color: #476F57;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border
 }
 
 #header_left h2 {
@@ -154,7 +157,7 @@ header {
     overflow: scroll;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(232, 245, 228);
 }
 
 .cards{
@@ -179,9 +182,9 @@ header {
 }
 
 
-#card1, #card2, #card3, #card4 {
+#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9, #card10, #card11, #card12, #card13, #card14, #card15, #card16, #card17, #card18, #card19, #card20  {
     border-radius: 25px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
 
 }
 
@@ -193,6 +196,61 @@ header {
 }
 
 .for_men {
+    background-color: rgb(240, 245, 240);
 
 }
 
+.for_women {
+    background-color: rgb(232, 245, 228);
+}
+
+.fordogs {
+    background-color: rgb(240, 245, 240);
+    padding-top: 4rem;
+    gap: 10rem;
+    padding-bottom: 2rem;
+}
+
+.fordogs h2{
+    padding-bottom: 2rem;
+}
+
+.favorite_brands {
+    background-color: rgb(232, 245, 228);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10rem;
+    gap: 10rem;
+    padding-bottom: 10rem;
+}
+
+
+footer {
+    background-color: rgb(240, 245, 240);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+
+}
+#footer_left, #footer_right{
+    display: flex;
+    gap: 25%;
+
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: 530;
+}

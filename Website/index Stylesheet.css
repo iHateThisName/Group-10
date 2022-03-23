@@ -11,6 +11,7 @@
 
 }
 
+/*Default font size for p elements to 2rem*/
 p {
     font-size: 2rem;
 }
@@ -20,6 +21,7 @@ h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
+/**/
 header {
     background-color: white;
     font-size: 4rem;
