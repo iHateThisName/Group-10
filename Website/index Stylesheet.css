@@ -34,9 +34,7 @@ header {
     align-items: center;
 
 
-
-
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
 
 
 }
@@ -93,7 +91,10 @@ header {
 }
 
 body{
-    background-color: #EEFFE8;
+    /*background-color: #EEFFE8;*/
+    background-color: #051E22;
+    background-image: linear-gradient(140deg, #051E22 10%, #5A944D 50%);
+
 }
 
 .Landing_Page img{
@@ -165,33 +166,44 @@ button{
 }
 
 .popular-products{
-    background-color: rgba(255, 255, 255, 0.2);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+
+
+
+    padding-bottom: 2rem;
+    border-top: black solid 0.1rem;
+    border-bottom: black solid 0.1rem;
 }
 
 
 .cards{
-    text-align: center;
     display: flex;
-    column-gap: 32px;
+    text-align: center;
     justify-content: center;
-    align-self: center;
-    padding-bottom: 50px;
-    padding-top: 1rem;
+    gap: 3rem;
+
+    flex-wrap: wrap;
+    flex-grow: 0;
+
 
 }
+
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
 
 .product_cards {
-    border-radius: 2.5rem 2.5rem;
-     background-color: white;
+    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
  }
 
 .popular-products {
-    overflow: scroll;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+
+
 }
 
 .popular-products h2 {
@@ -201,16 +213,16 @@ button{
 
 
 #card1, #card2, #card3, #card4 {
-    border-radius: 25px;
-    background-color: white;
+    background-color: #FFFFFFBA;
+    border-radius: 2.5rem;
+    border: 0.2rem solid black;
+    overflow: hidden;
 
 }
 
 .cards img {
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-
-
+    border-bottom: 0.1rem #325c39 solid;
+    background-color: #E5F6DF;
 }
 
 .popular_button{
