@@ -1,0 +1,9 @@
+h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+p {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
