@@ -94,8 +94,8 @@ header {
 
 body{
     /*background-color: #EEFFE8;*/
-    background-color: #051E22;
-    background-image: linear-gradient(140deg, #051E22 10%, #5A944D 50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);
 
 }
 
@@ -202,11 +202,6 @@ button{
     width: 30rem;
     height: 30rem;
  }
-
-.popular-products {
-
-
-}
 
 .popular-products h2 {
     padding-bottom: 2rem;
