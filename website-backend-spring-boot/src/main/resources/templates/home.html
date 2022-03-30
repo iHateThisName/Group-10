@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>XXS</title>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/home%20Stylesheet.css" th:href="@{/css/home Stylesheet.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/home-stylesheet.css"
+          th:href="@{/css/home-stylesheet.css}">
 </head>
 <body>
 <header>
@@ -24,8 +25,8 @@
     as well as login and register options.
     -->
     <div id="header_right">
-        <h4>Store</h4>
-        <h4><a href="About.html">About us</a></h4>
+        <h4><a href="store">Store</a></h4>
+        <h4><a href="about">About us</a></h4>
         <h4>Contact</h4>
         <button id="login" type="button">Log in</button>
         <button id="register" type="button">Register</button>
@@ -34,7 +35,7 @@
 
 <div class="Landing_Page">
 
-    <img src = "/static/images/Hero.webp" alt="Welcome to XXS" th:src="@{/images/Hero.webp}">
+    <img src = "/static/images/home/hero.webp" alt="Welcome to XXS" th:src="@{/images/home/hero.webp}">
 
     <div class="TextOnImage">
         <h1>Best quality of hiking equipment worldwide</h1>
@@ -81,7 +82,7 @@ A section containing a few product cards for the most popular products on the si
     <button class="popular_button" type="button">See more</button>
 </div>
 
-<div class="product&services">
+<div class="product-and-services">
 
     <img src="https://picsum.photos/400/250" alt="Our Products">
     <div id="text">
@@ -116,7 +117,7 @@ A section containing a few product cards for the most popular products on the si
     <div class="person_cards">
 
         <div>
-            <img class="person_image" src="/static/images/anton.jpg" alt="Anton" th:src="@{/images/anton.jpg}">
+            <img class="person_image" src="/static/images/home/anton.jpg" alt="Anton" th:src="@{/images/home/anton.jpg}">
             <div class="person">
                 <p>“Hiking is a good way<br> to use weekends<br> together with your<br> family. XXS is our go-to<br> place for the latest<br> hiking gear.”
                 <h5>Anton Berg-Hansen</h5>
@@ -125,16 +126,26 @@ A section containing a few product cards for the most popular products on the si
 
         </div>
         <div>
-            <img class="person_image" src="/static/images/Chuck%20Vestre.jpg"
-                 alt="Chuck" th:src="@{/images/Chuck Vestre.jpg}">
+            <img class="person_image" src="/static/images/home/chuck.jpg"
+                 alt="Chuck" th:src="@{/images/home/chuck.jpg}">
             <div class="person">
-                <p>“We are a small IT<br> company, full of geeks.<br> I had difficulty getting<br> the geeks out of their<br> chairs. XXS suggested<br> the latest water bottles<br> as a Christmas gift for<br> all employees. I was<br> skeptical at first, but<br> now I have difficulty<br> getting them back<br> indoors.”</p>
+                <p>“We are a small IT<br> company, full of geeks.<br>
+                    I had difficulty getting<br>
+                    the geeks out of their<br>
+                    chairs. XXS suggested<br>
+                    the latest water bottles<br>
+                    as a Christmas gift for<br>
+                    all employees. I was<br>
+                    skeptical at first, but<br>
+                    now I have difficulty<br>
+                    getting them back<br>
+                    indoors.”</p>
                 <h5>Chuck Vestre</h5>
             </div>
 
         </div>
         <div>
-            <img class="person_image" src="/static/images/Pitbull.jpg" alt="MR WorldWIde" th:src="@{/images/Pitbull.jpg}">
+            <img class="person_image" src="/static/images/home/pitbull.jpg" alt="MR WorldWIde" th:src="@{/images/home/pitbull.jpg}">
             <div class="person">
                 <p>“Got a matching<br> sweater for my dog<br> and myself. We are out<br> in the mountains<br> every Sunday since."</p>
                 <h5>Pitbull</h5>

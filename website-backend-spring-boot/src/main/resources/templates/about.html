@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>XXS - About us</title>
+    <link rel="stylesheet" href="/static/css/about-stylesheet.css"
+          th:href="@{/css/about-stylesheet.css}">
+</head>
+<body>
+
+<header>
+    <!--
+    Div element for the left side of the header, containing the company name/logo and slogan.
+    -->
+    <div id="header_left">
+
+        <h1 class="main_header">XXS</h1>
+        <h2 class="slogan">because the size doesn't matter</h2>
+
+    </div>
+
+
+    <!--
+    Div element for the right side of the header, containing links for Store, About us and Contact page
+    as well as login and register options.
+    -->
+    <div id="header_right">
+        <h4>Store</h4>
+        <h4>About us</h4>
+        <h4>Contact</h4>
+        <button id="login" type="button">Log in</button>
+        <button id="register" type="button">Register</button>
+    </div>
+</header>
+
+<h1 id="About_us">
+    About us
+</h1>
+
+<div class="Dedicated_and_helpful">
+    <div>
+        <h3>Dedicated and helpful</h3>
+        <p>XXS is your friendly neighbourhood hiking equipment supplier. Whatever you need, we've got it.
+        Our workers are specialized in helping you find the right product in the best possible quality for you,
+        and the prices are set in a way that it'll be a profitable investment for your hiking life</p>
+    </div>
+    <img src="/static/images/about/community.jpg" alt="Helpful" th:src="@{/images/about/community.jpg}">
+</div>
+
+
+<div class="Location">
+    <img src="/static/images/about/byrampen-alesund.jpg" alt="Location" th:src="@{/images/about/byrampen-alesund.jpg}">
+    <div>
+        <h3>Location</h3>
+        <p>XXS is located in beautiful and iconic Ålesund, at the north-west coast in Norway.
+        This gives us a particular first-hand experience with fine nature and stormy weather, resulting
+        in a good understanding of our customers needs</p>
+    </div>
+</div>
+
+</body>
+</html>

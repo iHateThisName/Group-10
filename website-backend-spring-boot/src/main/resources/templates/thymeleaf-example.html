@@ -9,7 +9,7 @@
     <!--    The th:ref is a link to a stylesheet for the application and href will NOT work on the backend side when it is running.-->
     <!--    BUT th:ref does NOT work when it is not running, but href will work.-->
     <!--    That is why we have both-->
-    <link th:href = "@{/css/example StyleSheet.css}" rel="stylesheet" href="/static/css/example%20StyleSheet.css">
+    <link th:href = "@{/css/thymeleaf-stylesheet.css}" rel="stylesheet" href="/static/css/thymeleaf-stylesheet.css">
 </head>
 <body>
 <h1 th:text="'Thymeleaf: ' + ${message}">This text will only show if the html is displayed not through backend</h1>
@@ -20,6 +20,6 @@
 
 <!--    The same thing that happens to the link element applies here. -->
 <!--    Also includes function call as you can see on the button element-->
-<script type="application/javascript" th:src="@{/js/example.js}" src="/static/js/example.js"></script>
+<script type="application/javascript" th:src="@{/js/thymeleaf.js}" src="/static/js/thymeleaf.js"></script>
 </body>
 </html>

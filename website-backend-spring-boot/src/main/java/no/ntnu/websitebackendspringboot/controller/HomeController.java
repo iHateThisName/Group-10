@@ -14,11 +14,23 @@ public class HomeController {
         return "home";
     }
 
+    //TODO a controller for about
+    @RequestMapping("/about")
+    public String getAbout() {
+        return "about";
+    }
+
+    //TODO a controller for store
+    @RequestMapping("/store")
+    public String getStore() {
+        return "store";
+    }
+
     @GetMapping(path = "/example")
     public String example(Model model) {
         String msg = "This is using a String variable from the backend";
         model.addAttribute("message", msg);
-        return "example Thymeleaf";
+        return "thymeleaf-example";
     }
 
 
