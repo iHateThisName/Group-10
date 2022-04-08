@@ -1,5 +1,6 @@
 package no.ntnu.websitebackendspringboot.models;
 
+import java.util.Locale;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,8 +25,7 @@ public class Role {
   private Long id;
   private String name;
 
-  public Role(Long id, String name) {
-    this.id = id;
+  public Role(String name) {
     this.name = name;
   }
 
