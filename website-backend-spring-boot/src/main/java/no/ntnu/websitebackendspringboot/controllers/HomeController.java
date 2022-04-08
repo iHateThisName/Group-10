@@ -1,4 +1,4 @@
-package no.ntnu.websitebackendspringboot.controller;
+package no.ntnu.websitebackendspringboot.controllers;
 
 
 import org.springframework.stereotype.Controller;
