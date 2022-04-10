@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 /**
- * @author "https://github.com/iHateThisName"
+ * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
  */
 @RestController

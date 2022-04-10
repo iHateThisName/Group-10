@@ -1,5 +1,7 @@
 package no.ntnu.websitebackendspringboot.services;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import no.ntnu.websitebackendspringboot.models.Role;
@@ -8,13 +10,14 @@ import no.ntnu.websitebackendspringboot.repositories.RoleRepository;
 import no.ntnu.websitebackendspringboot.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * @author "https://github.com/iHateThisName"
+ * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
  */
 // @Service tells spring that this is a service class.
@@ -35,15 +38,26 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-    Optional<User> user = userRepository.findByUsername(username);
+    Optional<User> userOptional = userRepository.findByUsername(username);
 
-    if (user.isPresent()) {
-
-      return new AccessUserDetails(user.get());
-
-    } else {
-      throw new UsernameNotFoundException(String.format("User: %s not found in the database", username));
+    if (userOptional.isEmpty()) {
+      //user is empty
+      log.error("User not found in the database");
     }
+    if (userOptional.isPresent()) {
+      //user is present
+      log.info("User found in the database: {}", username);
+
+      Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+      userOptional.get().getRoles().forEach(role ->
+          authorities.add(new SimpleGrantedAuthority(role.getName())));
+
+      //Return a user of type userdetails and not this project User class.
+      return new org.springframework.security.core.userdetails.User(
+          userOptional.get().getUsername(), userOptional.get().getPassword(), authorities);
+
+    }
+    return null;
   }
 
   @Override

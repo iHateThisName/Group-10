@@ -1,6 +1,5 @@
 package no.ntnu.websitebackendspringboot;
 
-import java.util.Optional;
 import no.ntnu.websitebackendspringboot.models.Role;
 import no.ntnu.websitebackendspringboot.models.User;
 import no.ntnu.websitebackendspringboot.services.UserService;
@@ -11,7 +10,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author "https://github.com/iHateThisName"
+ * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
  */
 @Component
