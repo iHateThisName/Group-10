@@ -3,6 +3,7 @@ package no.ntnu.websitebackendspringboot.services;
 import java.util.List;
 import no.ntnu.websitebackendspringboot.models.Role;
 import no.ntnu.websitebackendspringboot.models.User;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
@@ -20,4 +21,9 @@ public interface UserService {
   User getUser(String username);
   //get a list of all the users
   List<User> getUsers();
+  //get a list of all the roles
+  List<Role> getRoles();
+  //Retrieve the UserDetails about a user with the username
+  UserDetails loadUserByUsername(String username);
+
 }

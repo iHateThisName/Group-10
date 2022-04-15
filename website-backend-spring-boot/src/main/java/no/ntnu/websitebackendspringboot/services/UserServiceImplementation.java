@@ -15,13 +15,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
  */
 // @Service tells spring that this is a service class.
+// @Transactional tells spring that everything in this class is transactional.
 @Service
+@Transactional
 public class UserServiceImplementation implements UserService, UserDetailsService {
 
   private final RoleRepository roleRepository;
@@ -31,6 +34,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
   public UserServiceImplementation(
       UserRepository userRepository,
       RoleRepository roleRepository) {
+
     this.userRepository = userRepository;
     this.roleRepository = roleRepository;
   }
@@ -52,7 +56,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
       userOptional.get().getRoles().forEach(role ->
           authorities.add(new SimpleGrantedAuthority(role.getName())));
 
-      //Return a user of type userdetails and not this project User class.
+      //Return a user of type UserDetails and not this project User class.
       return new org.springframework.security.core.userdetails.User(
           userOptional.get().getUsername(), userOptional.get().getPassword(), authorities);
 
@@ -95,12 +99,9 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
             "Username " + username + " not found"));
 
     //Now it needs to find the class Role to add to user
-    Optional<Role> role = roleRepository.findByName(roleName);
-
-    //finally, add the role to the user
-    role.ifPresent(value -> user.getRoles().add(value));
-
-
+    Optional<Role> optionalRole = roleRepository.findByName(roleName);
+    //adding the role
+    optionalRole.ifPresent(value -> user.getRoles().add(value));
   }
 
   @Override
@@ -120,5 +121,11 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
 
     log.info("Fetching all users");
     return userRepository.findAll();
+  }
+
+  @Override
+  public List<Role> getRoles() {
+    log.info("Fetching all roles");
+    return roleRepository.findAll();
   }
 }
