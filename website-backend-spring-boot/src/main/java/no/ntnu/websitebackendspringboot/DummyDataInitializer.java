@@ -1,10 +1,13 @@
 package no.ntnu.websitebackendspringboot;
 
+import java.util.Optional;
 import no.ntnu.websitebackendspringboot.models.Role;
 import no.ntnu.websitebackendspringboot.models.User;
-import no.ntnu.websitebackendspringboot.services.UserService;
+import no.ntnu.websitebackendspringboot.repositories.RoleRepository;
+import no.ntnu.websitebackendspringboot.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
@@ -16,47 +19,73 @@ import org.springframework.stereotype.Component;
 @Component
 public class DummyDataInitializer implements ApplicationListener<ApplicationReadyEvent> {
 
-  private final Logger logger = LoggerFactory.getLogger(getClass().getName());
-  private final UserService userService;
+  private final Logger log = LoggerFactory.getLogger(getClass().getName());
 
-  public DummyDataInitializer(UserService userService) {
-    this.userService = userService;
+  @Value("${DummyDataInitializer.user.password}")
+  String password;
+
+  private final UserRepository userRepository;
+  private final RoleRepository roleRepository;
+
+  public DummyDataInitializer(UserRepository userRepository,
+                              RoleRepository roleRepository) {
+
+    this.userRepository = userRepository;
+    this.roleRepository = roleRepository;
   }
 
 
   @Override
   public void onApplicationEvent(ApplicationReadyEvent event) {
 
-    User arnold = userService.getUser("arnold");
+    Optional<User> arnold = userRepository.findByUsername("arnold");
 
-    if (arnold == null) {
-      logger.info("Adding users to database...");
-      addData();
-      logger.info("Done adding users to database");
+    if (arnold.isEmpty()) {
+      log.info("Adding users to database...");
+      addData(password);
+      log.info("Done adding users to database");
+      StringBuilder stringBuilder = new StringBuilder();
+      userRepository.findAll().forEach(user -> {
+        stringBuilder
+            .append("\n----------------------------\n")
+            .append(user.getUsername())
+            .append("\n")
+            .append(user);
+      });
+      log.info("information about all the users: {}", stringBuilder);
+
     } else {
-      logger.info("Users already exist in the database");
+      log.info("Users already exist in the database");
     }
 
   }
 
-  private void addData() {
+  private void addData(String password) {
 
-    userService.saveRole(new Role("user"));
-    userService.saveRole(new Role("manager"));
-    userService.saveRole(new Role("admin"));
+    Role user = new Role("user");
+    Role manager = new Role("manager");
+    Role admin = new Role("admin");
+    roleRepository.save(user);
+    roleRepository.save(manager);
+    roleRepository.save(admin);
 
-    //todo the password should be encoded
-    userService.saveUser(new User("john", "1234", "John Travolta"));
-    userService.saveUser(new User("will", "1234", "Will Smith"));
-    userService.saveUser(new User("jim", "1234", "Jim Carry"));
-    userService.saveUser(new User("arnold", "1234", "Arnold Schwarzenegger"));
 
-    userService.addRoleToUser("john", "user");
-    userService.addRoleToUser("john", "manager");
-    userService.addRoleToUser("will", "manager");
-    userService.addRoleToUser("jim", "admin");
-    userService.addRoleToUser("arnold", "admin");
-    userService.addRoleToUser("arnold", "user");
+    User john = new User("john", password, "John Travolta");
+    User will = new User("will", password, "Will Smith");
+    User jim = new User("jim", password, "Jim Carry");
+    User arnold = new User("arnold", password, "Arnold Schwarzenegger");
+
+    john.addRole(user);
+    john.addRole(manager);
+    will.addRole(manager);
+    jim.addRole(admin);
+    arnold.addRole(admin);
+    arnold.addRole(user);
+
+    userRepository.save(john);
+    userRepository.save(will);
+    userRepository.save(jim);
+    userRepository.save(arnold);
 
   }
 
