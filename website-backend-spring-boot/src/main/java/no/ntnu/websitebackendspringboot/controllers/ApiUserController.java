@@ -6,6 +6,7 @@ import no.ntnu.websitebackendspringboot.models.Role;
 import no.ntnu.websitebackendspringboot.models.User;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,15 +20,16 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 @RestController
 @RequestMapping(path = "/api")
-public class UserController {
+public class ApiUserController {
 
-  private final UserService userService;
+  private UserService userService;
 
-  public UserController(UserService userService) {
+  public ApiUserController(UserService userService) {
     this.userService = userService;
   }
 
   @GetMapping("/users")
+  @PreAuthorize("hasAnyRole('USER', 'MANAGER', 'ADMIN')")
   public ResponseEntity<List<User>> getUsers() {
     //Creating a responseEntity witch is what the browser receives
     //the .ok tells the user it is code 200
@@ -35,7 +37,14 @@ public class UserController {
     return ResponseEntity.ok().body(userService.getUsers());
   }
 
+  @GetMapping("roles")
+  @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
+  public ResponseEntity<List<Role>> getRoles() {
+    return ResponseEntity.ok().body(userService.getRoles());
+  }
+
   @PostMapping("/user/save")
+  @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<User> saveUser(@RequestBody User user) {
     //.created will response with 201
     //Which means a resource was created in the server.
@@ -46,6 +55,7 @@ public class UserController {
   }
 
   @PostMapping("/role/save")
+  @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<Role> saveRole(@RequestBody Role role) {
     //.created will response with 201
     //Which means a resource was created in the server.
@@ -57,6 +67,7 @@ public class UserController {
   }
 
   @PostMapping("/role/addtouser")
+  @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
 
     userService.addRoleToUser(form.getUsername(), form.getRoleName());
