@@ -74,6 +74,10 @@ header {
     font-weight: 500;
 }
 
+.profileButton {
+    height: 3rem;
+    width: 3rem;
+}
 
 
 #login, #register {
