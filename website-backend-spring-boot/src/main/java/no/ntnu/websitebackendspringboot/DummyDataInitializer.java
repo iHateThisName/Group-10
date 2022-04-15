@@ -76,11 +76,11 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
     User arnold = new User("arnold", password, "Arnold Schwarzenegger");
 
     john.addRole(user);
-    john.addRole(manager);
     will.addRole(manager);
     jim.addRole(admin);
-    arnold.addRole(admin);
     arnold.addRole(user);
+    arnold.addRole(manager);
+    arnold.addRole(admin);
 
     userRepository.save(john);
     userRepository.save(will);

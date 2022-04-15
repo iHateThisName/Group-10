@@ -2,6 +2,8 @@ package no.ntnu.websitebackendspringboot.models;
 
 import static javax.persistence.GenerationType.AUTO;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,17 +22,29 @@ public class Role {
   //@GeneratedValue tells the db how to generate this id
   @Id
   @GeneratedValue(strategy = AUTO)
+  @Column(name = "Id")
   private Long id;
+  @Column(name = "Role")
   private String name;
 
   /**
    * We only need the name when crating a new role,
    * because we have told the database to generate this id.
    *
-   * @param name the name of the role.
+   * @param roleName the name of the role.
    */
-  public Role(String name) {
-    this.name = name;
+  public Role(String roleName) {
+    //making it uppercase
+    roleName = roleName.toUpperCase();
+    //This string needs to be included
+    String stringRole = "ROLE_";
+
+    //Cheeks if the new role name has "ROLE_" in front of it
+    if (!roleName.startsWith(stringRole)) {
+      //if not that just add it
+      roleName = stringRole + roleName;
+    }
+    this.name = roleName;
   }
 
   /**
@@ -53,5 +67,13 @@ public class Role {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  @Override
+  public String toString() {
+    return "Role{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        '}';
   }
 }

@@ -1,14 +1,17 @@
 package no.ntnu.websitebackendspringboot.models;
 
-import static javax.persistence.GenerationType.AUTO;
+import static javax.persistence.GenerationType.IDENTITY;
 
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 /**
@@ -22,16 +25,24 @@ public class User {
   //@Id tells that the attribute below is id in the db table
   //@GeneratedValue tells the db how to generate this id
   @Id
-  @GeneratedValue(strategy = AUTO)
+  @GeneratedValue(strategy = IDENTITY)
+  @Column(name = "Id")
   private Long id;
+  @Column(name = "Name")
   private String name;
+  @Column(name = "Username")
   private String username;
+  @Column(length = 60, name = "Password")
   private String password;
-//  private boolean active = true;
+  private boolean active = true;
 
   //Eager makes it load all the roles whenever it loads the user
   //so when it loads the user it will also load all the roles in the db
   @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "user_role",
+      joinColumns = @JoinColumn(name="user_Id"),
+      inverseJoinColumns = @JoinColumn(name="role_Id")
+  )
   private Set<Role> roles = new LinkedHashSet<>();
 
   /**
@@ -75,14 +86,6 @@ public class User {
     this.password = password;
   }
 
-//  public boolean isActive() {
-//    return active;
-//  }
-//
-//  public void setActive(boolean active) {
-//    this.active = active;
-//  }
-
   public String getName() {
     return name;
   }
@@ -97,6 +100,34 @@ public class User {
 
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
+  }
+
+  public boolean isActive() {
+    return active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
+  }
+
+  /**
+   * Add a role to the user
+   *
+   * @param role Role to add
+   */
+  public void addRole(Role role) {
+    roles.add(role);
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", username='" + username + '\'' +
+        ", password='" + password + '\'' +
+        ", roles=" + roles +
+        '}';
   }
 }
 
