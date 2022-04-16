@@ -37,10 +37,16 @@ public class ApiUserController {
     return ResponseEntity.ok().body(userService.getUsers());
   }
 
-  @GetMapping("roles")
+  @GetMapping("/roles")
   @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
   public ResponseEntity<List<Role>> getRoles() {
     return ResponseEntity.ok().body(userService.getRoles());
+  }
+
+  @GetMapping("/admin")
+  @PreAuthorize("hasRole('ADMIN')")
+  public ResponseEntity<String> getAdmin() {
+    return ResponseEntity.ok().body("YOU ARE A ADMIN");
   }
 
   @PostMapping("/user/save")
