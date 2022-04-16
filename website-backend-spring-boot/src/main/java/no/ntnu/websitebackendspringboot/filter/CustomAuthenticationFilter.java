@@ -67,12 +67,17 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     log.info("Username is: {}", username);
     log.info("Password is: {}", password);
 
+    if (username == null) {
 
-    UsernamePasswordAuthenticationToken authenticationToken =
-        new UsernamePasswordAuthenticationToken(
-            username, password);
+      return null;
+    } else {
 
-    return authenticationManager.authenticate(authenticationToken);
+      UsernamePasswordAuthenticationToken authenticationToken =
+          new UsernamePasswordAuthenticationToken(
+              username, password);
+
+      return authenticationManager.authenticate(authenticationToken);
+    }
 
   }
 
