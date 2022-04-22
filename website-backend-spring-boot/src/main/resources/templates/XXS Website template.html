@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/template-stylesheet.css"
+          th:href="@{/css/template-stylesheet.css}">
+
+</head>
+<body>
+<header>
+
+    <!--
+    Div element for the left side of the header, containing the company name/logo and slogan.
+    -->
+    <div id="header_left">
+
+        <h1 class="main_header">XXS</h1>
+        <h2 class="slogan">because the size doesn't matter</h2>
+
+    </div>
+
+
+    <!--
+    Div element for the right side of the header, containing links for Store, About us and Contact page
+    as well as login and register options.
+    -->
+    <div id="header_right">
+        <h4><a href="store">Store</a></h4>
+        <h4><a href="about">About us</a></h4>
+        <h4>Contact</h4>
+        <a href="login">
+            <button id="login" type="button">Log in</button>
+        </a>
+        <button id="register" type="button">Register</button>
+
+        <a href="/profile">
+            <input type="image" class="profileButton" src="/static/images/home/profileIcon.png" th:src="@{/images/home/profileIcon.png}"
+                   alt="profile icon"/>
+        </a>
+    </div>
+</header>
+
+<!--
+ ---------------------
+ Put html code here :)
+ ---------------------
+-->
+
+
+
+
+<footer>
+    <div id="footer_left">
+        <h2>Mobile app</h2>
+        <h2>Pricing</h2>
+        <h2>About us</h2>
+    </div>
+
+    <div id="footer_mid">
+        <h1>XXS</h1>
+
+    </div>
+
+    <div id="footer_right">
+        <h2>Contact</h2>
+        <h2>FAQ</h2>
+        <h2>Delivery</h2>
+    </div>
+
+
+</footer>
+
+</body>
+</html>
