@@ -139,3 +139,13 @@ img{
     gap: 10rem;
     padding: 1rem 5rem 10rem;
 }
+
+.OurProducts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    align-self: center;
+    gap: 10rem;
+    padding: 1rem 5rem 10rem;
+}
