@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/faq-stylesheet.css"
+          th:href="@{/css/faq-stylesheet.css}">
+
+</head>
+<body>
+<header>
+
+    <!--
+    Div element for the left side of the header, containing the company name/logo and slogan.
+    -->
+    <div id="header_left">
+
+        <h1 class="main_header">XXS</h1>
+        <h2 class="slogan">because the size doesn't matter</h2>
+
+    </div>
+
+
+    <!--
+    Div element for the right side of the header, containing links for Store, About us and Contact page
+    as well as login and register options.
+    -->
+    <div id="header_right">
+        <h4><a href="store">Store</a></h4>
+        <h4><a href="about">About us</a></h4>
+        <h4>Contact</h4>
+        <a href="login">
+            <button id="login" type="button">Log in</button>
+        </a>
+        <button id="register" type="button">Register</button>
+
+        <a href="/profile">
+            <input type="image" class="profileButton" src="/static/images/home/profileIcon.png" th:src="@{/images/home/profileIcon.png}"
+                   alt="profile icon"/>
+        </a>
+    </div>
+</header>
+
+<!--
+ ---------------------
+ Put html code here :)
+ ---------------------
+-->
+
+<div class="faq-section">
+
+
+    <div id="return">
+        <h3>Return policy</h3>
+        <p>Are you not happy with our products? Don't worry!  <br> Here at XXS we practice a 50 day return policy  </p>
+    </div>
+</div>
+
+<div class="faq-section">
+
+
+    <div>
+        <h3>Quality</h3>
+        <p>We are working hard to give our customers <br> the best quality. That is why we are picky on <br> which brands we are cooperating with.  </p>
+    </div>
+</div>
+
+<div class="faq-section">
+
+
+    <div>
+        <h3>Shipping time</h3>
+        <p>The team at XXS is working hard to get our products <br> out to you as fast as possible. you can expect <br> your goodies to arrive within 2-5 working days  </p>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div id="footer_left">
+        <h2>Mobile app</h2>
+        <h2>Pricing</h2>
+        <h2>About us</h2>
+    </div>
+
+    <div id="footer_mid">
+        <h1>XXS</h1>
+
+    </div>
+
+    <div id="footer_right">
+        <h2>Contact</h2>
+        <h2>FAQ</h2>
+        <h2>Delivery</h2>
+    </div>
+
+
+</footer>
+
+</body>
+</html>
