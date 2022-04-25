@@ -58,40 +58,46 @@ A section containing a few product cards for the most popular products on the si
 
     <h2>Popular products</h2>
 
-    <div class="cards">
+    <div class="allcards">
+        <div class="cards1">
 
-        <div id="card1">
-            <img class="product_cards" src="https://i.imgur.com/qJTbRxF.png" alt="E9 Premium Backpack">
-            <h5>SALOMON</h5>
-            <p>E9 Premium Backpack</p>
-            <h2>599</h2>
+            <div id="card1">
+                <img class="product_cards" src="https://i.imgur.com/qJTbRxF.png" alt="E9 Premium Backpack">
+                <h5>SALOMON</h5>
+                <p>E9 Premium Backpack</p>
+                <h2>599</h2>
+            </div>
+            <div id="card2">
+                <img class="product_cards" src="https://i.imgur.com/xjhKakE.png" alt="Hiking boots">
+                <h5>MAMMUT</h5>
+                <p>X100 Hiking Boots 2022</p>
+                <h2>899</h2>
+            </div>
         </div>
-        <div id="card2">
-            <img class="product_cards" src="https://i.imgur.com/xjhKakE.png" alt="Hiking boots">
-            <h5>MAMMUT</h5>
-            <p>X100 Hiking Boots 2022</p>
-            <h2>899</h2>
-        </div>
-        <div id="card3">
-            <img class="product_cards" src="https://i.imgur.com/NdXQjPx.png" alt="All Weather jacket">
-            <h5>BERGANS</h5>
-            <p>ALLWEATHER Jacket</p>
-            <h2>999</h2>
-        </div>
-        <div id="card4">
-            <img class="product_cards" src="https://i.imgur.com/vwNnW8s.png" alt="Winter sweater">
-            <h5>DEVOLD</h5>
-            <p>Winter Sweater 2021</p>
-            <h2>499</h2>
-        </div>
+        <div class="cards2">
+            <div id="card3">
+                <img class="product_cards" src="https://i.imgur.com/NdXQjPx.png" alt="All Weather jacket">
+                <h5>BERGANS</h5>
+                <p>ALLWEATHER Jacket</p>
+                <h2>999</h2>
+            </div>
+            <div id="card4">
+                <img class="product_cards" src="https://i.imgur.com/vwNnW8s.png" alt="Winter sweater">
+                <h5>DEVOLD</h5>
+                <p>Winter Sweater 2021</p>
+                <h2>499</h2>
+            </div>
 
+        </div>
     </div>
+
+
     <button class="popular_button" type="button">See more</button>
 </div>
 
 <div class="product-and-services">
 
-    <img src="https://picsum.photos/400/250" alt="Our Products">
+    <img src="/static/images/home/825191.jpeg" alt="Our Products">
     <div id="text">
         <h3>Our product and services</h3>
         <p>We sell only premium equipment from brands such as<br> Bergans, North Face, Devold and Mammut. All our<br> employees are hiking enthusiasts and we have tested all<br> we sell in the shop. </p>
@@ -104,7 +110,7 @@ A section containing a few product cards for the most popular products on the si
         <p>Young or old, we help you reach the peaks of your lifetime.<br> With XXS your weekend is a success. Our team consists of<br> professional climbers as well as weekend hikers.</p>
         <button type="button">More about us</button>
     </div>
-    <img src="https://picsum.photos/400/250" alt="Our Team">
+    <img src="/static/images/home/photo-1548960071-38683381b592.webp" alt="Our Team">
 </div>
 
 <div class="Related_companies">
@@ -136,42 +142,47 @@ A section containing a few product cards for the most popular products on the si
     <h2>You're in good company</h2>
 
     <div class="person_cards">
-
-        <div>
-            <img class="person_image" src="/static/images/home/anton.jpg" alt="Anton" th:src="@{/images/home/anton.jpg}">
-            <div class="person">
-                <p>“Hiking is a good way<br> to use weekends<br> together with your<br> family. XXS is our go-to<br> place for the latest<br> hiking gear.”
-                <h5>Anton Berg-Hansen</h5>
-            </div>
-
-
+        <div class="person_card1">
+            <div>
+                <img class="person_image1" src="/static/images/home/anton.jpg" alt="Anton" th:src="@{/images/home/anton.jpg}">
+                <div class="person">
+                    <p>“Hiking is a good way<br> to use weekends<br> together with your<br> family. XXS is our go-to<br> place for the latest<br> hiking gear.”
+                    <h5>Anton Berg-Hansen</h5>
+                </div>
         </div>
-        <div>
-            <img class="person_image" src="/static/images/home/chuck.jpg"
-                 alt="Chuck" th:src="@{/images/home/chuck.jpg}">
-            <div class="person">
-                <p>“We are a small IT<br> company, full of geeks.<br>
-                    I had difficulty getting<br>
-                    the geeks out of their<br>
-                    chairs. XXS suggested<br>
-                    the latest water bottles<br>
-                    as a Christmas gift for<br>
-                    all employees. I was<br>
-                    skeptical at first, but<br>
-                    now I have difficulty<br>
-                    getting them back<br>
-                    indoors.”</p>
-                <h5>Chuck Vestre</h5>
-            </div>
+        </div>
 
+        <div class="person_card2">
+            <div>
+                <img class="person_image2" src="/static/images/home/chuck.jpg"
+                     alt="Chuck" th:src="@{/images/home/chuck.jpg}">
+                <div class="person">
+                    <p>“We are a small IT<br> company, full of geeks.<br>
+                        I had difficulty getting<br>
+                        the geeks out of their<br>
+                        chairs. XXS suggested<br>
+                        the latest water bottles<br>
+                        as a Christmas gift for<br>
+                        all employees. I was<br>
+                        skeptical at first, but<br>
+                        now I have difficulty<br>
+                        getting them back<br>
+                        indoors.”</p>
+                    <h5>Chuck Vestre</h5>
+                </div>
         </div>
-        <div>
-            <img class="person_image" src="/static/images/home/pitbull.jpg" alt="MR WorldWIde" th:src="@{/images/home/pitbull.jpg}">
-            <div class="person">
-                <p>“Got a matching<br> sweater for my dog<br> and myself. We are out<br> in the mountains<br> every Sunday since."</p>
-                <h5>Pitbull</h5>
+        </div>
+
+        <div class="person_card3">
+            <div>
+                <img class="person_image3" src="/static/images/home/pitbull.jpg" alt="MR WorldWIde" th:src="@{/images/home/pitbull.jpg}">
+                <div class="person">
+                    <p>“Got a matching<br> sweater for my dog<br> and myself. We are out<br> in the mountains<br> every Sunday since."</p>
+                    <h5>Pitbull</h5>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 <div class="for_dogs">
