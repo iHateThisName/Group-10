@@ -1,17 +1,7 @@
 package no.ntnu.websitebackendspringboot.filter;
 
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import no.ntnu.websitebackendspringboot.services.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +13,16 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
@@ -68,6 +68,16 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     log.info("Password is: {}", password);
 
     if (username == null) {
+
+//      Path path = Paths.get("src/main/resources/templates/login.html");
+//      log.info(path.toAbsolutePath().toString());
+//
+//
+//      try {
+//        new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("👎"));
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
 
       return null;
     } else {
@@ -125,5 +135,17 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
 //    new ObjectMapper().writeValue(response.getOutputStream(), tokens);
 
+  }
+
+  @Override
+  protected void unsuccessfulAuthentication(HttpServletRequest request,
+                                            HttpServletResponse response,
+                                            AuthenticationException failed) throws IOException, ServletException {
+
+    log.info("failed authentication while attempting to access "
+            + request.getServletPath());
+
+    //Adding more descriptive message
+    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Authentication Failed");
   }
 }
