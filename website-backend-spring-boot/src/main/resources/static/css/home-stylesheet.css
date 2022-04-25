@@ -309,7 +309,7 @@ button{
 }
 
 .person_image{
-    border-radius: 50%;
+    border-radius: 2.5rem;
     display: block;
     max-height: 200px;
     max-width: 300px;

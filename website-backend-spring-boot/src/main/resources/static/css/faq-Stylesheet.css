@@ -90,6 +90,34 @@ header {
 
 }
 
+.faq_section_picture{
+    max-height: 40rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.faq_section_picture img {
+    width: 100%;
+    position: relative;
+    bottom: 45rem;
+}
+
+.TextOnImage {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    color: #5bffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
 
 #register{
     background-color: #044c1f;
@@ -122,6 +150,8 @@ h2{
     padding-top: 5rem;
     position: relative;
     align-self: center;
+    vertical-align: center;
+
     background-color: rgba(255, 255, 255, 0.73);
     gap: 10rem;
     padding-bottom: 5rem;

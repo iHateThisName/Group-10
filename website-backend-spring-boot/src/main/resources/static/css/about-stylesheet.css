@@ -104,9 +104,40 @@ h2{
 
 }
 
-#About_us{
+.all_section {
+    max-height: 40rem;
+    overflow: hidden;
+    position: relative;
     text-align: center;
-    background: #476F57;
+    color: white;
+}
+
+.all_section img {
+    width: 100%;
+    position: relative;
+    bottom: 45rem;
+}
+
+
+.TextOnImage {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
+.TextOnImage h1 {
+    color: white;
+    font-max-size: 10rem;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
 }
 
 body{
