@@ -1,4 +1,256 @@
-h1 {
-    color: black;
-    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+* {
+    /*This makes the css easier to work with*/
+
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+h1{
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3, h4, h5 {
+    font-size: 1.8rem;
+}
+
+header {
+    background-color: white;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+
+
+}
+
+
+#header_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#header_left h1 {
+    font-weight: 800;
+    letter-spacing: -0.5rem;
+    color: #476F57;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_left h2 {
+    font-size: 3rem;
+    color: #476F57;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
+}
+
+#header_right h4 {
+    font-weight: 500;
+}
+
+#login, #shoppingcart {
+    width: 130px;
+    height: 40px;
+    color: #044c1f;
+    background: #D5F3CA;
+    border-radius: 10px;
+    font-size: 1.4rem;
+}
+
+#shoppingcart{
+    background-color: #044c1f;
+    color: white;
+}
+
+.all_section {
+    max-height: 40rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.all_section img {
+    width: 100%;
+    position: relative;
+    bottom: 45rem;
+}
+
+.TextOnImage {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
+.TextOnImage h1 {
+    color: white;
+    font-max-size: 10rem;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.TextOnImage h2 {
+    color: white;
+    font-size: 3rem;
+    margin-top: -15%;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.TextOnImage button {
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+
+}
+
+.popular-products {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: scroll;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: rgb(232, 245, 228);
+}
+
+.cards{
+    text-align: center;
+    display: flex;
+    column-gap: 32px;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 50px;
+    padding-top: 1rem;
+
+}
+
+.product_cards {
+    border-radius: 2.5rem 2.5rem;
+    background-color: white;
+}
+
+.popular-products h2 {
+    padding-bottom: 2rem;
+    font-size: 4rem;
+}
+
+
+#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9, #card10, #card11, #card12, #card13, #card14, #card15, #card16, #card17, #card18, #card19, #card20  {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+}
+
+.cards img {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+
+}
+
+.for_men {
+    background-color: rgb(240, 245, 240);
+
+}
+
+.for_women {
+    background-color: rgb(232, 245, 228);
+}
+
+.fordogs {
+    background-color: rgb(240, 245, 240);
+    padding-top: 4rem;
+    gap: 10rem;
+    padding-bottom: 2rem;
+}
+
+.fordogs h2{
+    padding-bottom: 2rem;
+}
+
+.favorite_brands {
+    background-color: rgb(232, 245, 228);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10rem;
+    gap: 10rem;
+    padding-bottom: 10rem;
+}
+
+
+footer {
+    background-color: rgb(240, 245, 240);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+
+}
+#footer_left, #footer_right{
+    display: flex;
+    gap: 25%;
+
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: 530;
 }
