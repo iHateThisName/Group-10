@@ -178,16 +178,25 @@ button{
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
-
-
-
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     border-top: black solid 0.1rem;
     border-bottom: black solid 0.1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
 }
 
+.allcards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
 
-.cards{
+.cards1{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -199,12 +208,25 @@ button{
 
 }
 
+.cards2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 3rem;
+
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+
+
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
 
 .product_cards {
     overflow: hidden;
     width: 30rem;
     height: 30rem;
+
 }
 
 .popular-products h2 {
@@ -248,24 +270,43 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10rem;
     position: relative;
     align-self: center;
     background-color: rgba(255, 255, 255, 0.73);
     gap: 10rem;
-    padding-bottom: 10rem;
-
-
+    padding: 10rem;
 }
+
+.product-and-services img{
+    height: 34rem;
+    width: 65rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.product-and-services h3 {
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
 .about_us{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 10rem;
     background-color: rgba(255, 255, 255, 0.2);
     gap: 10rem;
-    padding-bottom: 10rem;
+    padding: 10rem;
+}
+
+.about_us img {
+    height: 34rem;
+    width: 65rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about_us h3{
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
 }
 
 .about_us button {
@@ -282,25 +323,65 @@ button{
 }
 
 .Related_companies{
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 10rem;
-    background-color: rgba(255, 255, 255, 0.73);
+    flex-direction: row;
     gap: 10rem;
-    padding-bottom: 10rem;
 }
+
+
+.allimages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+
+
+.Related_companies h3 {
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+
+
+
+.related_companies_images1 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.related_companies_images2 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.related_companies_images3 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .related_text{
-    text-align: left;
+    text-align: center;
 }
 
 .person_cards{
     display: flex;
+    align-content: center;
     column-gap: 64px;
     justify-content: center;
     padding-top: 2rem;
-
 
 }
 
@@ -308,8 +389,26 @@ button{
     text-align: center;
 }
 
-.person_image{
-    border-radius: 2.5rem;
+
+
+
+
+.person_image1{
+    max-height: 200px;
+    max-width: 300px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.person_image2{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: block;
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.person_image3{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: block;
     max-height: 200px;
     max-width: 300px;
@@ -321,7 +420,7 @@ button{
     padding-bottom: 5rem;
 }
 
-.product-and-services img,.about_us img,.Related_companies img {
+.product-and-services img,.about_us img {
     border-radius: 2.5rem;
 }
 
