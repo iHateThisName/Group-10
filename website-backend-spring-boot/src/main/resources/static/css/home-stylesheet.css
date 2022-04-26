@@ -424,6 +424,7 @@ button{
     display: flex;
     position: relative;
     flex-wrap: wrap;
+    gap: 2rem;
 
     column-gap: 24px;
     justify-content: center;
