@@ -54,6 +54,7 @@ header {
 #header_left h2 {
     display: flex;
     flex-direction: row;
+    text-align: left;
     font-weight: 400;
     color: #8A8A8A;
     margin-top: -1rem;
@@ -83,7 +84,7 @@ header {
 #login, #register {
     width: 130px;
     height: 40px;
-    color: #044c1f;
+    color: #476F57;
     background: #D5F3CA;
     border-radius: 10px;
     font-size: 1.4rem;
@@ -92,21 +93,21 @@ header {
 
 
 #register{
-    background-color: #044c1f;
+    background-color: #476F57;
     color: white;
 }
 
 body{
     /*background-color: #EEFFE8;*/
     background-color: rgba(255, 255, 255, 0.2);
-    background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);
+    /*background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);*/
 
 }
 
 .Landing_Page img{
     width: 100%;
     position: relative;
-    bottom: 20rem;
+    
 
 }
 
@@ -173,17 +174,17 @@ button{
 
 .popular-products{
     /*background-color: rgba(255, 255, 255, 0.2);*/
-
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    border-top: black solid 0.1rem;
-    border-bottom: black solid 0.1rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    
+    padding-left: 6.3rem;
+    padding-right: 6.3rem;
+
 }
 
 .allcards {
@@ -192,7 +193,7 @@ button{
     align-items: center;
     position: relative;
     flex-direction: row;
-    gap: 3rem;
+    gap: 6rem;
     flex-wrap: wrap;
 }
 
@@ -200,7 +201,7 @@ button{
     display: flex;
     text-align: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 6rem;
 
     flex-wrap: wrap;
     flex-grow: 0;
@@ -212,7 +213,7 @@ button{
     display: flex;
     text-align: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 6rem;
 
     flex-wrap: wrap;
     flex-grow: 0;
@@ -224,22 +225,40 @@ button{
 
 .product_cards {
     overflow: hidden;
-    width: 30rem;
-    height: 30rem;
+    width: 20rem;
+    height: 20rem;
 
 }
 
 .popular-products h2 {
     padding-bottom: 2rem;
     font-size: 4rem;
+    
+    margin-left: 2rem;
+}
+
+.allcards {
+    margin-bottom: 1rem;
+}
+
+.popular-products h5, .allcards h2, .popular-products p {
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.allcards h2 {
+    color: #476F57;
 }
 
 
 #card1, #card2, #card3, #card4 {
-    background-color: #FFFFFFBA;
-    border-radius: 2.5rem;
-    border: 0.2rem solid black;
+    background-color: #F0F0F0;
+    /*border-radius: 2.5rem;*/
+    /*border: 0.2rem solid black;*/
     overflow: hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-align: left;
+    
 
 }
 
@@ -248,16 +267,24 @@ button{
     background-color: #E5F6DF;
 }
 
+.cards2 img, .cards1 img{
+    margin: 3rem;
+}
+
+
+
+
+
 .popular_button{
     margin: auto;
     position: relative;
     right: 1%;
-    background: #476F57;
-    color: white;
+    background: #EEFFE8;
+    color: #476F57;
     font-style: normal;
     font-weight: 500;
     font-size: 1.7rem;
-    width: 15rem;
+    width: 20rem;
     height: 5rem;
     border-radius: 0.5rem;
     display: flex;
@@ -271,10 +298,14 @@ button{
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
     align-self: center;
-    background-color: rgba(255, 255, 255, 0.73);
-    gap: 10rem;
-    padding: 10rem;
+    background-color: #F8FFF5;
+    gap: 6rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 7.95rem;
+    padding-right: 7.95rem;
 }
 
 .product-and-services img{
@@ -293,9 +324,13 @@ button{
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.2);
-    gap: 10rem;
-    padding: 10rem;
+    flex-wrap: wrap-reverse;
+    background-color: rgb(255, 255, 255);
+    gap: 6rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
 }
 
 .about_us img {
@@ -323,14 +358,17 @@ button{
 }
 
 .Related_companies{
-    background-color: rgba(255, 255, 255, 0.73);
-    padding: 5rem;
+    background-color: #F8FFF5;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 14rem;
+    padding-left: 14rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     flex-direction: row;
-    gap: 10rem;
+    gap: 20rem;
 }
 
 
@@ -376,48 +414,75 @@ button{
     text-align: center;
 }
 
-.person_cards{
+.customer_feedback h2{
+    padding-top: 3rem;
+    font-weight: lighter;
+    font-size: 3.5rem;
+}
+
+.person_cards {
     display: flex;
-    align-content: center;
-    column-gap: 64px;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    column-gap: 24px;
     justify-content: center;
-    padding-top: 2rem;
-
-}
-
-.person{
-    text-align: center;
+    padding-top: 7rem;
 }
 
 
+.person, .person2, .person3{
+    text-align: left;
+}
+
+.person h5 {
+    padding-top: 4.5rem;
+}
+
+.person3 h5 {
+    padding-top: 2.3rem;
+}
 
 
 
 .person_image1{
-    max-height: 200px;
-    max-width: 300px;
+    max-height: 250px;
+    max-width: 350px;
+    margin-right: 1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    float: left;
+}
+
+.person_image1 h5 {
+
 }
 
 
 .person_image2{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: block;
-    max-height: 200px;
-    max-width: 300px;
+    max-height: 250px;
+    max-width: 350px;
+    margin-right: 1rem;
+    float: left;
 }
 
 .person_image3{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: block;
-    max-height: 200px;
-    max-width: 300px;
+    max-height: 250px;
+    max-width: 350px;
+    margin-right: 1rem;
+    float: left;
 }
 
+
+
 .customer_feedback{
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255);
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
 }
 
 .product-and-services img,.about_us img {
@@ -431,8 +496,10 @@ button{
     align-items: center;
     padding-top: 20rem;
     padding-bottom: 20rem;
-    background-color: rgba(255, 255, 255, 0.73);
-    gap: 5rem;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    background-color: #F8FFF5;
+    gap: 2rem;
 }
 
 .for_dogs h2{
@@ -448,8 +515,11 @@ button{
     font-size: 1.7rem;
     width: 15rem;
     height: 5rem;
-    border-radius: 0.5rem;
-    margin-left: 30rem;
+    min-height: 5rem;
+    min-width: 15rem;
+    
+    border-radius: 1rem;
+    margin-left: 20rem;
 }
 
 #button2{
@@ -460,11 +530,13 @@ button{
     background-color: #D5F3CA;
     color: #044c1f;
     border-radius: 10px;
+    min-height: 5rem;
+    min-width: 15rem;     
 }
 
 
 footer {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255);
     font-size: 1rem;
     display: flex;
     justify-content: space-around;
@@ -481,6 +553,7 @@ footer {
 }
 
 footer h1 {
+    color: #476F57;
     font-size: 4rem;
     font-weight: 800;
 }
