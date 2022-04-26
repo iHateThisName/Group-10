@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xxs - gallery</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/gallery-stylesheet.css"
+          th:href="@{/css/gallery-stylesheet.css}">
+
+    <script type="application/javascript" th:src="@{/js/gallery-script.js}" src="/static/js/gallery-script.js" defer></script>
+</head>
+<body>
+<header>
+
+    <!--
+    Div element for the left side of the header, containing the company name/logo and slogan.
+    -->
+    <div id="header_left">
+
+        <h1 class="main_header">XXS</h1>
+        <h2 class="slogan">because the size doesn't matter</h2>
+
+    </div>
+
+
+    <!--
+    Div element for the right side of the header, containing links for Store, About us and Contact page
+    as well as login and register options.
+    -->
+    <div id="header_right">
+        <h4><a href="store">Store</a></h4>
+        <h4><a href="about">About us</a></h4>
+        <h4>Contact</h4>
+        <a href="login">
+            <button id="login" type="button">Log in</button>
+        </a>
+        <button id="register" type="button">Register</button>
+
+        <a href="/profile">
+            <input type="image" class="profileButton" src="/static/images/home/profileIcon.png" th:src="@{/images/home/profileIcon.png}"
+                   alt="profile icon"/>
+        </a>
+    </div>
+</header>
+
+<section aria-label="Photo gallery">
+    <h1 id="gallery-headline">Photo gallery</h1>
+
+    <p id="gallery-info">At xxs, we want to create a welcoming community for our fellow hiking enthusiast customers. <br>
+    Therefore we decided to create a gallery where customers can send us photos from their hikes, <br>
+    and the best photos from every month will be added. Do you want you picture on our site? <br>
+    send them to photogallery@xxs.com and maybe <em>your</em> photo will be the next one in our gallery</p>
+
+    <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+        <ul data-slides>
+            <li class="slide" data-active>
+                <img src="/static/images/gallery/g1.jpg" alt="Gallery photo 1" th:src="@{/images/gallery/g1.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g2.jpg" alt="Gallery photo 2" th:src="@{/images/gallery/g2.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g3.jpg" alt="Gallery photo 3" th:src="@{/images/gallery/g3.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g4.jpg" alt="Gallery photo 4" th:src="@{/images/gallery/g4.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g5.jpg" alt="Gallery photo 5" th:src="@{/images/gallery/g5.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g6.jpg" alt="Gallery photo 6" th:src="@{/images/gallery/g6.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g7.jpg" alt="Gallery photo 7" th:src="@{/images/gallery/g7.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g8.jpg" alt="Gallery photo 8" th:src="@{/images/gallery/g8.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g9.jpg" alt="Gallery photo 9" th:src="@{/images/gallery/g9.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g10.jpg" alt="Gallery photo 10" th:src="@{/images/gallery/g10.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g11.jpg" alt="Gallery photo 11" th:src="@{/images/gallery/g11.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g12.jpg" alt="Gallery photo 12" th:src="@{/images/gallery/g12.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g13.jpg" alt="Gallery photo 13" th:src="@{/images/gallery/g13.jpg}">
+            </li>
+            <li class="slide">
+                <img src="/static/images/gallery/g14.jpg" alt="Gallery photo 14" th:src="@{/images/gallery/g14.jpg}">
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <div id="footer_left">
+        <h2>Mobile app</h2>
+        <h2>Pricing</h2>
+        <h2>About us</h2>
+    </div>
+
+    <div id="footer_mid">
+        <h1>XXS</h1>
+
+    </div>
+
+    <div id="footer_right">
+        <h2>Contact</h2>
+        <h2>FAQ</h2>
+        <h2>Delivery</h2>
+    </div>
+
+
+</footer>
+
+</body>
+</html>
