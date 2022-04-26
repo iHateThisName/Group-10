@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests()
         .antMatchers("/css/*", "/images/**", "/js/*").permitAll()
-            .antMatchers("/", "/home", "/login", "/store", "/about").permitAll();
+            .antMatchers("/", "/home", "/login", "/store", "/about", "faq").permitAll();
 
 //    http.formLogin().loginPage("/home")
 //            .loginProcessingUrl("/login")

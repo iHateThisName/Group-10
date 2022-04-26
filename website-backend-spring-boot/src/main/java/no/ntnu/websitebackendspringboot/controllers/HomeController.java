@@ -41,6 +41,11 @@ public class HomeController {
     return "store";
   }
 
+  @GetMapping(value = "/faq")
+  public  String getFaq() {
+    return "faq";
+  }
+
   @GetMapping(path = "/example")
   public String example(Model model) {
     String msg = "This is using a String variable from the backend";
