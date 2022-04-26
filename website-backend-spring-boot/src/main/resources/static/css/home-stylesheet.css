@@ -384,23 +384,16 @@ button{
     font-size: 3.5rem;
 }
 
-.person_cards{
+.person_cards {
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    
+
     column-gap: 24px;
     justify-content: center;
     padding-top: 7rem;
-
-
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a875bb3c8cc714779c264ef4b0b4ba3aa83d552d
 }
+
 
 .person, .person2, .person3{
     text-align: left;
