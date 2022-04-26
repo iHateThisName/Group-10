@@ -185,6 +185,7 @@ header {
 #card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9, #card10, #card11, #card12, #card13, #card14, #card15, #card16, #card17, #card18, #card19, #card20  {
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -197,11 +198,22 @@ header {
 
 .for_men {
     background-color: rgb(240, 245, 240);
+    padding-top:4rem;
+}
 
+.for_men h2 {
+    font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
 .for_women {
+    padding-top: 4rem;
     background-color: rgb(232, 245, 228);
+}
+
+.for_women h2 {
+    font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
 .fordogs {
@@ -209,10 +221,13 @@ header {
     padding-top: 4rem;
     gap: 10rem;
     padding-bottom: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .fordogs h2{
     padding-bottom: 2rem;
+    font-size: 3rem;
 }
 
 .favorite_brands {
@@ -222,11 +237,19 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 10rem;
     gap: 10rem;
-    padding-bottom: 10rem;
+    padding: 10rem;
 }
 
+.favorite_brands h3 {
+    font-size: 3rem;
+}
+
+.favorite_brands_images img{
+    margin: 3rem;
+    height: 8rem;
+    width: 15rem;
+}
 
 footer {
     background-color: rgb(240, 245, 240);
