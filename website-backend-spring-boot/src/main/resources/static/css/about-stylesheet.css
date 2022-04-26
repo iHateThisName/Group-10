@@ -144,7 +144,7 @@ body{
     background-color: #EEFFE8;
 }
 
-img{
+.content img{
     border-radius: 2.5rem;
     width: 50rem;
     height: 35rem;
