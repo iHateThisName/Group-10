@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+* {
+    /*This makes the css easier to work with*/
+
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/*Default font size for p elements to 2rem*/
+p {
+    font-size: 2rem;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-size: 1.8rem;
+}
+
+/**/
+header {
+    background-color: white;
+    font-size: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    align-items: center;
+
+
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
+
+
+}
+
+
+
+
+#header_left h1 {
+    font-weight: 800;
+    letter-spacing: -0.5rem;
+    color: #476F57;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_left h2 {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: #8A8A8A;
+    margin-top: -1rem;
+}
+
+#header_right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
+}
+
+#header_right h4 {
+    font-weight: 500;
+}
+
+.profileButton {
+    height: 3rem;
+    width: 3rem;
+}
+
+
+#login, #register {
+    width: 130px;
+    height: 40px;
+    color: #044c1f;
+    background: #D5F3CA;
+    border-radius: 10px;
+    font-size: 1.4rem;
+
+}
+
+
+#register{
+    background-color: #044c1f;
+    color: white;
+}
+
+body{
+    /*background-color: #EEFFE8;*/
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);
+
+}
+
+.Landing_Page img{
+    width: 100%;
+    position: relative;
+    bottom: 20rem;
+
+}
+
+.Landing_Page {
+    max-height: 70rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.TextOnImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+}
+
+.TextOnImage h1 {
+    color: white;
+    font-max-size: 10rem;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.TextOnImage button {
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+
+}
+
+
+h1{
+    font-size: 6rem;
+    font-weight: 700;
+
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular-products{
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-top: black solid 0.1rem;
+    border-bottom: black solid 0.1rem;
+}
+
+.cards{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 3rem;
+
+    flex-wrap: wrap;
+    flex-grow: 0;
+
+
+}
+
+/*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
+
+.product_cards {
+    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
+}
+
+.popular-products h2 {
+    padding-bottom: 2rem;
+    font-size: 4rem;
+}
+
+
+#card1, #card2, #card3, #card4 {
+    background-color: #FFFFFFBA;
+    border-radius: 2.5rem;
+    border: 0.2rem solid black;
+    overflow: hidden;
+
+}
+
+.cards img {
+    border-bottom: 0.1rem #325c39 solid;
+    background-color: #E5F6DF;
+}
+
+.popular_button{
+    margin: auto;
+    position: relative;
+    right: 1%;
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    display: flex;
+
+}
+
+
+
+.product-and-services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    position: relative;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.73);
+    gap: 10rem;
+    padding-bottom: 10rem;
+
+
+}
+.about_us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 10rem;
+    padding-bottom: 10rem;
+}
+
+.about_us button {
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin-top: 5rem;
+
+}
+
+.Related_companies{
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    gap: 15rem;
+}
+
+
+.allimages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+
+
+.Related_companies h3 {
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+
+
+
+.related_companies_images1 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+}
+.related_companies_images2 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+}
+
+.related_companies_images3 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+}
+
+.related_text{
+    text-align: center;
+}
+
+.person_cards{
+    display: flex;
+    column-gap: 64px;
+    justify-content: center;
+    padding-top: 2rem;
+
+
+
+}
+
+.person{
+    text-align: center;
+}
+
+.person_image{
+    border-radius: 2.5rem;
+    display: block;
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.customer_feedback{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.product-and-services img,.about_us img {
+    border-radius: 2.5rem;
+}
+
+
+.for_dogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+    background-color: rgba(255, 255, 255, 0.73);
+    gap: 5rem;
+}
+
+.for_dogs h2{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+#button1{
+    background: #476F57;
+    color: white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin-left: 30rem;
+}
+
+#button2{
+    width: 15rem;
+    height: 5rem;
+    font-weight: 500;
+    font-size: 1.7rem;
+    background-color: #D5F3CA;
+    color: #044c1f;
+    border-radius: 10px;
+}
+
+
+footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+
+}
+#footer_left, #footer_right{
+    display: flex;
+    gap: 25%;
+
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: 530;
+}
