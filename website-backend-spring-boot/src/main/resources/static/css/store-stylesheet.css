@@ -106,7 +106,6 @@ header {
 .all_section img {
     width: 100%;
     position: relative;
-    bottom: 45rem;
 }
 
 .TextOnImage {
@@ -152,12 +151,16 @@ header {
 }
 
 .popular-products {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     overflow: scroll;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background-color: rgb(232, 245, 228);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+
+
+    background-color: rgb(255, 255, 255);
 }
 
 .cards{
@@ -168,23 +171,59 @@ header {
     align-self: center;
     padding-bottom: 50px;
     padding-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 6rem;
 
 }
 
-.product_cards {
-    border-radius: 2.5rem 2.5rem;
-    background-color: white;
+.cards2 {
+    text-align: center;
+    display: flex;
+    column-gap: 32px;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 50px;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 6rem;
+}
+
+.headline_popular h2 {
+    font-size: 5rem;
+
+}
+
+.popular-products h5, .cards h2, .cards2 h2, .popular-products p {
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.cards2 img, .cards img{
+    margin: 3rem;
 }
 
 .popular-products h2 {
     padding-bottom: 2rem;
+
+}
+
+.cards h2 {
+    color: #476F57;
+    font-size: 4rem;
+}
+
+.cards2 h2 {
+    color: #476F57;
     font-size: 4rem;
 }
 
 
 #card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9, #card10, #card11, #card12, #card13, #card14, #card15, #card16, #card17, #card18, #card19, #card20  {
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #F0F0F0;
+    /*border-radius: 2.5rem;*/
+    /*border: 0.2rem solid black;*/
+    overflow: hidden;
+    text-align: left;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
@@ -197,8 +236,12 @@ header {
 }
 
 .for_men {
-    background-color: rgb(240, 245, 240);
+    background-color: #F8FFF5;
     padding-top:4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
 }
 
 .for_men h2 {
@@ -208,7 +251,11 @@ header {
 
 .for_women {
     padding-top: 4rem;
-    background-color: rgb(232, 245, 228);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
 }
 
 .for_women h2 {
@@ -217,12 +264,15 @@ header {
 }
 
 .fordogs {
-    background-color: rgb(240, 245, 240);
+    background-color: #F8FFF5;
     padding-top: 4rem;
-    gap: 10rem;
     padding-bottom: 2rem;
     padding-left: 5rem;
     padding-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
 }
 
 .fordogs h2{
@@ -231,7 +281,7 @@ header {
 }
 
 .favorite_brands {
-    background-color: rgb(232, 245, 228);
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -239,6 +289,7 @@ header {
     position: relative;
     gap: 10rem;
     padding: 10rem;
+
 }
 
 .favorite_brands h3 {
@@ -249,6 +300,7 @@ header {
     margin: 3rem;
     height: 8rem;
     width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 footer {

@@ -195,6 +195,7 @@ button{
     flex-direction: row;
     gap: 6rem;
     flex-wrap: wrap;
+
 }
 
 .cards1{
@@ -233,13 +234,14 @@ button{
 .popular-products h2 {
     padding-bottom: 2rem;
     font-size: 4rem;
-    
+
     margin-left: 2rem;
 }
 
 .allcards {
     margin-bottom: 1rem;
 }
+
 
 .popular-products h5, .allcards h2, .popular-products p {
     margin-left: 2rem;
@@ -256,8 +258,8 @@ button{
     /*border-radius: 2.5rem;*/
     /*border: 0.2rem solid black;*/
     overflow: hidden;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-align: left;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
 
 }
