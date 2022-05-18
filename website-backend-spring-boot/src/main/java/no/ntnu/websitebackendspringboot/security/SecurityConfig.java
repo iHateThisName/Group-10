@@ -22,7 +22,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity //tells that this is a class for configuring web security
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private final UserDetailsService userDetailsService;
@@ -53,19 +52,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //Want to have the CustomAuthenticationFilter to override the default login url path
     CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
         authenticationManagerBean(), jwtService);
-    customAuthenticationFilter.setFilterProcessesUrl("/login");
+//    customAuthenticationFilter.setFilterProcessesUrl("/login");
 
     //Disable cross site request forgery
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
     http.authorizeRequests()
-        .antMatchers("/", "/home", "/login", "/about", "/store" , "/css/*", "/images/**", "/js/*")
-        .permitAll();
+        .antMatchers("/css/*", "/images/**", "/js/*").permitAll()
+            .antMatchers("/", "/home", "/login", "/store", "/about", "faq").permitAll();
 
-//    http.formLogin().loginPage("/login");
-//    http.formLogin().successForwardUrl("/home");
+//    http.formLogin().loginPage("/home")
+//            .loginProcessingUrl("/login")
+//            .defaultSuccessUrl("/home", true)
+//                    .successForwardUrl("/profile");
+
+    http.formLogin().loginPage("/login");
+
 //    http.logout().logoutSuccessUrl("/home");
+
+//    http.formLogin().defaultSuccessUrl("/home", true);
 
     //We want everyone authenticated
     http.authorizeRequests().anyRequest().authenticated();

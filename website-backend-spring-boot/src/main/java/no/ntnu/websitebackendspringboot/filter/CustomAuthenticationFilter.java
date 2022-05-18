@@ -12,17 +12,18 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
@@ -36,8 +37,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
   private final Logger log = LoggerFactory.getLogger(getClass().getName());
 
   private final JwtService jwtService;
-
-
 
   public CustomAuthenticationFilter(AuthenticationManager authenticationManager,
                                     JwtService jwtService) {
@@ -69,15 +68,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     if (username == null) {
 
-//      Path path = Paths.get("src/main/resources/templates/login.html");
-//      log.info(path.toAbsolutePath().toString());
-//
-//
-//      try {
-//        new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("👎"));
-//      } catch (IOException e) {
-//        e.printStackTrace();
-//      }
 
       return null;
     } else {
@@ -115,25 +105,25 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     //here we are going to generate the token using the jwtService
     String accessToken = jwtService.generateAccessToken(user, request);
     String refreshToken = jwtService.generateRefreshToken(user, request);
+    String bearer = "Bearer ";
+    accessToken = bearer + accessToken;
+    refreshToken = bearer +refreshToken;
 
-    Map<String, String> tokens = new HashMap<>();
-    tokens.put("access_Token", accessToken);
-    tokens.put("refresh_Token", refreshToken);
-
-    response.setContentType(APPLICATION_JSON_VALUE);
+//    response.setContentType(APPLICATION_JSON_VALUE);
 
     //This is a way to use ResponseEntity to set a header
     HttpHeaders headers = new HttpHeaders();
     headers.add("access_Token", accessToken);
-    headers.add("refresh_Token", refreshToken);
+    headers.add("refresh_Token",refreshToken);
+
 
     //This will make it stay in the response header
     response.addHeader("access_Token", accessToken);
     response.addHeader("refresh_Token", refreshToken);
 
+
     //this will just give the ResponseEntity as a json to the user when successfully to login
     new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
-//    new ObjectMapper().writeValue(response.getOutputStream(), tokens);
 
   }
 

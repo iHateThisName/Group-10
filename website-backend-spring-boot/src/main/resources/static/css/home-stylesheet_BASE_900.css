@@ -54,7 +54,6 @@ header {
 #header_left h2 {
     display: flex;
     flex-direction: row;
-    text-align: left;
     font-weight: 400;
     color: #8A8A8A;
     margin-top: -1rem;
@@ -84,7 +83,7 @@ header {
 #login, #register {
     width: 130px;
     height: 40px;
-    color: #476F57;
+    color: #044c1f;
     background: #D5F3CA;
     border-radius: 10px;
     font-size: 1.4rem;
@@ -93,21 +92,21 @@ header {
 
 
 #register{
-    background-color: #476F57;
+    background-color: #044c1f;
     color: white;
 }
 
 body{
     /*background-color: #EEFFE8;*/
     background-color: rgba(255, 255, 255, 0.2);
-    /*background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);*/
+    background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);
 
 }
 
 .Landing_Page img{
     width: 100%;
     position: relative;
-    
+    bottom: 20rem;
 
 }
 
@@ -174,91 +173,48 @@ button{
 
 .popular-products{
     /*background-color: rgba(255, 255, 255, 0.2);*/
-    background-color: rgb(255, 255, 255);
+
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    
-    padding-left: 6.3rem;
-    padding-right: 6.3rem;
-
+    border-top: black solid 0.1rem;
+    border-bottom: black solid 0.1rem;
 }
 
-.allcards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: row;
-    gap: 6rem;
-    flex-wrap: wrap;
-}
-
-.cards1{
+.cards{
     display: flex;
     text-align: center;
     justify-content: center;
-    gap: 6rem;
+    gap: 3rem;
 
     flex-wrap: wrap;
     flex-grow: 0;
 
 
 }
-
-.cards2 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 6rem;
-
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-
 
 /*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
 
 .product_cards {
     overflow: hidden;
-    width: 20rem;
-    height: 20rem;
-
+    width: 30rem;
+    height: 30rem;
 }
 
 .popular-products h2 {
     padding-bottom: 2rem;
     font-size: 4rem;
-    
-    margin-left: 2rem;
-}
-
-.allcards {
-    margin-bottom: 1rem;
-}
-
-.popular-products h5, .allcards h2, .popular-products p {
-    margin-left: 2rem;
-    text-align: left;
-}
-
-.allcards h2 {
-    color: #476F57;
 }
 
 
 #card1, #card2, #card3, #card4 {
-    background-color: #F0F0F0;
-    /*border-radius: 2.5rem;*/
-    /*border: 0.2rem solid black;*/
+    background-color: #FFFFFFBA;
+    border-radius: 2.5rem;
+    border: 0.2rem solid black;
     overflow: hidden;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    text-align: left;
-    
 
 }
 
@@ -267,24 +223,16 @@ button{
     background-color: #E5F6DF;
 }
 
-.cards2 img, .cards1 img{
-    margin: 3rem;
-}
-
-
-
-
-
 .popular_button{
     margin: auto;
     position: relative;
     right: 1%;
-    background: #EEFFE8;
-    color: #476F57;
+    background: #476F57;
+    color: white;
     font-style: normal;
     font-weight: 500;
     font-size: 1.7rem;
-    width: 20rem;
+    width: 15rem;
     height: 5rem;
     border-radius: 0.5rem;
     display: flex;
@@ -297,51 +245,24 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    flex-wrap: wrap;
-    align-self: center;
-    background-color: #F8FFF5;
-    gap: 6rem;
     padding-top: 10rem;
+    position: relative;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.73);
+    gap: 10rem;
     padding-bottom: 10rem;
-    padding-left: 7.95rem;
-    padding-right: 7.95rem;
-}
 
-.product-and-services img{
-    height: 34rem;
-    width: 65rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
-.product-and-services h3 {
-    font-size: 2.5rem;
-    padding-bottom: 2rem;
 }
-
 .about_us{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    flex-wrap: wrap-reverse;
-    background-color: rgb(255, 255, 255);
-    gap: 6rem;
     padding-top: 10rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 10rem;
     padding-bottom: 10rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
-}
-
-.about_us img {
-    height: 34rem;
-    width: 65rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.about_us h3{
-    font-size: 2.5rem;
-    padding-bottom: 2rem;
 }
 
 .about_us button {
@@ -358,17 +279,14 @@ button{
 }
 
 .Related_companies{
-    background-color: #F8FFF5;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    padding-right: 14rem;
-    padding-left: 14rem;
+    background-color: rgba(255, 255, 255, 0.73);
+    padding: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     flex-direction: row;
-    gap: 20rem;
+    gap: 15rem;
 }
 
 
@@ -394,95 +312,47 @@ button{
     margin: 2rem;
     height: 8rem;
     width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .related_companies_images2 img {
     margin: 2rem;
     height: 8rem;
     width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .related_companies_images3 img {
     margin: 2rem;
     height: 8rem;
     width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .related_text{
     text-align: center;
 }
 
-.customer_feedback h2{
-    padding-top: 3rem;
-    font-weight: lighter;
-    font-size: 3.5rem;
-}
-
-.person_cards {
+.person_cards{
     display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 2rem;
-
-    column-gap: 24px;
+    column-gap: 64px;
     justify-content: center;
-    padding-top: 7rem;
-}
+    padding-top: 2rem;
 
-
-.person, .person2, .person3{
-    text-align: left;
-}
-
-.person h5 {
-    padding-top: 4.5rem;
-}
-
-.person3 h5 {
-    padding-top: 2.3rem;
-}
-
-
-
-.person_image1{
-    max-height: 250px;
-    max-width: 350px;
-    margin-right: 1rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    float: left;
-}
-
-.person_image1 h5 {
 
 }
 
+.person{
+    text-align: center;
+}
 
-.person_image2{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.person_image{
+    border-radius: 2.5rem;
     display: block;
-    max-height: 250px;
-    max-width: 350px;
-    margin-right: 1rem;
-    float: left;
+    max-height: 200px;
+    max-width: 300px;
 }
-
-.person_image3{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: block;
-    max-height: 250px;
-    max-width: 350px;
-    margin-right: 1rem;
-    float: left;
-}
-
-
 
 .customer_feedback{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
     padding-top: 5rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 }
 
 .product-and-services img,.about_us img {
@@ -496,10 +366,8 @@ button{
     align-items: center;
     padding-top: 20rem;
     padding-bottom: 20rem;
-    padding-right: 8rem;
-    padding-left: 8rem;
-    background-color: #F8FFF5;
-    gap: 2rem;
+    background-color: rgba(255, 255, 255, 0.73);
+    gap: 5rem;
 }
 
 .for_dogs h2{
@@ -515,11 +383,8 @@ button{
     font-size: 1.7rem;
     width: 15rem;
     height: 5rem;
-    min-height: 5rem;
-    min-width: 15rem;
-    
-    border-radius: 1rem;
-    margin-left: 20rem;
+    border-radius: 0.5rem;
+    margin-left: 30rem;
 }
 
 #button2{
@@ -530,24 +395,20 @@ button{
     background-color: #D5F3CA;
     color: #044c1f;
     border-radius: 10px;
-    min-height: 5rem;
-    min-width: 15rem;     
 }
 
 
 footer {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.2);
     font-size: 1rem;
     display: flex;
     justify-content: space-around;
     /*height: 34rem;*/
     padding-top: 7rem;
     padding-bottom: 7rem;
-    color: white;
 
 
 }
-
 #footer_left, #footer_right{
     display: flex;
     gap: 25%;
@@ -555,7 +416,6 @@ footer {
 }
 
 footer h1 {
-    color: #47fc47;
     font-size: 4rem;
     font-weight: 800;
 }
