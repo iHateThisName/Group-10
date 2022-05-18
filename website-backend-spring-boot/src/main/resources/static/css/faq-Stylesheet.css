@@ -117,47 +117,34 @@ header {
     align-items: center;
     gap: 10rem;
 }
-
-
 #register{
     background-color: #044c1f;
     color: white;
 }
-
 body{
     /*background-color: #EEFFE8;*/
     background-color: rgba(255, 255, 255, 0.2);
     background-image: linear-gradient(140deg, #FFFFFF33 0%, #5A944D 25%);
-
 }
-
 h1{
     font-size: 6rem;
     font-weight: 700;
-
 }
-
 h2{
     text-align: center;
     font-size: 2rem;
-
 }
-
 .faq_section{
 
-    background-color: #e8fde8;
+    background-color: #F8FFF5;
 
 }
-
 .faq-paragraph-section {
     margin-left: 40%;
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
     text-align: left;
-
-
-
 
     gap: 10rem;
     padding-bottom: 5rem;
@@ -167,24 +154,12 @@ h2{
     display: flex;
     padding-top: 10rem;
     gap: 5rem;
-
-
-
-
-
-
 }
+
 li {
     font-size: 1.5rem;
     list-style-type: none;
-
-
 }
-
-
-
-
-
 
 footer {
     background-color:black;
@@ -195,20 +170,16 @@ footer {
     padding-top: 5rem;
     padding-bottom: 5rem;
     color: white;
-
-
 }
 #footer_left, #footer_right{
     display: flex;
     gap: 25%;
 
 }
-
 footer h1 {
     font-size: 4rem;
     font-weight: 800;
 }
-
 footer h2 {
     font-size: 1.5rem;
     font-weight: 530;
