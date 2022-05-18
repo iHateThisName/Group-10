@@ -574,6 +574,18 @@ li {
 
 }
 
+#footer_links {
+    display: flex;
+    padding-top: 10rem;
+    gap: 5rem;
+}
+
+#footer_links h2 {
+    font-size: 2rem;
+}
+
+
+
 #footer_left, #footer_right{
     display: flex;
     gap: 25%;
