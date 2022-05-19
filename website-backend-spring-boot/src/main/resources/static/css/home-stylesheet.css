@@ -373,6 +373,16 @@ button{
 
 }
 
+
+
+.allimages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
 .Related_companies{
     background-color: #F8FFF5;
     padding-top: 5rem;
@@ -386,17 +396,6 @@ button{
     flex-direction: row;
     gap: 20rem;
 }
-
-
-.allimages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-}
-
-
 
 .Related_companies h3 {
     font-size: 4rem;

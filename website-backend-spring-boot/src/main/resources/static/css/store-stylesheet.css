@@ -161,15 +161,34 @@ header {
     flex-wrap: wrap;
     gap: 0rem;
     justify-content: center;
-    padding-left: 6.3rem;
-    padding-right: 6.3rem;
+
 
 
 
     background-color: rgb(255, 255, 255);
 }
 
-.cards{
+.cardsection1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.cardsection2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.cards, .cards2, .cards3, .cards4{
     text-align: center;
     display: flex;
     column-gap: 32px;
@@ -182,29 +201,19 @@ header {
 
 }
 
-.cards2 {
-    text-align: center;
-    display: flex;
-    column-gap: 32px;
-    justify-content: center;
-    align-self: center;
-    padding-bottom: 50px;
-    padding-top: 0rem;
-    margin-bottom: 1rem;
-    gap: 6rem;
-}
+
 
 .headline_popular h2 {
     font-size: 5rem;
 
 }
 
-.popular-products h5, .cards h2, .cards2 h2, .popular-products p, .for_men h5, .for_men p, .for_women h5, .for_women p, .fordogs h5, .fordogs p {
+.popular-products h5, .cards h2, .cards2 h2, .cards3 h2, .cards4 h2, .popular-products p, .for_men h5, .for_men p, .for_women h5, .for_women p, .fordogs h5, .fordogs p {
     margin-left: 2rem;
     text-align: left;
 }
 
-.cards2 img, .cards img{
+.cards2 img, .cards img, .cards3 img, .cards4 img{
     margin: 3rem;
 }
 
@@ -213,15 +222,12 @@ header {
 
 }
 
-.cards h2 {
+.cards h2, .cards2 h2, .cards3 h2, .cards4 h2 {
     color: #476F57;
     font-size: 4rem;
 }
 
-.cards2 h2 {
-    color: #476F57;
-    font-size: 4rem;
-}
+
 
 .for_men .cards h2 {
     font-size: 4rem;
@@ -239,7 +245,7 @@ header {
 
 }
 
-.cards img, .cards2 img {
+.cards img, .cards2 img, .cards3 img, .cards4 img {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     width: 20rem;
@@ -255,6 +261,16 @@ header {
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
+}
+
+.allcards, .allcards2, .allcards3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 .for_men h2 {
@@ -280,8 +296,7 @@ header {
     background-color: #F8FFF5;
     padding-top: 4rem;
     padding-bottom: 2rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -293,24 +308,44 @@ header {
     font-size: 4rem;
 }
 
-.favorite_brands {
-    background-color: white;
+
+.favorite_brands{
+    background-color: #F8FFF5;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 8rem;
+    padding-left: 8rem;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 10rem;
-    padding: 10rem;
-
+    flex-direction: row;
+    gap: 20rem;
 }
 
-.favorite_brands h3 {
-    font-size: 3rem;
+.Related_companies h3 {
+    font-size: 4rem;
+    font-weight: lighter;
 }
 
-.favorite_brands_images img{
-    margin: 3rem;
+
+
+
+.related_companies_images1 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.related_companies_images2 img {
+    margin: 2rem;
+    height: 8rem;
+    width: 15rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.related_companies_images3 img {
+    margin: 2rem;
     height: 8rem;
     width: 15rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -369,6 +404,8 @@ li {
     gap: 25%;
 
 }
+
+
 
 
 
