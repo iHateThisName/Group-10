@@ -110,7 +110,9 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    color: #5bffff;
+
+    color: #47fc47;
+    -webkit-text-stroke: 2px black;
 
     display: flex;
     flex-direction: column;
@@ -176,6 +178,16 @@ footer {
     gap: 25%;
 
 }
+#footer_links {
+    display: flex;
+    padding-top: 10rem;
+    gap: 5rem;
+}
+
+#footer_links h2 {
+    font-size: 2rem;
+}
+
 footer h1 {
     font-size: 4rem;
     font-weight: 800;
