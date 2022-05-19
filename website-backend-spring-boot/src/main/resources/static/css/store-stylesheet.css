@@ -320,11 +320,21 @@ footer {
     background-color: rgb(0, 0, 0);
     font-size: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+
+
     /*height: 34rem;*/
     padding-top: 7rem;
     padding-bottom: 7rem;
+    gap: 90rem;
     color: white;
+
+
+
+}
+
+#footer_mid {
+    position: absolute;
 
 
 }
@@ -355,9 +365,13 @@ li {
 
 #footer_left, #footer_right{
     display: flex;
+
     gap: 25%;
 
 }
+
+
+
 
 footer h1 {
     color: #47fc47;
