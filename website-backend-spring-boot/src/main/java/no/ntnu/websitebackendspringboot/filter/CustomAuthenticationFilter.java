@@ -105,9 +105,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     //here we are going to generate the token using the jwtService
     String accessToken = jwtService.generateAccessToken(user, request);
     String refreshToken = jwtService.generateRefreshToken(user, request);
-    String bearer = "Bearer ";
-    accessToken = bearer + accessToken;
-    refreshToken = bearer +refreshToken;
 
 //    response.setContentType(APPLICATION_JSON_VALUE);
 
