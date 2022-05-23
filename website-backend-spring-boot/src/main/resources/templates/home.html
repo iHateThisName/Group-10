@@ -8,7 +8,8 @@
 
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png" th:src="@{/images/favicon/apple-touch-icon.png}">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png" th:src="@{/images/favicon/favicon-32x32.png}">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" th:src="@{/images/favicon/favicon-16x16.png}"><link rel="manifest" href="/static/images/favicon/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" th:src="@{/images/favicon/favicon-16x16.png}">
+    <!--    <link rel="manifest" href="/static/images/favicon/site.webmanifest">-->
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -21,7 +22,7 @@
     -->
     <div id="header_left">
 
-        <h1 class="main_header">XXS</h1>
+        <h1 class="logo">XXS</h1>
         <h2 class="slogan">because the size doesn't matter</h2>
 
     </div>
@@ -32,11 +33,10 @@
     as well as login and register options.
     -->
     <div id="header_right">
-        <h4><a href="store">Store</a></h4>
-        <h4><a href="about">About us</a></h4>
-        <h4>Contact</h4>
+        <a href="store">Store</a>
+        <a href="about">About us</a>
         <a href="login">
-        <button id="login" type="button">Log in</button>
+            <button id="login" type="button">Log in</button>
         </a>
         <button id="register" type="button">Register</button>
 
@@ -157,7 +157,7 @@ A section containing a few product cards for the most popular products on the si
                     <p>“Hiking is a good way to use weekends<br> together with your family. <br>XXS is our go-to<br> place for the latest<br> hiking gear.”
                     <h5>Anton Berg-Hansen</h5>
                 </div>
-        </div>
+            </div>
         </div>
 
         <div class="person_card2">
@@ -178,7 +178,7 @@ A section containing a few product cards for the most popular products on the si
                         indoors.”</p>
                     <h5>Chuck Vestre</h5>
                 </div>
-        </div>
+            </div>
         </div>
 
         <div class="person_card3">
@@ -204,31 +204,31 @@ A section containing a few product cards for the most popular products on the si
     <div id="footer_mid">
         <h1>XXS</h1>
 
-    <div id="footer_left">
-        <div class="contact_info">
-            <div>
-                <ul>
-                    <li><h3>OPENING HOURS</h3></li>
-                    <li></li>
-                    <li>Monday-Friday: 08:00 - 20:00</li>
-                    <li>Saturday: 10:00 - 18:00</li>
-                    <li>Sunday: CLOSED</li>
+        <div id="footer_left">
+            <div class="contact_info">
+                <div>
+                    <ul>
+                        <li><h3>OPENING HOURS</h3></li>
+                        <li></li>
+                        <li>Monday-Friday: 08:00 - 20:00</li>
+                        <li>Saturday: 10:00 - 18:00</li>
+                        <li>Sunday: CLOSED</li>
 
 
-                </ul>
+                    </ul>
+                </div>
+                <div>
+                    <li><h3>CONTACT INFO</h3></li>
+                    <li> <span> <i class="material-icons">call</i></span> Call us now: (+47) 917 92 104</li>
+                    <li> <span> <i class="material-icons">email</i> </span> Mail : support@xxs.no</li>
+                    <li> <span> <i class="material-icons">location_pin</i> </span> XXS AS, Ivar aasens gate 27,6005 Ålesund, Norway </li>
+
+                </div>
+
+
+
             </div>
-            <div>
-                <li><h3>CONTACT INFO</h3></li>
-                <li> <span> <i class="material-icons">call</i></span> Call us now: (+47) 917 92 104</li>
-                <li> <span> <i class="material-icons">email</i> </span> Mail : support@xxs.no</li>
-                <li> <span> <i class="material-icons">location_pin</i> </span> XXS AS, Ivar aasens gate 27,6005 Ålesund, Norway </li>
-
-            </div>
-
-
-
         </div>
-    </div>
 
 
 
