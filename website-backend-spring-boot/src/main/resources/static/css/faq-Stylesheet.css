@@ -111,13 +111,25 @@ header {
     transform: translate(-50%, -50%);
     overflow: hidden;
 
-    color: #47fc47;
-    -webkit-text-stroke: 2px black;
+
+    font-weight: 200;
+    color: white;
+    /* uses text shadow to create text border. */
+    text-shadow: -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black;
+
+
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10rem;
+}
+
+.TextOnImage h1 {
+    font-weight: 400;
 }
 #register{
     background-color: #044c1f;

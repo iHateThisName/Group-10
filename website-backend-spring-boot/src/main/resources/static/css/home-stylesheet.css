@@ -137,11 +137,16 @@ body{
 }
 
 .TextOnImage h1 {
-    color: white;
     font-max-size: 10rem;
     font-style: normal;
-    font-weight: 400;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+
+    font-weight: 200;
+    color: white;
+    /* uses text shadow to create text border. */
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .TextOnImage button {
