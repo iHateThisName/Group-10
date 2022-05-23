@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //Want to have the CustomAuthenticationFilter to override the default login url path
     CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
         authenticationManagerBean(), jwtService);
-//    customAuthenticationFilter.setFilterProcessesUrl("/login");
+    customAuthenticationFilter.setFilterProcessesUrl("/login");
 
     //Disable cross site request forgery
     http.csrf().disable();
