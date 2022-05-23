@@ -88,17 +88,11 @@ header {
 #login, #register {
     width: 130px;
     height: 40px;
-    color: #476F57;
-    background: #D5F3CA;
+    color: white;
+    background: #476F57;
     border-radius: 10px;
     font-size: 1.4rem;
 
-}
-
-
-#register{
-    background-color: #476F57;
-    color: white;
 }
 
 body{
@@ -158,6 +152,8 @@ body{
     width: 20rem;
     height: 5rem;
     border-radius: 0.5rem;
+
+
 
 }
 
@@ -290,8 +286,8 @@ button{
     margin: auto;
     position: relative;
     right: 1%;
-    background: #EEFFE8;
-    color: #476F57;
+    background: #476F57;
+    color: white;
     font-style: normal;
     font-weight: 500;
     font-size: 1.7rem;
@@ -520,8 +516,7 @@ button{
     align-items: center;
     padding-top: 20rem;
     padding-bottom: 20rem;
-    padding-right: 8rem;
-    padding-left: 8rem;
+
     background-color: #F8FFF5;
     gap: 2rem;
 }
@@ -530,8 +525,8 @@ button{
     font-size: 4rem;
     font-weight: 400;
 }
+.for_dogs button {
 
-#button1{
     background: #476F57;
     color: white;
     font-style: normal;
@@ -546,17 +541,7 @@ button{
     margin-left: 20rem;
 }
 
-#button2{
-    width: 15rem;
-    height: 5rem;
-    font-weight: 500;
-    font-size: 1.7rem;
-    background-color: #D5F3CA;
-    color: #044c1f;
-    border-radius: 10px;
-    min-height: 5rem;
-    min-width: 15rem;     
-}
+
 
 
 footer {
@@ -617,3 +602,18 @@ footer h2 {
     font-size: 1.5rem;
     font-weight: 530;
 }
+
+/* Animations */
+button:hover {
+
+    color: #476F57;
+    background: white;
+
+}
+#login:hover, #register:hover{
+
+    color: #476F57;
+    background: white;
+
+}
+
