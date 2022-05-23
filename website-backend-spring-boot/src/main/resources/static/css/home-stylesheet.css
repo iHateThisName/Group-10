@@ -35,6 +35,10 @@ header {
 
     align-items: center;
 
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
 
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
 
@@ -556,8 +560,8 @@ footer {
     display: flex;
     justify-content: space-around;
     /*height: 34rem;*/
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
     color: white;
 
 
@@ -565,7 +569,7 @@ footer {
 
 .contact_info {
     display: flex;
-    padding-top: 10rem;
+    padding-top: 2rem;
     gap: 5rem; }
 
 li {
@@ -577,8 +581,9 @@ li {
 
 #footer_links {
     display: flex;
-    padding-top: 10rem;
+    padding-top: 5rem;
     gap: 5rem;
+
 }
 
 #footer_links h2 {

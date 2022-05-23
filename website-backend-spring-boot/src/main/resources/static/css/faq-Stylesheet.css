@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /**/
+
 header {
     background-color: white;
     font-size: 4rem;
@@ -29,9 +30,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
+
+    padding-top: 0;
 
     align-items: center;
     position: sticky;
@@ -43,9 +43,6 @@ header {
 
 
 }
-
-
-
 
 #header_left h1 {
     font-weight: 800;
@@ -153,7 +150,7 @@ h2{
 
 .contact_info {
     display: flex;
-    padding-top: 10rem;
+    padding-top: 2rem;
     gap: 5rem;
 }
 
@@ -168,7 +165,7 @@ footer {
     display: flex;
     justify-content: space-around;
     /*height: 34rem;*/
-    padding-top: 5rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     color: white;
 }
@@ -179,7 +176,7 @@ footer {
 }
 #footer_links {
     display: flex;
-    padding-top: 10rem;
+    padding-top: 5rem;
     gap: 5rem;
 }
 
