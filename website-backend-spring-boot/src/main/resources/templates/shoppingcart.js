@@ -17,15 +17,15 @@ let cart = [];
 class Products {
     async getProducts() {
         try {
-            let result = await fetch("/static/js/products.js")
+            let result = await fetch("/templates/products.json")
             let data = await result.json()
 
             let products = data.items;
             products = products.map(item => {
-                const {title,price} = item.fields;
-                const {id} = item.sys
+                const { title, price } = item.fields;
+                const { id } = item.sys
                 const image = item.fields.image.fields.file.url;
-                return {title,price,id,image}
+                return { title, price, id, image}
             })
             return products;
         }
@@ -37,10 +37,6 @@ class Products {
 
 // display products - responsible for getting all the items that are being returned from the products and displaying them
 class UI {
-    displayProducts(products) {
-        console.log(products);
-
-    }
 
 }
 
@@ -55,5 +51,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const products = new Products();
 
     // get all products
-    products.getProducts().then(products => ui.displayProducts(products));
+    products.getProducts().then(data => console.log(data));
 })

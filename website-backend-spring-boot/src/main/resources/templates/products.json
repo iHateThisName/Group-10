@@ -1,4 +1,4 @@
-productlist = [
+[
     {
         "items": [
             {
@@ -32,8 +32,8 @@ productlist = [
                     "price": 499,
                     "image": { "fields": { "file": { "url": "https://i.imgur.com/vwNnW8s.png" } } }
                 }
-            },
+            }
 
         ]
-    },
-];
+    }
+]
