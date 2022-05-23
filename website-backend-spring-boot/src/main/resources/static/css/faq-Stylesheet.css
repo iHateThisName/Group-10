@@ -166,7 +166,7 @@ footer {
     justify-content: space-around;
     /*height: 34rem;*/
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     color: white;
 }
 #footer_left, #footer_right{
@@ -176,7 +176,7 @@ footer {
 }
 #footer_links {
     display: flex;
-    padding-top: 5rem;
+    align-items: center;
     gap: 5rem;
 }
 
