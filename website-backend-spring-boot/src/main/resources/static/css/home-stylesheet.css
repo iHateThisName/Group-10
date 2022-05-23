@@ -89,7 +89,7 @@ header {
     width: 130px;
     height: 40px;
     color: white;
-    background: #476F57;
+    background: #044c1f;
     border-radius: 10px;
     font-size: 1.4rem;
 
@@ -144,7 +144,7 @@ body{
 }
 
 .TextOnImage button {
-    background: #476F57;
+    background: #044c1f;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -286,7 +286,7 @@ button{
     margin: auto;
     position: relative;
     right: 1%;
-    background: #476F57;
+    background: #044c1f;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -328,7 +328,7 @@ button{
 
 
 .gallery_page button {
-    background: #476F57;
+    background: #044c1f;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -366,7 +366,7 @@ button{
 }
 
 .about_us button {
-    background: #476F57;
+    background: #044c1f;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -527,7 +527,7 @@ button{
 }
 .for_dogs button {
 
-    background: #476F57;
+    background: #044c1f;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -606,13 +606,13 @@ footer h2 {
 /* Animations */
 button:hover {
 
-    color: #476F57;
+    color: #044c1f;
     background: white;
 
 }
 #login:hover, #register:hover{
 
-    color: #476F57;
+    color: #044c1f;
     background: white;
 
 }

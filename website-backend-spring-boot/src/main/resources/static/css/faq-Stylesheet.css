@@ -83,8 +83,8 @@ header {
 #login, #register {
     width: 130px;
     height: 40px;
-    color: #044c1f;
-    background: #D5F3CA;
+    color: white;
+    background: #044c1f;
     border-radius: 10px;
     font-size: 1.4rem;
 
@@ -130,10 +130,6 @@ header {
 
 .TextOnImage h1 {
     font-weight: 400;
-}
-#register{
-    background-color: #044c1f;
-    color: white;
 }
 
 h1{
@@ -206,6 +202,11 @@ footer h2 {
 }
 #footer_logo{
     color: #47fc47;
+}
+
+#login:hover, #register:hover {
+    color: #044c1f;
+    background: white;
 }
 
 
