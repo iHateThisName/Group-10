@@ -10,6 +10,9 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
 
     padding-top: 0;
 
@@ -24,11 +27,13 @@ header {
 
 }
 
-#header_left h1 {
+#header_left a {
     font-weight: 800;
+    font-size: 4rem;
     letter-spacing: -0.5rem;
     color: #476F57;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
 }
 
 #header_left h2 {
