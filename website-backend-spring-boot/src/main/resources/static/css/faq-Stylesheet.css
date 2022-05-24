@@ -125,9 +125,6 @@ header {
                 1px -1px 0 black,
                 -1px 1px 0 black,
                 1px 1px 0 black;
-
-
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,12 +132,12 @@ header {
 }
 
 .TextOnImage h1 {
-    font-weight: 400;
+    font-weight: 200;
 }
 
 h1{
     font-size: 6rem;
-    font-weight: 700;
+
 }
 h2{
     text-align: center;
@@ -161,6 +158,16 @@ h2{
     gap: 10rem;
     padding-bottom: 5rem;
 }
+footer {
+    background-color:black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+}
 
 .contact_info {
     display: flex;
@@ -173,16 +180,6 @@ li {
     list-style-type: none;
 }
 
-footer {
-    background-color:black;
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /*height: 34rem;*/
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    color: white;
-}
 #footer_left, #footer_right{
     display: flex;
     gap: 25%;
