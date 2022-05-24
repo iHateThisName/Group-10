@@ -469,14 +469,9 @@ button{
 /* Animations */
 button:hover {
 
-    color: #044c1f;
-    background: white;
+    color: black;
+    background: #47fc47;
 
 }
-#login:hover, #register:hover{
 
-    color: #044c1f;
-    background: white;
-
-}
 
