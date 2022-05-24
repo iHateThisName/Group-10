@@ -8,3 +8,12 @@ $(document).ready(function () {
     });
 })
 
+//We use This so we can work with the html files without using the backend
+//Todo delete this when done
+$(document).ready(function () {
+    $(function(){
+        $("#header").load("Header.html");
+        $("#footer").load("Footer.html");
+    });
+})
+
