@@ -165,7 +165,8 @@ body{
     position: relative;
     background-color: rgba(255, 255, 255, 0.2);
     gap: 10rem;
-    padding: 1rem 5rem 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .Location{
@@ -176,7 +177,8 @@ body{
     align-self: center;
     background-color: rgba(255, 255, 255, 0.73);
     gap: 10rem;
-    padding: 1rem 5rem 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .OurProducts{
@@ -186,7 +188,8 @@ body{
     position: relative;
     align-self: center;
     gap: 10rem;
-    padding: 1rem 5rem 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 footer {
