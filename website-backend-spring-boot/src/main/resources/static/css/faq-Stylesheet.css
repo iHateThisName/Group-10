@@ -70,9 +70,15 @@ header {
     color: #476F57;
 }
 
-#header_right h4 {
-    font-weight: 500;
+.Link_Header{
+    font-size: 2rem;
+
+    font-weight: 530;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
+
+
 
 .profileButton {
     height: 3rem;
@@ -119,9 +125,6 @@ header {
                 1px -1px 0 black,
                 -1px 1px 0 black,
                 1px 1px 0 black;
-
-
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,12 +132,12 @@ header {
 }
 
 .TextOnImage h1 {
-    font-weight: 400;
+    font-weight: 200;
 }
 
 h1{
     font-size: 6rem;
-    font-weight: 700;
+
 }
 h2{
     text-align: center;
@@ -155,6 +158,16 @@ h2{
     gap: 10rem;
     padding-bottom: 5rem;
 }
+footer {
+    background-color:black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*height: 34rem;*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+}
 
 .contact_info {
     display: flex;
@@ -167,16 +180,6 @@ li {
     list-style-type: none;
 }
 
-footer {
-    background-color:black;
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /*height: 34rem;*/
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    color: white;
-}
 #footer_left, #footer_right{
     display: flex;
     gap: 25%;
@@ -186,10 +189,15 @@ footer {
     display: flex;
     align-items: center;
     gap: 5rem;
+
 }
 
-#footer_links h2 {
+.Link_Footer {
     font-size: 2rem;
+
+    font-weight: 530;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 footer h1 {
@@ -204,9 +212,23 @@ footer h2 {
     color: #47fc47;
 }
 
+/* ANIMATIONS AND LINKS */
 #login:hover, #register:hover {
     color: #044c1f;
     background: white;
+}
+
+.Link_Header:not(:hover){
+    color: #044c1f;
+}
+
+.Link_Footer:not(:hover) {
+    color: white;
+
+}
+
+.Link_Footer:hover, .Link_Header:hover {
+    color: #47fc47;
 }
 
 
