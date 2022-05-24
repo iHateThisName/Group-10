@@ -59,13 +59,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
     http.authorizeRequests()
-        .antMatchers("/css/*", "/images/**", "/js/*").permitAll()
-            .antMatchers("/", "/home", "/login", "/store", "/about", "faq").permitAll();
+        .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
+            .antMatchers("/", "/home", "/login", "/store", "/about", "/faq", "/api/Header", "/api/Footer").permitAll();
 
 //    http.formLogin().loginPage("/home")
 //            .loginProcessingUrl("/login")
 //            .defaultSuccessUrl("/home", true)
 //                    .successForwardUrl("/profile");
+
+
 
     http.formLogin().loginPage("/login");
 

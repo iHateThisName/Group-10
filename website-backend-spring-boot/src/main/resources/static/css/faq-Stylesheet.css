@@ -23,26 +23,6 @@ h1, h2, h3, h4, h5 {
 
 /**/
 
-header {
-    background-color: white;
-    font-size: 4rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    padding-top: 0;
-
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-
-
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
-
-
-}
 
 #header_left h1 {
     font-weight: 800;

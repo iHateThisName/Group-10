@@ -1,8 +1,10 @@
 
 // JavaScript that uses jQuery to load html files in a html file
 
-$(function(){
-    $("#header").load("Header.html");
-    $("#footer").load("Footer.html");
-});
+$(document).ready(function () {
+    $(function(){
+        $("#header").load("/api/Header");
+        $("#footer").load("/api/Footer");
+    });
+})
 
