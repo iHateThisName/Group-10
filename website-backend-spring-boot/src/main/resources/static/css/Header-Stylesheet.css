@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+/********************
+    Header
+********************/
+header {
+    background-color: white;
+    font-size: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
+
+
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -0.5rem;
+    color: #476F57;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.slogan {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    font-weight: 400;
+    color: #8A8A8A;
+    margin-top: -1rem;
+}
+
+#header_right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
+}
+
+#header_right a {
+    font-size: 1.6rem;
+    color: #325c39;
+}
+
+.profileButton {
+    height: 3rem;
+    width: 3rem;
+}
+
+
+#login, #register {
+    width: 130px;
+    height: 40px;
+    color: white;
+    background: #044c1f;
+    border-radius: 10px;
+    font-size: 1.4rem;
+
+}
