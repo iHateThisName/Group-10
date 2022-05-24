@@ -23,6 +23,62 @@ h1, h2, h3, h4, h5 {
 
 /**/
 
+<<<<<<< HEAD
+=======
+
+#header_left h1 {
+    font-weight: 800;
+    letter-spacing: -0.5rem;
+    color: #476F57;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#header_left h2 {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: #8A8A8A;
+    margin-top: -1rem;
+}
+
+#header_right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: #476F57;
+}
+
+.Link_Header{
+    font-size: 2rem;
+
+    font-weight: 530;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+
+
+.profileButton {
+    height: 3rem;
+    width: 3rem;
+}
+
+
+#login, #register {
+    width: 130px;
+    height: 40px;
+    color: white;
+    background: #044c1f;
+    border-radius: 10px;
+    font-size: 1.4rem;
+
+}
+
+>>>>>>> f191943fe64b09e00b29a684831d6a83285b8f60
 .faq_section_picture{
     max-height: 40rem;
     overflow: hidden;

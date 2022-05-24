@@ -3,6 +3,7 @@ package no.ntnu.websitebackendspringboot.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,5 +54,14 @@ public class HomeController {
     return "thymeleaf-example";
   }
 
+  @GetMapping(value = "/api/Header")
+  public String getHeader() {
+    return "Header";
+  }
+
+  @GetMapping(value = "/api/Footer")
+  public String getFooter() {
+    return "Footer";
+  }
 
 }
