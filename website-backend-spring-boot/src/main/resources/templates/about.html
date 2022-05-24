@@ -6,35 +6,14 @@
     <link rel="stylesheet" href="/static/css/about-stylesheet.css"
           th:href="@{/css/about-stylesheet.css}">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
+
 </head>
 <body>
 
-<header>
-    <!--
-    Div element for the left side of the header, containing the company name/logo and slogan.
-    -->
-    <div id="header_left">
-
-        <h1 class="main_header">XXS</h1>
-        <h2 class="slogan">because the size doesn't matter</h2>
-
-    </div>
-
-
-    <!--
-    Div element for the right side of the header, containing links for Store, About us and Contact page
-    as well as login and register options.
-    -->
-    <div id="header_right">
-        <h4>Store</h4>
-        <h4>About us</h4>
-        <h4>Contact</h4>
-        <button id="login" type="button">Log in</button>
-        <button id="register" type="button">Register</button>
-    </div>
-</header>
+<header id="header"></header>
 
 <div class="all_section">
 
@@ -78,53 +57,7 @@
 </div>
 </div>
 
-<footer>
-
-
-    <div id="footer_mid">
-        <h1 id="footer_logo">XXS</h1>
-
-
-        <div id="footer_left">
-            <div class="contact_info">
-                <div>
-                    <ul>
-                        <li><h3>OPENING HOURS</h3></li>
-                        <li></li>
-                        <li>Monday-Friday: 08:00 - 20:00</li>
-                        <li>Saturday: 10:00 - 18:00</li>
-                        <li>Sunday: CLOSED</li>
-
-
-                    </ul>
-                </div>
-                <div>
-                    <li><h3>CONTACT INFO</h3></li>
-                    <li> <span> <i class="material-icons">call</i></span> Call us now: (+47) 917 92 104</li>
-                    <li> <span> <i class="material-icons">email</i> </span> Mail : support@xxs.no</li>
-                    <li> <span> <i class="material-icons">location_pin</i> </span> XXS AS, Ivar aasens gate 27,6005 Ålesund, Norway </li>
-
-                </div>
-
-
-
-            </div>
-        </div>
-
-
-
-    </div>
-
-    <div id="footer_right">
-        <div id="footer_links">
-            <a class="Link_Footer" href="faq.html">FAQ</a>
-            <a class="Link_Footer" href="about.html">About us</a>
-            <a class="Link_Footer" href="gallery.html">Gallery</a>
-        </div>
-    </div>
-
-
-</footer>
+<footer id="footer"></footer>
 
 </body>
 </html>

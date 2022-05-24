@@ -371,7 +371,7 @@ button{
     gap: 2rem;
 
     column-gap: 24px;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 7rem;
 }
 

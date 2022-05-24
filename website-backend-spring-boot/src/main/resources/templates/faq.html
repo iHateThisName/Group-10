@@ -10,52 +10,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png" th:src="@{/images/favicon/favicon-32x32.png}">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" th:src="@{/images/favicon/favicon-16x16.png}"><link rel="manifest" href="/static/images/favicon/site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+
 
     <script src="/static/js/faq.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
 
 
 </head>
 <body>
-<header>
-
-
-
-
-    <!--
-    Div element for the left side of the header, containing the company name/logo and slogan.
-    -->
-    <div id="header_left">
-
-        <h1 class="main_header">XXS</h1>
-        <h2 class="slogan">because the size doesn't matter</h2>
-
-    </div>
-
-
-    <!--
-    Div element for the right side of the header, containing links for Store, About us and Contact page
-    as well as login and register options.
-    -->
-    <div id="header_right">
-        <a class="Link_Header" href="store.html">Store</a>
-        <a class="Link_Header" href="about.html">About us</a>
-
-        <a href="login">
-            <button id="login" type="button">Log in</button>
-        </a>
-        <button id="register" type="button">Register</button>
-
-        <a href="/profile">
-            <input type="image" class="profileButton" src="/static/images/home/profileIcon.png" th:src="@{/images/home/profileIcon.png}"
-                   alt="profile icon"/>
-        </a>
-    </div>
-
-
-
-</header>
+<header id="header"></header>
 
 <!--
  ---------------------
@@ -117,53 +83,7 @@
 
 
 
-<footer>
-
-
-    <div id="footer_mid">
-        <h1 id="footer_logo">XXS</h1>
-
-
-    <div id="footer_left">
-        <div class="contact_info">
-            <div>
-                <ul>
-                    <li><h3>OPENING HOURS</h3></li>
-                    <li></li>
-                    <li>Monday-Friday: 08:00 - 20:00</li>
-                    <li>Saturday: 10:00 - 18:00</li>
-                    <li>Sunday: CLOSED</li>
-
-
-                </ul>
-            </div>
-            <div>
-                <li><h3>CONTACT INFO</h3></li>
-                <li> <span> <i class="material-icons">call</i></span> Call us now: (+47) 917 92 104</li>
-                <li> <span> <i class="material-icons">email</i> </span> Mail : support@xxs.no</li>
-                <li> <span> <i class="material-icons">location_pin</i> </span> XXS AS, Ivar aasens gate 27,6005 Ålesund, Norway </li>
-
-            </div>
-
-
-
-        </div>
-    </div>
-
-
-
-    </div>
-
-    <div id="footer_right">
-        <div id="footer_links">
-            <a class="Link_Footer" href="faq.html">FAQ</a>
-            <a class="Link_Footer" href="about.html">About us</a>
-            <a class="Link_Footer" href="gallery.html">Gallery</a>
-        </div>
-    </div>
-
-
-</footer>
+<footer id="footer"></footer>
 
 </body>
 </html>
