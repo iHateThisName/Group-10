@@ -135,6 +135,12 @@ h2{
 }
 
 
+#gallery-info{
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+
 .TextOnImage {
     position: absolute;
     top: 55%;
@@ -153,7 +159,10 @@ h2{
     font-max-size: 10rem;
     font-style: normal;
     font-weight: 700;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 #gallery-info{
@@ -189,6 +198,7 @@ h2{
     height: 100%;
     object-fit: cover;
     object-position: center;
+    padding-bottom: 5rem;
 }
 
 .slide[data-active]{
