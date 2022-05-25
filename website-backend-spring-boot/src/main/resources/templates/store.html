@@ -50,7 +50,40 @@
     <div class="headline_popular">
         <h2>Popular products</h2>
     </div>
-    <div class="cardsection1">
+    <!-- cart -->
+    <div id="cart-wrap">
+        <!-- products list -->
+        <div id="cart-products"></div>
+
+        <!-- current cart items -->
+        <div id="cart-items"></div>
+    </div>
+
+    <!-- templates -->
+    <!-- product cell -->
+    <template id="template-product">
+        <div class="p-item">
+            <img class="p-img"/>
+            <div class="p-name"></div>
+            <div class="p-desc"></div>
+            <div class="p-price"></div>
+            <button class="cart p-add">Add To Cart</button>
+        </div>
+    </template>
+
+    <!-- cart items -->
+    <template id="template-cart">
+        <div class="c-item">
+            <div class="c-name"></div>
+            <button class="c-del cart">X</button>
+            <input class="c-qty" type="number" min="0"/>
+        </div>
+    </template>
+    <template id="template-cart-checkout">
+        <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
+        <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+    </template>
+    <!--<div class="cardsection1">
     <div class="cards">
 
 
@@ -115,7 +148,7 @@
             <h2>800</h2>
         </div>
     </div>
-    </div>
+    </div>-->
 
 
 </div>
