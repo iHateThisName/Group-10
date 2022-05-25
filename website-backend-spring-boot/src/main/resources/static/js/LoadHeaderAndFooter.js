@@ -3,17 +3,19 @@
 
 $(document).ready(function () {
     $(function(){
-        $("#header").load("/api/Header");
-        $("#footer").load("/api/Footer");
+        $("#header").load("/api/Header", function (response, status, xhr) {
+            if (status === "error"){
+                //It failed to receive from Get from "/api/Header"
+                //Assume that it is because work on frontend with no backend support
+                //Therefore able to load it like shown below.
+                $("#header").load("Header.html");
+            }
+        });
+        $("#footer").load("/api/Footer", function (response, status, xhr) {
+            if (status === "error") {
+                //The same reason as the Header
+                $("#footer").load("Footer.html");
+            }
+        })
     });
 })
-
-//We use This so we can work with the html files without using the backend
-//Todo delete this when done
-$(document).ready(function () {
-    $(function(){
-        $("#header").load("Header.html");
-        $("#footer").load("Footer.html");
-    });
-})
-
