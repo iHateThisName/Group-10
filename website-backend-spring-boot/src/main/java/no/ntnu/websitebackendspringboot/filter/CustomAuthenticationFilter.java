@@ -81,6 +81,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         }
       }
     }
+
+    log.warn("Return null in attemptAuthentication");
     return null;
 
   }
@@ -110,8 +112,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     String accessToken = jwtService.generateAccessToken(user, request);
     String refreshToken = jwtService.generateRefreshToken(user, request);
 
-//    response.setContentType(APPLICATION_JSON_VALUE);
-
     //This is a way to use ResponseEntity to set a header
     HttpHeaders headers = new HttpHeaders();
     headers.add("access_Token", accessToken);
@@ -123,8 +123,22 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     response.addHeader("refresh_Token", refreshToken);
 
 
+
+
+    //Cookie
+    Cookie cookieJwt = new Cookie("access_Token", accessToken);
+    Cookie cookieRefreshJwt = new Cookie("refresh_Token", accessToken);
+
+    log.info("Adding AccessCookie");
+
+    response.addCookie(cookieJwt);
+
+    response.sendRedirect("/home");
+
+
+
     //this will just give the ResponseEntity as a json to the user when successfully to login
-    new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
+//    new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
 
   }
 

@@ -9,14 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,10 +49,23 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
     this.jwtService = jwtService;
   }
 
+  private String readAccessCookie(HttpServletRequest request) {
+
+
+    Cookie[] cookies = request.getCookies();
+
+    for (Cookie cookie : cookies) {
+      if (cookie.getName().equalsIgnoreCase("access_Token")) {
+        return "Bearer " + cookie.getValue();
+      }
+    }
+    return null;
+  }
+
 
   @Override
-  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
-                                  FilterChain filterChain) throws ServletException, IOException {
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+          throws ServletException, IOException {
 
     //These are the request that we are not going to check the tokens on.
     if (request.getServletPath().equals("/login") ||
@@ -58,27 +74,30 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
       filterChain.doFilter(request, response);
     } else {
 
-
       //We only retrieve the date from the header with the type authorization
       //so if this is null then there was non information in the request's authorization header
-      String authorizationHeader = request.getHeader(AUTHORIZATION);
+//      String authorizationToken = request.getHeader(AUTHORIZATION);
+
+      //Right now we are using cookie
+      String authorizationToken = readAccessCookie(request);
+
+      log.info("Discovered token: " + authorizationToken);
 
       //This if statement will be true if the request is of the type authorization header
       // && it starts with "Bearer ".
-      if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+      if (authorizationToken != null && authorizationToken.startsWith("Bearer ")) {
 
         try {
-
-
           Collection<SimpleGrantedAuthority> authorities =
-              jwtService.extractClaim(authorizationHeader);
+              jwtService.extractClaim(authorizationToken);
 
           // This is how we tell spring that this is a user
           // here we have their username and their roles and that tells spring what they can to in the application
           UsernamePasswordAuthenticationToken authenticationToken =
               new UsernamePasswordAuthenticationToken(
-                  jwtService.extractUsername(authorizationHeader),
-                  null, authorities);
+                  jwtService.extractUsername(authorizationToken), null, authorities);
+
+          authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
           // Here spring is going to look at the user, look at their role, and determine what resource they can access
           // and what they can access, depending on the roles.
