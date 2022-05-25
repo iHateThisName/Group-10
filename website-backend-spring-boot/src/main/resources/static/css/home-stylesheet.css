@@ -221,6 +221,10 @@ button{
 
 }
 
+a {
+    text-decoration: none;
+}
+
 
 
 .gallery_page{
