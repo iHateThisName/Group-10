@@ -59,25 +59,31 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       HttpServletRequest request,
       HttpServletResponse response) throws AuthenticationException {
 
+    if (request.getServletPath().equals("/login")) {
 
+      String username = request.getParameter("username");
+      String password = request.getParameter("password");
+      log.info("Username is: {}", username);
+      log.info("Password is: {}", password);
 
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
-    log.info("Username is: {}", username);
-    log.info("Password is: {}", password);
+      if (username == null) {
+        return null;
+      } else {
 
-    if (username == null) {
+        UsernamePasswordAuthenticationToken authenticationToken =
+                new UsernamePasswordAuthenticationToken(
+                        username, password);
 
-
-      return null;
-    } else {
-
-      UsernamePasswordAuthenticationToken authenticationToken =
-          new UsernamePasswordAuthenticationToken(
-              username, password);
-
-      return authenticationManager.authenticate(authenticationToken);
+        try {
+          return authenticationManager.authenticate(authenticationToken);
+        } catch (AuthenticationException authenticationException) {
+          log.info(authenticationException.getMessage());
+        }
+      }
     }
+
+    log.warn("Return null in attemptAuthentication");
+    return null;
 
   }
 
@@ -106,8 +112,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     String accessToken = jwtService.generateAccessToken(user, request);
     String refreshToken = jwtService.generateRefreshToken(user, request);
 
-//    response.setContentType(APPLICATION_JSON_VALUE);
-
     //This is a way to use ResponseEntity to set a header
     HttpHeaders headers = new HttpHeaders();
     headers.add("access_Token", accessToken);
@@ -119,8 +123,24 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     response.addHeader("refresh_Token", refreshToken);
 
 
+
+
+    //Cookie
+    Cookie cookieJwt = new Cookie("access_Token", accessToken);
+    Cookie cookieRefreshJwt = new Cookie("refresh_Token", accessToken);
+
+    cookieJwt.setMaxAge(60*30);
+
+    log.info("Adding AccessCookie");
+
+    response.addCookie(cookieJwt);
+
+    response.sendRedirect("/home");
+
+
+
     //this will just give the ResponseEntity as a json to the user when successfully to login
-    new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
+//    new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
 
   }
 

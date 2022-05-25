@@ -49,37 +49,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
-    //Want to have the CustomAuthenticationFilter to override the default login url path
-    CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
-        authenticationManagerBean(), jwtService);
-//    customAuthenticationFilter.setFilterProcessesUrl("/login");
-
-    //Disable cross site request forgery
+    //Disable cross site request forgery to allow JWT authentication
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
     http.authorizeRequests()
-        .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
-            .antMatchers("/", "/home", "/login", "/store", "/about", "/faq", "/api/Header", "/api/Footer").permitAll();
-
-//    http.formLogin().loginPage("/home")
-//            .loginProcessingUrl("/login")
-//            .defaultSuccessUrl("/home", true)
-//                    .successForwardUrl("/profile");
-
-
-
-    http.formLogin().loginPage("/login");
-
-//    http.logout().logoutSuccessUrl("/home");
-
-//    http.formLogin().defaultSuccessUrl("/home", true);
+            .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
+            .antMatchers("/api/Header", "/api/Footer").permitAll()
+            .antMatchers("/", "/home", "/login", "/store", "/about", "/faq").permitAll();
 
     //We want everyone authenticated
     http.authorizeRequests().anyRequest().authenticated();
 
     //Adding a filter.
-    http.addFilter(customAuthenticationFilter);
+    http.addFilter(new CustomAuthenticationFilter(authenticationManagerBean(), jwtService));
 
     //Want to authorize (Authorization) before we authenticate (Authentication)
     http.addFilterBefore(new CustomAuthorizationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
