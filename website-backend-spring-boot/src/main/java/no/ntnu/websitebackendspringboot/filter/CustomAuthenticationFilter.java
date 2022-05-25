@@ -129,6 +129,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     Cookie cookieJwt = new Cookie("access_Token", accessToken);
     Cookie cookieRefreshJwt = new Cookie("refresh_Token", accessToken);
 
+    cookieJwt.setMaxAge(60*30);
+
     log.info("Adding AccessCookie");
 
     response.addCookie(cookieJwt);
