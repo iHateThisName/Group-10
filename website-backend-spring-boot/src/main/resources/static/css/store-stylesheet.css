@@ -21,7 +21,7 @@ h1{
 }
 
 h2{
-    text-align: center;
+
     font-size: 2rem;
 }
 
@@ -532,6 +532,7 @@ button.c-del.cart {
 .popular-products {
     padding-top: 4rem;
     background-color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 
@@ -626,6 +627,7 @@ button.c-del.cart {
     padding-top:4rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 3rem;
     justify-content: center;
 }
@@ -648,6 +650,7 @@ button.c-del.cart {
 .for_women {
     padding-top: 4rem;
     background-color: white;
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -663,7 +666,7 @@ button.c-del.cart {
     background-color: #F8FFF5;
     padding-top: 4rem;
     padding-bottom: 2rem;
-
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 3rem;

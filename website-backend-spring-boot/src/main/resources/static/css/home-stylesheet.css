@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5 {
 .TextOnImage h1 {
     font-max-size: 10rem;
     font-style: normal;
-    
+
     font-weight: 200;
     color: white;
     /* uses text shadow to create text border. */

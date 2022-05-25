@@ -74,14 +74,14 @@ h2{
 
 }
 .faq-paragraph-section {
-    margin-left: 40%;
+
     display: flex;
     flex-direction: column;
-    padding-top: 5rem;
-    text-align: left;
+    padding-top: 10rem;
+    text-align: center;
 
     gap: 10rem;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
 }
 footer {
     background-color:black;
