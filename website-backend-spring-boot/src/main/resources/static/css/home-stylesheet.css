@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5 {
 .TextOnImage h1 {
     font-max-size: 10rem;
     font-style: normal;
-
+    
     font-weight: 200;
     color: white;
     /* uses text shadow to create text border. */
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .TextOnImage button {
-    background: #044c1f;
+    background: #476F57;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -209,7 +209,7 @@ button{
     margin: auto;
     position: relative;
     right: 1%;
-    background: #044c1f;
+    background: #476F57;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -256,7 +256,7 @@ a {
 
 
 .gallery_page button {
-    background: #044c1f;
+    background: #476F57;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -294,7 +294,7 @@ a {
 }
 
 .about_us button {
-    background: #044c1f;
+    background: #476F57;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -455,7 +455,7 @@ a {
 }
 .for_dogs button {
 
-    background: #044c1f;
+    background: #476F57;
     color: white;
     font-style: normal;
     font-weight: 500;
