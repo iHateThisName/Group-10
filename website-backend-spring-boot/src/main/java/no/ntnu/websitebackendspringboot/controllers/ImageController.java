@@ -1,6 +1,7 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
 import no.ntnu.websitebackendspringboot.models.Image;
+import no.ntnu.websitebackendspringboot.models.Product;
 import no.ntnu.websitebackendspringboot.services.ImageService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,11 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * Controller for image handling endpoints
  */
 @Controller
 @CrossOrigin //enables cross-origin resource sharing
+@RequestMapping(path = "/api")
 public class ImageController {
 
     final ImageService imageService;

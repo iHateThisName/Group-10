@@ -1,6 +1,7 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
 import no.ntnu.websitebackendspringboot.models.Product;
+import no.ntnu.websitebackendspringboot.models.User;
 import no.ntnu.websitebackendspringboot.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import java.util.List;
  * A REST API for products
  */
 @Controller
+@RequestMapping(path = "/api")
 public class ProductController {
 
     private ProductService productService;
@@ -31,14 +33,14 @@ public class ProductController {
      * @return List of all products
      */
     @GetMapping("/products")
-    public List<Product> getAll() {
+    public ResponseEntity<List<Product>> getAll() {
         try {
             Thread.sleep(2000); // Imitate long loading of data...
         } catch (InterruptedException e) {
 
             log.error("Product-loading thread interrupted!");
         }
-        return productService.getAll();
+        return ResponseEntity.ok().body(productService.getAll());
     }
 
     /**
