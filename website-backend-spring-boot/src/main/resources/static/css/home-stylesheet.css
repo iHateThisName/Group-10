@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 
-/********************
-    HTML setup
-********************/
+/********************************
+    HTML setup / General setup
+********************************/
 * {
     /*This makes the css easier to work with*/
     font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
@@ -19,11 +19,30 @@ p {
     font-size: 2rem;
 }
 
-
 h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
+h1{
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
 
 /********************
     Hero Section
@@ -75,30 +94,11 @@ h1, h2, h3, h4, h5 {
     width: 20rem;
     height: 5rem;
     border-radius: 0.5rem;
-
-
-
 }
 
-
-h1{
-    font-size: 6rem;
-    font-weight: 700;
-
-}
-
-h2{
-    text-align: center;
-    font-size: 2rem;
-
-}
-
-
-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/******************************
+    popular products Section!
+******************************/
 
 .popular-products{
     /*background-color: rgba(255, 255, 255, 0.2);*/
@@ -107,38 +107,10 @@ button{
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    padding-left: 6.3rem;
-    padding-right: 6.3rem;
-
+    padding: 4rem 6.3rem 4rem 6.3rem;
 }
 
-.allcards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: row;
-    gap: 6rem;
-    flex-wrap: wrap;
-
-}
-
-.cards1{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 6rem;
-
-    flex-wrap: wrap;
-    flex-grow: 0;
-
-
-}
-
-.cards2 {
+.card_section{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -148,62 +120,36 @@ button{
     flex-grow: 0;
 }
 
+.card_section h2 {
+    color: #476F57;
+}
 
+.card_section img{
+    margin: 3rem;
+}
 
-/*Webstorm claims this is redundant. but is necessary for the card to be properly rendered for the site */
-
-.product_cards {
+.product_image {
     overflow: hidden;
     width: 20rem;
     height: 20rem;
-
 }
 
 .popular-products h2 {
     padding-bottom: 2rem;
     font-size: 4rem;
-
-    margin-left: 2rem;
 }
 
-.allcards {
-    margin-bottom: 1rem;
-}
-
-
-.popular-products h5, .allcards h2, .popular-products p {
+.popular-products h5, .card_section h2, .popular-products p {
     margin-left: 2rem;
     text-align: left;
 }
 
-.allcards h2 {
-    color: #476F57;
-}
-
-
-#card1, #card2, #card3, #card4 {
+.cards {
     background-color: #F0F0F0;
-    /*border-radius: 2.5rem;*/
-    /*border: 0.2rem solid black;*/
     overflow: hidden;
     text-align: left;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
-
 }
-
-.cards img {
-    border-bottom: 0.1rem #325c39 solid;
-    background-color: #E5F6DF;
-}
-
-.cards2 img, .cards1 img{
-    margin: 3rem;
-}
-
-
-
-
 
 .popular_button{
     margin: auto;
@@ -211,21 +157,16 @@ button{
     right: 1%;
     background: #476F57;
     color: white;
-    font-style: normal;
     font-weight: 500;
     font-size: 1.7rem;
     width: 20rem;
     height: 5rem;
     border-radius: 0.5rem;
-    display: flex;
-
 }
 
-a {
-    text-decoration: none;
-}
-
-
+/******************************
+        Gallery Section!
+******************************/
 
 .gallery_page{
     display: flex;
@@ -236,24 +177,21 @@ a {
     align-self: center;
     background-color: #F8FFF5;
     gap: 6rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    padding-left: 7.95rem;
-    padding-right: 7.95rem;
+    padding: 10rem 7rem 10rem 7rem;
 }
 
 .gallery_page img{
     height: 34rem;
     width: 65rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.5rem;
 }
 
 .gallery_page h3 {
-    font-size: 2.5rem;
+    font-size: 4rem;
+    font-weight: lighter;
     padding-bottom: 2rem;
 }
-
 
 .gallery_page button {
     background: #476F57;
@@ -265,8 +203,11 @@ a {
     height: 5rem;
     border-radius: 0.5rem;
     margin-top: 5rem;
-
 }
+
+/******************************
+        About us Section!
+******************************/
 
 .about_us{
     display: flex;
@@ -276,20 +217,19 @@ a {
     flex-wrap: wrap-reverse;
     background-color: rgb(255, 255, 255);
     gap: 6rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding: 10rem 7rem 10rem 7rem;
 }
 
 .about_us img {
     height: 34rem;
     width: 65rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .about_us h3{
-    font-size: 2.5rem;
+    font-size: 4rem;
+    font-weight: lighter;
     padding-bottom: 2rem;
 }
 
@@ -303,31 +243,22 @@ a {
     height: 5rem;
     border-radius: 0.5rem;
     margin-top: 5rem;
-
 }
 
-
-
-.allimages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-}
+/***********************************
+     Related companies Section!
+***********************************/
 
 .Related_companies{
     background-color: #F8FFF5;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    padding-right: 14rem;
-    padding-left: 14rem;
+    padding: 5rem 14rem 5rem 14rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     flex-direction: row;
     gap: 20rem;
+    text-align: center;
 }
 
 .Related_companies h3 {
@@ -335,31 +266,20 @@ a {
     font-weight: lighter;
 }
 
-
-
-
-.related_companies_images1 img {
+.related_companies_images img {
     margin: 2rem;
     height: 8rem;
     width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.related_companies_images2 img {
-    margin: 2rem;
-    height: 8rem;
-    width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.related_companies_images3 img {
-    margin: 2rem;
-    height: 8rem;
-    width: 15rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+/***********************************
+     Customer feedback Section!
+***********************************/
 
-.related_text{
-    text-align: center;
+.customer_feedback{
+    padding-top: 5rem;
+    padding-bottom: 10rem;
 }
 
 .customer_feedback h2{
@@ -368,7 +288,7 @@ a {
     font-size: 3.5rem;
 }
 
-.person_cards {
+.person_cards_section {
     display: flex;
     position: relative;
     flex-wrap: wrap;
@@ -379,64 +299,17 @@ a {
     padding-top: 7rem;
 }
 
-
-.person, .person2, .person3{
-    text-align: left;
-}
-
-.person h5 {
-    padding-top: 4.5rem;
-}
-
-.person3 h5 {
-    padding-top: 2.3rem;
-}
-
-
-
-.person_image1{
+.person_image{
     max-height: 250px;
     max-width: 350px;
     margin-right: 1rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     float: left;
 }
 
-.person_image1 h5 {
-
-}
-
-
-.person_image2{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: block;
-    max-height: 250px;
-    max-width: 350px;
-    margin-right: 1rem;
-    float: left;
-}
-
-.person_image3{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: block;
-    max-height: 250px;
-    max-width: 350px;
-    margin-right: 1rem;
-    float: left;
-}
-
-
-
-.customer_feedback{
-    background-color: rgb(255, 255, 255);
-    padding-top: 5rem;
-    padding-bottom: 10rem;
-}
-
-.product-and-services img,.about_us img {
-    border-radius: 2.5rem;
-}
-
+/***********************************
+     Customer feedback Section!
+***********************************/
 
 .for_dogs{
     display: flex;
@@ -454,7 +327,6 @@ a {
     font-weight: 400;
 }
 .for_dogs button {
-
     background: #476F57;
     color: white;
     font-style: normal;
@@ -469,13 +341,11 @@ a {
     margin-left: 20rem;
 }
 
+/***********************************
+     Customer feedback Section!
+***********************************/
 
-/* Animations */
 button:hover {
-
     color: black;
     background: #47fc47;
-
 }
-
-
