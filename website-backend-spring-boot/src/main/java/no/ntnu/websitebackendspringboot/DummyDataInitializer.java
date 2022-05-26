@@ -137,7 +137,7 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
 
     productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.99));
 
-    URL resource = DummyDataInitializer.class.getResource("/static/images/backpack.png");
+    URL resource = DummyDataInitializer.class.getResource("/templates/products/qJTbRxF.png");
     byte[] bytes = new byte[0];
 
     try {
