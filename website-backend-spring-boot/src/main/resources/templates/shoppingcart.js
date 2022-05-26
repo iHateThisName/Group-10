@@ -19,7 +19,8 @@ var cart = {
     },
 
     // empty entire cart
-    nuke : () => { if (confirm("Empty cart?")) {
+    nuke : () => {
+        if (confirm("Empty cart?")) {
         cart.items = {};
         localStorage.removeItem("cart");
         cart.list();
@@ -60,7 +61,9 @@ var cart = {
         cart.hItems.innerHTML = "";
         let item, part, pdt, empty = true;
         for (let key in cart.items) {
-            if (cart.items.hasOwnProperty(key)) { empty = false; break; }
+            if (cart.items.hasOwnProperty(key)) {
+                empty = false;
+                break; }
         }
 
         // cart is empty
