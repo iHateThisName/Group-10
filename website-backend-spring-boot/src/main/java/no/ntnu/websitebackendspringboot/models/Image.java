@@ -1,16 +1,16 @@
 package no.ntnu.websitebackendspringboot.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 
 /**
  * Model/Entity for storing image data
  */
+@Entity(name = "Image")
 public class Image {
 
     @Id
     @GeneratedValue
+    @Column(name = "Image_Id")
     private Integer id;
     @Lob
     private byte[] data;
