@@ -42,7 +42,7 @@ var cart = {
             item.querySelector(".p-img").src = cart.iURL + p.img;
             item.querySelector(".p-name").textContent = p.name;
             item.querySelector(".p-desc").textContent = p.desc;
-            item.querySelector(".p-price").textContent = "kr " + p.price.toFixed(2);
+            item.querySelector(".p-price").textContent = p.price + ",-";
             item.querySelector(".p-add").onclick = () => { cart.add(id); };
             cart.hPdt.appendChild(item);
         }
@@ -54,7 +54,7 @@ var cart = {
         cart.list();
     },
 
-    // list curret cart items in html
+    // list current cart items in html
     list : () => {
         // reset
         cart.hItems.innerHTML = "";
@@ -79,7 +79,7 @@ var cart = {
                 p = products[id];
                 item = template.cloneNode(true);
                 item.querySelector(".c-del").onclick = () => { cart.remove(id); };
-                item.querySelector(".c-name").textContent = p.name;
+                item.querySelector(".c-name").textContent = p.name + " " + p.desc;
                 item.querySelector(".c-qty").value = cart.items[id];
                 item.querySelector(".c-qty").onchange = function () { cart.change(id, this.value); };
                 cart.hItems.appendChild(item);

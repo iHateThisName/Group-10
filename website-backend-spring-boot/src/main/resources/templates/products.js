@@ -8,7 +8,7 @@ var products = {
     },
     124: {
         name : "MAMMUT",
-        desc : "X100 Hiking Boots 2022",
+        desc : "X100 Hiking Boots",
         img : "xjhKakE.png",
         price : 899
     },
@@ -20,12 +20,12 @@ var products = {
     },
     126: {
         name : "DEVOLD",
-        desc : "Winter Sweater 2021",
+        desc : "Winter Sweater",
         img : "vwNnW8s (1) (2).png",
         price : 499
     },
     127: {
-        name : "NIKEDDD",
+        name : "NIKE",
         desc : "Dog Clothes set",
         img : "vwNnW8s (1) (2).png",
         price : 700
@@ -37,7 +37,7 @@ var products = {
         price : 200
     },
     129: {
-        name : "NIKEDDD",
+        name : "NIKE",
         desc : "Water Bottle",
         img : "vwNnW8s (1) (2).png",
         price : 120

@@ -74,11 +74,15 @@ header {
     gap: 3rem;
     justify-content: center;
     align-items: center;
-    color: #476F57;
+}
+
+#header_right h3 {
+    color: #476F57; 
 }
 
 #header_right h4 {
     font-weight: 500;
+    color: #476F57; 
 }
 
 #login {
@@ -178,8 +182,8 @@ input.cart, button.cart {
 .p-name, .p-desc, .p-price {
     margin: 5px 0; }
 .p-name {
-    font-size: 2.5rem;
-    text-transform: uppercase;
+    font-size: 2.4rem;
+
 }
 .p-desc {
     /*color: #7c7979;*/
@@ -220,8 +224,16 @@ input.cart, button.cart {
     /*width: 100%;*/
     margin-left: 2rem;
 }
-button.c-empty {
+button.c-empty:hover {
+    color: #b2cbae;
+}
 
+button.c-checkout:hover {
+    color: #b2cbae;
+}
+
+button.c-del:hover {
+    color: #b2cbae;
 }
 
 .c-total, button.c-empty, button.c-checkout { margin-top: 10px; }
