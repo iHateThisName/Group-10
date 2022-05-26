@@ -2,9 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>XXS - About us</title>
+    <title>About us</title>
+
+    <!-----------------------
+    about Link section
+    ----------------------->
+
     <link rel="stylesheet" href="/static/css/about-stylesheet.css"
           th:href="@{/css/about-stylesheet.css}">
+
+    <!-----------------------
+    about Script section
+    ----------------------->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -15,29 +24,42 @@
 
 <header id="header"></header>
 
-<div class="all_section">
+<!-----------------------
+about hero section
+----------------------->
 
+<div class="hero_section">
     <img src = "/static/images/about/About_us.jpg" alt="About us" th:src="@{/images/about/About_us.jpg}">
-
     <div class="TextOnImage">
         <h1>ABOUT US</h1>
     </div>
-
 </div>
+
+<!-----------------------
+about content section
+----------------------->
 
 <div class="content">
-<div class="Dedicated_and_helpful">
-    <div>
-        <h3>Dedicated and helpful</h3>
-        <p>XXS is your friendly neighbourhood hiking equipment supplier.<br> Whatever you need, we've got it.
-        Our workers are specialized in<br> helping you find the right product in the best possible quality<br> for you,
-        and the prices are set in a way that it'll be a profitable<br> investment for your hiking life</p>
+
+    <!---------------------------------------
+        Dedicated and helpful section
+    ---------------------------------------->
+
+    <div class="content_item">
+        <div>
+            <h3>Dedicated and helpful</h3>
+            <p>XXS is your friendly neighbourhood hiking equipment supplier.<br> Whatever you need, we've got it.
+                Our workers are specialized in<br> helping you find the right product in the best possible quality<br> for you,
+                and the prices are set in a way that it'll be a profitable<br> investment for your hiking life</p>
+        </div>
+        <img src="/static/images/about/community.jpg" alt="Helpful" th:src="@{/images/about/community.jpg}">
     </div>
-    <img src="/static/images/about/community.jpg" alt="Helpful" th:src="@{/images/about/community.jpg}">
-</div>
 
+    <!------------------------
+        Location section
+    ------------------------->
 
-<div class="Location">
+<div class="content_item" id="Location">
     <img src="/static/images/about/byrampen-alesund.jpg" alt="Location" th:src="@{/images/about/byrampen-alesund.jpg}">
     <div>
         <h3>Location</h3>
@@ -47,7 +69,11 @@
     </div>
 </div>
 
-<div class="OurProducts">
+    <!------------------------
+        Our products section
+    ------------------------->
+
+<div class="content_item">
     <div>
         <h3>Our products and services</h3>
         <p>We sell only premium equipment from brands such as Bergans,<br> North Face, Devold and Mammut.
@@ -56,6 +82,10 @@
     <img src="/static/images/about/ourproducts.jpg" alt="ourProducts" th:src="@{/images/about/ourproducts.jpg}" >
 </div>
 </div>
+
+<!------------------------
+      Footer section
+------------------------->
 
 <footer id="footer"></footer>
 
