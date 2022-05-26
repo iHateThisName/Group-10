@@ -55,7 +55,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests()
             .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
-            .antMatchers("/api/Header", "/api/Footer").permitAll()
+            .antMatchers("/api/Header", "/api/Footer", "/api/**").permitAll()
+//            .antMatchers("/api/products").permitAll()
             .antMatchers("/", "/home", "/login", "/store", "/about", "/faq").permitAll();
 
     //We want everyone authenticated

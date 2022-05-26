@@ -17,6 +17,13 @@ public class Image {
     private String extension;
     private String contentType;
 
+    // Specifies the IMAGE table does not contain an owner column, but
+    // an PRODUCT_ID column with a foreign key. And creates a join to
+    // lazily fetch the owner
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRODUCT_ID", nullable = true)
+    private Product product;
+
     public Image() {
     }
 

@@ -1,6 +1,7 @@
 package no.ntnu.websitebackendspringboot.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
@@ -23,6 +24,14 @@ public class Product {
     private double price;
     @Column(name = "Image_Id")
     private int imageId;
+
+    // The 'mappedBy = "product"' attribute specifies that
+    // the 'private Product product;' field in Image owns the
+    // relationship (i.e. contains the foreign key for the query to
+    // find all images for a product.)
+    @OneToMany(mappedBy = "product")
+    private List<Image> images;
+
 
     /**
      * The JPA need an empty constructor to operate
