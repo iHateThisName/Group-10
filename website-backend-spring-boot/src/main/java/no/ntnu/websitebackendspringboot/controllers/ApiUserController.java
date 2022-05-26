@@ -72,7 +72,7 @@ public class ApiUserController {
     return ResponseEntity.created(uri).body(userService.saveRole(role));
   }
 
-  @PostMapping("/role/addtouser")
+  @PostMapping("/role/addRoleToUser")
   @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
 

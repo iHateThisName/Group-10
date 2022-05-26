@@ -2,6 +2,7 @@ package no.ntnu.websitebackendspringboot.filter;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Arrays;
 import no.ntnu.websitebackendspringboot.services.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -121,6 +122,13 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     //This will make it stay in the response header
     response.addHeader("access_Token", accessToken);
     response.addHeader("refresh_Token", refreshToken);
+
+    //cookie
+    Cookie cookie = new Cookie("access_Token", accessToken);
+    response.addCookie(cookie);
+
+//    response.sendRedirect("/home");
+
 
 
 

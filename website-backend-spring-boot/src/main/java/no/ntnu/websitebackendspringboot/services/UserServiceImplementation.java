@@ -31,8 +31,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
   private final UserRepository userRepository;
   private final Logger log = LoggerFactory.getLogger(getClass().getName());
 
-  public UserServiceImplementation(
-      UserRepository userRepository,
+  public UserServiceImplementation(UserRepository userRepository,
       RoleRepository roleRepository) {
 
     this.userRepository = userRepository;
