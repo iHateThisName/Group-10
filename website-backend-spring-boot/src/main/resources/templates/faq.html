@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>FAQ</title>
+
+
+
+    <!-----------------------
+    Faq Link section
+    ----------------------->
+
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/faq-stylesheet.css"
           th:href="@{/css/faq-stylesheet.css}">
 
@@ -11,11 +18,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" th:src="@{/images/favicon/favicon-16x16.png}"><link rel="manifest" href="/static/images/favicon/site.webmanifest">
 
 
+    <!--
+     ---------------------
+     Faq Script section
+     ---------------------
+    -->
 
     <script src="/static/js/faq.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
 
 
@@ -25,63 +35,54 @@
 
 <!--
  ---------------------
- Put html code here :)
+ Faq page hero section
  ---------------------
 -->
 
 <div class="faq_section_picture">
-
-
     <picture>
-
         <source srcset="/static/images/faq/Stage_1.jpeg" media="(min-width: 2150px)">
         <source srcset="/static/images/faq/Stage_2.jpeg" media="(min-width: 900px)">
         <source srcset="/static/images/faq/Stage_3.jpeg" media="(min-width: 400px)">
         <img src = "https://i.imgur.com/0rnLiLf.jpeg"  alt="FAQ picture">
     </picture>
-
     <div class="TextOnImage">
         <h1>FREQUENTLY ASKED QUESTIONS</h1>
-
     </div>
-
 </div>
 
+<!--
+ ---------------------
+ FAQ paragraph section
+ ---------------------
+-->
 
 <div class="faq_section">
 <div class="faq-paragraph-section">
-
-
     <div>
         <h3>RETURN POLICY</h3>
         <p>Are you not happy with our products? Don't worry!  <br> Here at XXS we practice a 50 day return policy  </p>
     </div>
-
-
-
     <div>
         <h3>QUALITY</h3>
         <p>We are working hard to give our customers <br> the best quality. That is why we are picky on <br> which brands we are cooperating with.  </p>
     </div>
-
     <div>
         <h3>SHIPPING TIME</h3>
         <p>The team at XXS is working hard to get our products <br> out to you as fast as possible. you can expect <br> your goodies to arrive within 2-5 working days  </p>
     </div>
-
     <div>
         <h3>CUSTOMER SERVICE</h3>
         <p> Do you have questions about or product, or maybe<br> you need help? feel free to contact us by phone, <br> Email. Or Come visit us at the store, We are eager to <br> help you  </p>
     </div>
-
 </div>
 </div>
 
-
-
-
-
-
+<!--
+ ---------------------
+ Faq footer section
+ ---------------------
+-->
 
 <footer id="footer"></footer>
 
