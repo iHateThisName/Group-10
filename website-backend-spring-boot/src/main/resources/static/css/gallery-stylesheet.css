@@ -237,31 +237,3 @@ h2{
 .carousel-button.next {
     right: 1rem;
 }
-
-footer {
-    background-color: rgb(255, 255, 255);
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /*height: 34rem;*/
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-
-
-}
-#footer_left, #footer_right{
-    display: flex;
-    gap: 25%;
-
-}
-
-footer h1 {
-    color: #476F57;
-    font-size: 4rem;
-    font-weight: 800;
-}
-
-footer h2 {
-    font-size: 1.5rem;
-    font-weight: 530;
-}
