@@ -39,7 +39,7 @@ header {
     padding-right: 1.5rem;
     padding-bottom: 0.5rem;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    
 
 
 }
@@ -81,12 +81,23 @@ header {
     font-weight: 500;
 }
 
-#login, #shoppingcart {
+#login {
     width: 130px;
     height: 40px;
     color: #044c1f;
     background: #D5F3CA;
     border-radius: 10px;
+    font-size: 1.4rem;
+}
+
+#shoppingcart {
+    width: 130px;
+    height: 40px;
+    border: none;
+    background: white;
+    color: #476F57;
+    text-align: left;
+    
     font-size: 1.4rem;
 }
 
@@ -103,6 +114,8 @@ header {
     margin-top: 0rem;
     margin-bottom: 5rem;
 }
+
+
 #cart-products {
     flex-grow: 1;
 }
@@ -185,8 +198,14 @@ input.cart, button.cart {
 /* ----------- current shopping cart ------------ */
 #cart-items {
     font-size: 2rem;
-
+    z-index: 1000;
+    /*position: absolute;*/
+    position: absolute;
+    right: 0.05rem;
+    top: 3rem;
+    padding-bottom: 1rem;
     border-radius: 5px;
+    background: white;
 }
 .c-item {
     padding: 10px 0;
@@ -194,7 +213,7 @@ input.cart, button.cart {
     flex-wrap: wrap;
 }
 .c-name, .c-total {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 .c-name, .c-total, button.c-empty, button.c-checkout {
@@ -219,6 +238,10 @@ button.c-del.cart {
     width: 30%;
 }
 
+.fa-shopping-cart {
+    font-size: 2rem;
+
+}
 
 /* responsive setting */
 @media screen and (max-width: 1000px) {

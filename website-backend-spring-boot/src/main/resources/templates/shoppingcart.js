@@ -25,6 +25,7 @@ var cart = {
         cart.list();
     }},
 
+
     // initialize
     init : () => {
         // get html elements
@@ -137,7 +138,9 @@ var cart = {
     // checkout
     checkout : () => {
         alert("Order has been placed.");
-
+        cart.items = {};
+        localStorage.removeItem("cart");
+        cart.list();
     }
 };
 window.addEventListener("DOMContentLoaded", cart.init);
