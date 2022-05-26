@@ -12,6 +12,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="products.js"></script>
+    <script src="productsmen.js"></script>
     <script src="shoppingcart.js"></script>
     <script src="https://kit.fontawesome.com/ea9d0937b1.js" crossorigin="anonymous"></script>
 
@@ -35,6 +36,7 @@
         <button id="shoppingcart" type="button">
             <i class="fas fa-shopping-cart"></i>
         </button>
+        <!-- current cart items -->
         <div id="cart-items"></div>
     </div>
 </header>
@@ -60,9 +62,6 @@
     <div id="cart-wrap">
         <!-- products list -->
         <div id="cart-products"></div>
-
-        <!-- current cart items -->
-
     </div>
 
     <!-- templates -->
@@ -164,7 +163,21 @@
     <div class="headline_men">
         <h2>For men</h2>
     </div>
-    <div class="allcards">
+    <div id="cart-wrap2">
+        <!-- products list -->
+        <div id="cart-products2"></div>
+    </div>
+    <template id="template-product2">
+        <div class="p-item">
+            <img class="p-img"/>
+            <div class="p-name"></div>
+            <div class="p-desc"></div>
+            <div class="p-price"></div>
+            <button class="cart p-add">Add To Cart</button>
+        </div>
+    </template>
+
+    <!--<div class="allcards">
     <div class="cards">
 
         <div id="card9">
@@ -193,7 +206,7 @@
             <p>Winter Sweater 2021</p>
             <h2>499</h2>
         </div>
-        </div>
+        </div>-->
 
     </div>
 </div>

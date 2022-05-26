@@ -1,6 +1,6 @@
 var cart = {
     // properties
-    hPdt : null,      // html products list
+    hPdt : null, // html products list
     hItems : null,    // html current cart
     items : {},       // current items in cart
     iURL : "products/", // product image url folder
@@ -32,6 +32,7 @@ var cart = {
         // get html elements
         cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
+
 
         // draw products list
         cart.hPdt.innerHTML = "";
