@@ -1,6 +1,7 @@
 package no.ntnu.websitebackendspringboot.models;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 /**
  * Model/Entity for storing image data
@@ -67,5 +68,16 @@ public class Image {
 
     public void setContentType(String contentType) {
         this.contentType = contentType;
+    }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "id=" + id +
+                ", data=" + Arrays.toString(data) +
+                ", extension='" + extension + '\'' +
+                ", contentType='" + contentType + '\'' +
+                ", product=" + product +
+                '}';
     }
 }
