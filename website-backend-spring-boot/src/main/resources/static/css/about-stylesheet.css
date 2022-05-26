@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
+/***********************************
+     General setup Section!
+***********************************/
+
 * {
     /*This makes the css easier to work with*/
 
@@ -9,6 +13,10 @@
     box-sizing: border-box; /* The box sizing we are used to */
     font-family: 'Montserrat', sans-serif;
 
+}
+
+body{
+    background-color: #EEFFE8;
 }
 
 /*Default font size for p elements to 2rem*/
@@ -34,7 +42,11 @@ h2{
 
 }
 
-.all_section {
+/***********************************
+            Hero Section!
+***********************************/
+
+.hero_section {
     max-height: 40rem;
     overflow: hidden;
     position: relative;
@@ -42,12 +54,11 @@ h2{
     color: white;
 }
 
-.all_section img {
+.hero_section img {
     width: 100%;
     position: relative;
     bottom: 45rem;
 }
-
 
 .TextOnImage {
     position: absolute;
@@ -74,9 +85,9 @@ h2{
                  1px 1px 0 black;
 }
 
-body{
-    background-color: #EEFFE8;
-}
+/***********************************
+           content Section!
+***********************************/
 
 .content img{
     border-radius: 2.5rem;
@@ -84,109 +95,16 @@ body{
     height: 35rem;
 }
 
-.Dedicated_and_helpful{
+.content_item{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.2);
     gap: 10rem;
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
 
-.Location{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    align-self: center;
-    background-color: rgba(255, 255, 255, 0.73);
-    gap: 10rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-}
-
-.OurProducts{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    align-self: center;
-    gap: 10rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-}
-
-footer {
-    background-color:black;
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /*height: 34rem;*/
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    color: white;
-}
-
-li {
-    font-size: 1.5rem;
-    list-style-type: none;
-}
-
-.contact_info {
-    display: flex;
-    padding-top: 2rem;
-    gap: 5rem;
-}
-
-#footer_left, #footer_right{
-    display: flex;
-    gap: 25%;
-
-}
-#footer_links {
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-
-}
-
-.Link_Footer {
-    font-size: 2rem;
-
-    font-weight: 530;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-}
-
-footer h1 {
-    font-size: 4rem;
-    font-weight: 800;
-}
-footer h2 {
-    font-size: 1.5rem;
-    font-weight: 530;
-}
-#footer_logo{
-    color: #47fc47;
-}
-
-/* ANIMATIONS AND LINKS */
-#login:hover, #register:hover {
-    color: #044c1f;
-    background: white;
-}
-
-.Link_Header:not(:hover){
-    color: #044c1f;
-}
-
-.Link_Footer:not(:hover) {
-    color: white;
-
-}
-
-.Link_Footer:hover, .Link_Header:hover {
-    color: #47fc47;
-}
+#Location{
+   background-color: rgba(255, 255, 255, 0.73);
+    }
