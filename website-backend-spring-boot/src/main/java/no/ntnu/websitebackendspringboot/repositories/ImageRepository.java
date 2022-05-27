@@ -16,5 +16,10 @@ public interface ImageRepository extends JpaRepository<Image, Integer> {
 //    Optional<Image> findImageByProductName(String name);
 
     List<Image> findImageByProduct_Id(Integer id);
+//
+//    @Query (
+//            "select * FROM Image "
+//    )
+//    List<Image> getAll();
 
 }

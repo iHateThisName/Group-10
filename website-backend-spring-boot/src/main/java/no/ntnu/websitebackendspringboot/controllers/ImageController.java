@@ -3,13 +3,21 @@ package no.ntnu.websitebackendspringboot.controllers;
 import no.ntnu.websitebackendspringboot.models.Image;
 import no.ntnu.websitebackendspringboot.models.Product;
 import no.ntnu.websitebackendspringboot.services.ImageService;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -30,6 +38,17 @@ public class ImageController {
     /**
      * Return image content from the database
      *
+     * @return Image content (and correct content type) or NOT FOUND
+     */
+    @GetMapping("/images")
+    public String getAllImages(Model model) {
+        model.addAttribute("imageAttribute", imageService.getAllImages());
+        return "Images";
+    }
+
+    /**
+     * Return image content from the database
+     *
      * @param id ID of the image to locate
      * @return Image content (and correct content type) or NOT FOUND
      */
@@ -46,6 +65,7 @@ public class ImageController {
         }
         return response;
     }
+
 
     @PostMapping("/images")
     public ResponseEntity<String> upload(@RequestParam("fileContent") MultipartFile multipartFile) {

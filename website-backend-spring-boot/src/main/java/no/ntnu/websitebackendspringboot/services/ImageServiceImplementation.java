@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Handles business logic for images
@@ -118,4 +119,11 @@ public class ImageServiceImplementation implements ImageService {
         }
         return deleted;
     }
+
+    @Override
+    public List<Image> getAllImages() {
+
+        return imageRepository.findAll();
+    }
+
 }

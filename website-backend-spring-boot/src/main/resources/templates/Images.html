@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+            <th> Name </th>
+            <th> Id </th>
+        </tr>
+    </thead>
+    <tbody>
+	    <tr th:if="${imageAttribute.empty}">
+                <td colspan="2"> No Images Available </td>
+        </tr>
+        <tr th:each="image : ${imageAttribute}">
+            <td><span th:text="${image.getFileName()}"> Name </span></td>
+            <td><span th:text="${image.getId()}"> Id </span></td>
+<!--            <td><a th:href="@{|/api/images/${image.getId()}|}" th:text="${image.getId()}"></a></td>-->
+            <td><img th:src="@{|/api/images/${image.getId()}|}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

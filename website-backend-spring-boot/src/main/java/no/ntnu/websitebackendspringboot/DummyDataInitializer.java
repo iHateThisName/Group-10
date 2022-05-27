@@ -1,13 +1,13 @@
 package no.ntnu.websitebackendspringboot;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
 
@@ -24,6 +24,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
@@ -98,6 +100,7 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
     });
     log.info("information about all the users: {}", imageStringBuilder);
 
+//    log.info(imageRepository.getAll().toString());
 
   }
 
@@ -137,35 +140,41 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
 
     productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.99));
 
-    URL resource = DummyDataInitializer.class.getResource("/templates/products/qJTbRxF.png");
-    byte[] bytes = new byte[0];
 
+    Image backpackImage = null;
     try {
-      bytes = imageToByte(Paths.get(resource.toURI()).toFile());
-
-    } catch (IOException | URISyntaxException e) {
+      backpackImage = new Image(imageToByte("qJTbRxF.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+    } catch (IOException e) {
       e.printStackTrace();
     }
-
-    Image backpackImage = new Image(bytes, "png", "image/png");
     imageRepository.save(backpackImage);
 
 
   }
 
-  private byte[] imageToByte(File file) throws IOException {
+  private byte[] imageToByte(String imageName, String formatName) throws IOException {
+
+    String currentWorkingDir = System.getProperty("user.dir");
+    String imageProductsDir = "/src/main/resources/static/images/products/";
+    String fullPath = currentWorkingDir + imageProductsDir + imageName;
+
 
     // read the image from the file
-    BufferedImage image = ImageIO.read(file);
+    BufferedImage bufferedImage = ImageIO.read(new File(fullPath));
 
     // create the object of ByteArrayOutputStream class
-    ByteArrayOutputStream outStreamObj = new ByteArrayOutputStream();
+    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
     // write the image into the object of ByteArrayOutputStream class
-    ImageIO.write(image, "jpg", outStreamObj);
+    ImageIO.write(bufferedImage, formatName, byteArrayOutputStream);
 
     // create the byte array from image
-    byte [] byteArray = outStreamObj.toByteArray();
+    byte [] byteArray = byteArrayOutputStream.toByteArray();
+
+//    ByteArrayResource inputStream = new ByteArrayResource(Files.readAllBytes(Paths.get(fullPath)));
+
+
+    System.out.println("erkgmegnegeig\n" + byteArray);
 
     return byteArray;
   }
