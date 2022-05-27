@@ -1,3 +1,7 @@
+/*const currentURL = window.location.href;
+const productURL = new URL(currentURL.replace("store", "api/products"))
+productURL.toJSON()*/
+
 var cart = {
     // properties
     hPdt : null, // html products list
