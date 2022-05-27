@@ -3,7 +3,7 @@ var cart = {
     hPdt : null, // html products list
     hItems : null,    // html current cart
     items : {},       // current items in cart
-    iURL : "products/", // product image url folder
+    iURL : "/website-backend-spring-boot/src/main/resources/static/images/products/", // product image url folder
 
     // localstorage cart
     // save current cart into storage
@@ -48,6 +48,10 @@ var cart = {
             item.querySelector(".p-add").onclick = () => { cart.add(id); };
             cart.hPdt.appendChild(item);
         }
+
+
+
+
 
         // load cart from previous session
         cart.load();

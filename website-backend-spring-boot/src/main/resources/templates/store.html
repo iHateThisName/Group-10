@@ -13,6 +13,7 @@
     <script src="products.js"></script>
     <script src="productsmen.js"></script>
     <script src="shoppingcart.js"></script>
+    <script src="shoppingcartmen.js"></script>
     <script src="https://kit.fontawesome.com/ea9d0937b1.js" crossorigin="anonymous"></script>
 
 
@@ -65,6 +66,7 @@
 
     <!-- templates -->
     <!-- product cell -->
+
     <template id="template-product">
         <div class="p-item">
             <img class="p-img"/>
@@ -161,20 +163,19 @@
 <div class="for_men">
     <div class="headline_men">
         <h2>For men</h2>
+        <template id="template-product2">
+            <div class="p-item2">
+                <img class="p-img2"/>
+                <div class="p-name2"></div>
+                <div class="p-desc2"></div>
+                <div class="p-price2"></div>
+                <button class="cart p-add">Add To Cart</button>
+            </div>
+        </template>
     </div>
-    <div id="cart-wrap2">
-        <!-- products list -->
-        <div id="cart-products2"></div>
-    </div>
-    <template id="template-product2">
-        <div class="p-item">
-            <img class="p-img"/>
-            <div class="p-name"></div>
-            <div class="p-desc"></div>
-            <div class="p-price"></div>
-            <button class="cart p-add">Add To Cart</button>
-        </div>
-    </template>
+
+
+
 
     <!--<div class="allcards">
     <div class="cards">

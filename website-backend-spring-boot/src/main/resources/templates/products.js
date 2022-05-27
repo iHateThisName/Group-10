@@ -47,5 +47,29 @@ var products = {
         desc : "Fleece Jumper 2021",
         img : "DEVOLD_WinterSweater.png",
         price : 800
+    },
+    131: {
+        name : "DEVOLD",
+        desc : "Fleece Jumper 2021",
+        img : "vwNnW8s (1) (2).png",
+        price : 800
+    },
+    132: {
+        name : "DEVOLD",
+        desc : "Fleece Jumper 2021",
+        img : "vwNnW8s (1) (2).png",
+        price : 800
+    },
+    133: {
+        name : "DEVOLD",
+        desc : "Fleece Jumper 2021",
+        img : "vwNnW8s (1) (2).png",
+        price : 800
+    },
+    134: {
+        name : "DEVOLD",
+        desc : "Fleece Jumper 2021",
+        img : "vwNnW8s (1) (2).png",
+        price : 800
     }
 };
