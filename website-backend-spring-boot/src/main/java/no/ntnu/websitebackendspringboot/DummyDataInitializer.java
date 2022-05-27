@@ -135,19 +135,39 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
 
   private void addProducts() {
 
-    Product salomonBackpack = new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.99);
-    productRepository.save(salomonBackpack);
 
-    productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.99));
+    productRepository.save(new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0));
+
+    productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0));
+
+    productRepository.save(new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00));
+
+    productRepository.save(new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00));
 
 
-    Image backpackImage = null;
+    Image SALOMON_Backpack_Image = null;
+    Image MAMMUT_Shoes_Image =null;
+    Image BERGANS_Jacket_Image = null;
+    Image DEVOLD_Winter_Sweater = null;
     try {
-      backpackImage = new Image(imageToByte("qJTbRxF.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+      SALOMON_Backpack_Image = new Image(imageToByte("SALOMON_Backpack.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+      MAMMUT_Shoes_Image = new Image(imageToByte("MAMMUT_Shoes.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+      BERGANS_Jacket_Image = new Image(imageToByte("BERGANS_Jacket.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+      DEVOLD_Winter_Sweater = new Image(imageToByte("DEVOLD_WinterSweater.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
+
+
+
+
+
     } catch (IOException e) {
       e.printStackTrace();
     }
-    imageRepository.save(backpackImage);
+
+    imageRepository.save(SALOMON_Backpack_Image);
+    imageRepository.save(MAMMUT_Shoes_Image);
+    imageRepository.save(BERGANS_Jacket_Image);
+    imageRepository.save(DEVOLD_Winter_Sweater);
+
 
 
   }
