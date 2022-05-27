@@ -6,39 +6,58 @@
     <meta charset="UTF-8">
     <title>Gallery</title>
 
+    <!-----------------------
+         Link section
+    ----------------------->
+
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/gallery-stylesheet.css"
           th:href="@{/css/gallery-stylesheet.css}">
 
     <link rel="icon" href="/static/images/favicon/favicon.ico" th:src="@{/images/favicon/favicon.ico}">
 
+    <!-----------------------
+          script section
+    ----------------------->
 
     <script type="application/javascript" th:src="@{/js/gallery-script.js}" src="/static/js/gallery-script.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
+
 </head>
 <body>
+
+<!-----------------------
+     header section
+----------------------->
+
 <header id="header"></header>
 
+<!-----------------------
+     Hero section
+----------------------->
 
 <section aria-label="Photo gallery">
-
-    <div class="all_section">
-
+    <div class="hero_section">
         <img src = "/static/images/gallery/Header_photo.jpg" alt="gallery header" th:src="@{/images/gallery/Header_photo.jpg}">
-
         <div class="TextOnImage">
             <h1>Photo gallery</h1>
         </div>
-
     </div>
 
+    <!-----------------------
+          Text section
+    ----------------------->
 
     <p id="gallery-info">At xxs, we want to create a welcoming community for our fellow hiking enthusiast customers. <br>
         Therefore we decided to create a gallery where customers can send us photos from their hikes, <br>
         and the best photos from every month will be added. Do you want you picture on our site? <br>
         send them to photogallery@xxs.com and maybe <em>your</em> photo will be the next one in our gallery</p>
+
+    <!-----------------------
+          Image section
+    ----------------------->
 
     <div class="carousel" data-carousel>
         <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
@@ -89,6 +108,10 @@
         </ul>
     </div>
 </section>
+
+<!-----------------------
+      footer section
+----------------------->
 
 <footer id="footer"></footer>
 
