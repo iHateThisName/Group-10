@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Product Manager</title>
@@ -9,16 +10,17 @@
 
   <link rel="stylesheet" type="text/css" media="all" href="/static/css/management-stylesheet.css"
         th:href="@{/css/management-stylesheet.css}">
+
   <script type="application/javascript" th:src="@{/js/Management.js}" src="/static/js/Management.js"></script>
 
 </head>
 <body>
 
-<noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
 
-<h1>Product Manager</h1>
+  <h1>Product Manager</h1>
 
-<div id="root"></div>
+  <div id="root"></div>
 
 
 </body>
