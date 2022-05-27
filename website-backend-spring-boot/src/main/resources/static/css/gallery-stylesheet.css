@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
+/***********************************
+        General setup Section!
+***********************************/
+
 * {
     /*This makes the css easier to work with*/
 
@@ -21,82 +25,6 @@ h1, h2, h3, h4, h5 {
     font-size: 1.8rem;
 }
 
-/**/
-header {
-    background-color: #F8FFF5;
-    font-size: 4rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
-
-    align-items: center;
-
-
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
-
-
-}
-
-
-
-
-#header_left h1 {
-    font-weight: 800;
-    letter-spacing: -0.5rem;
-    color: #476F57;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#header_left h2 {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    font-weight: 400;
-    color: #8A8A8A;
-    margin-top: -1rem;
-}
-
-#header_right {
-    font-size: 1.6rem;
-    font-weight: 400;
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-    justify-content: center;
-    align-items: center;
-    color: #476F57;
-}
-
-#header_right h4 {
-    font-weight: 500;
-}
-
-.profileButton {
-    height: 3rem;
-    width: 3rem;
-}
-
-
-#login, #register {
-    width: 130px;
-    height: 40px;
-    color: #476F57;
-    background: #D5F3CA;
-    border-radius: 10px;
-    font-size: 1.4rem;
-
-}
-
-
-#register{
-    background-color: #476F57;
-    color: white;
-}
-
 body{
 
     background-color: #F8FFF5;
@@ -116,11 +44,11 @@ h2{
 
 }
 
-#gallery-headline{
-    text-align: center;
-}
+/***********************************
+        Hero Section!
+***********************************/
 
-.all_section {
+.hero_section {
     max-height: 20rem;
     overflow: hidden;
     position: relative;
@@ -128,18 +56,11 @@ h2{
     color: white;
 }
 
-.all_section img {
+.hero_section img {
     width: 100%;
     position: relative;
     bottom: 45rem;
 }
-
-
-#gallery-info{
-    padding-top: 2rem;
-    font-size: 2rem;
-}
-
 
 .TextOnImage {
     position: absolute;
@@ -165,12 +86,26 @@ h2{
     1px 1px 0 black;
 }
 
+
+/***********************************
+        text Section!
+***********************************/
+
 #gallery-info{
     padding-top: 3rem;
     text-align: center;
     padding-bottom: 3rem;
+
 }
 
+em{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/***********************************
+           Image Section!
+***********************************/
 
 .carousel{
     width: 50%;

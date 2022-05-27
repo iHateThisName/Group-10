@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
-
 /********************
     HTML setup
 ********************/
+
 * {
     /*This makes the css easier to work with*/
     font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
@@ -11,11 +11,12 @@
     margin: 0; /* Setting the default margin to 0 */
     padding: 0; /* Setting the default padding to 0 */
     box-sizing: border-box; /* The box sizing we are used to */
-
 }
-/********************
-    Header
-********************/
+
+/***************************
+    Header general setup
+***************************/
+
 header {
     background-color: white;
     font-size: 4rem;
@@ -23,22 +24,19 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
-
-    padding-top: 0;
+    padding: 0 1.5rem 0 1.5rem;
 
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 999;
 
-
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
-
-
 }
+
+/***************************
+         Left setup
+***************************/
 
 #header_left a {
     font-weight: 800;
@@ -56,6 +54,10 @@ header {
     color: #8A8A8A;
     margin-top: -1rem;
 }
+
+/***************************
+        Right setup
+***************************/
 
 #header_right {
     font-size: 1.6rem;
@@ -76,13 +78,10 @@ header {
     text-decoration: none;
 }
 
-
-
 .profileButton {
     height: 3rem;
     width: 3rem;
 }
-
 
 #login, #register {
     width: 130px;
@@ -91,12 +90,11 @@ header {
     color: white;
     border-radius: 10px;
     font-size: 1.4rem;
-
 }
-/*-------------------------------------------------------------------------------*/
-/*                                 ANIMATIONS                                    */
-/*-------------------------------------------------------------------------------*/
 
+/***************************
+        Animations
+***************************/
 
 #header_left a:hover {
     color: #47fc47;
@@ -111,5 +109,4 @@ header {
     color: black;
     background: #47fc47;
 }
-
 

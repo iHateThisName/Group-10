@@ -1,3 +1,8 @@
+
+/***********************************
+        General setup Section!
+***********************************/
+
 footer {
     background-color:black;
     font-size: 1rem;
@@ -7,6 +12,25 @@ footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
     color: white;
+}
+
+footer h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+footer h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 530;
+}
+
+/***********************************
+           left Section!
+***********************************/
+
+#footer_logo{
+    color: #47fc47;
 }
 
 .contact_info {
@@ -26,6 +50,11 @@ li {
     gap: 25%;
 
 }
+
+/***********************************
+           right Section!
+***********************************/
+
 #footer_links {
     display: flex;
     flex-wrap: wrap;
@@ -42,20 +71,10 @@ li {
     text-decoration: none;
 }
 
-footer h1 {
-    font-size: 4rem;
-    font-weight: 800;
-}
-footer h2 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 530;
-}
-#footer_logo{
-    color: #47fc47;
-}
+/***********************************
+        Animation Section!
+***********************************/
 
-/* ANIMATIONS AND LINKS */
 #login:hover, #register:hover {
     color: #044c1f;
     background: white;
