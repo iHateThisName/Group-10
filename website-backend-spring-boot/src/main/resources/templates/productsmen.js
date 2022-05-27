@@ -3,25 +3,25 @@ var productsmen = {
     223: {
         name : "SALOMON",
         desc : "E9 Premium Backpack",
-        img : "qJTbRxF.png",
+        img : "SALOMON_Backpack.png",
         price : 599
     },
     224: {
         name : "MAMMUT",
         desc : "X100 Hiking Boots",
-        img : "xjhKakE.png",
+        img : "MAMMUT_Shoes.png",
         price : 899
     },
     225: {
         name : "BERGANS",
         desc : "Allweather Jacket",
-        img : "NdXQjPx.png",
+        img : "BERGANS_Jacket.png",
         price : 999
     },
     226: {
         name : "DEVOLD",
         desc : "Winter Sweater",
-        img : "vwNnW8s (1) (2).png",
+        img : "DEVOLD_WinterSweater.png",
         price : 499
     }
 };
