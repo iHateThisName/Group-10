@@ -136,13 +136,20 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
   private void addProducts() {
 
 
-    productRepository.save(new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0));
+    Product backpack = new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0);
+    Product boots = new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0);
+    Product jacket = new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00);
+    Product sweater = new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00);
 
-    productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0));
+    backpack.setImageId(4);
+    boots.setImageId(5);
+    jacket.setImageId(6);
+    sweater.setImageId(7);
 
-    productRepository.save(new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00));
-
-    productRepository.save(new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00));
+    productRepository.save(backpack);
+    productRepository.save(boots);
+    productRepository.save(jacket);
+    productRepository.save(sweater);
 
 
     Image SALOMON_Backpack_Image = null;
@@ -167,6 +174,7 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
     imageRepository.save(MAMMUT_Shoes_Image);
     imageRepository.save(BERGANS_Jacket_Image);
     imageRepository.save(DEVOLD_Winter_Sweater);
+
 
 
 
