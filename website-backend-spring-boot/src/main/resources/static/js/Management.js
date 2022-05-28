@@ -1,37 +1,35 @@
 const currentUrl = window.location.href;
 const productUrl = new URL(currentUrl.replace("management", "api/products"))
 
+
+
 function loadProducts() {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", productUrl)
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+
             let products = JSON.parse(xmlHttp.responseText);
+            let table = document.getElementById("table")
 
-            let tableTop = "<table> " +
-                "<tr> + " +
-                "<th>Id</th>" +
-                "<th>Name</th>" +
-                "<th>Description</th>" +
-                "<th>Price</th> + " +
-                "</tr>";
-
-
-            let main = "";
             for (let i = 0; i < products.length; i++) {
 
-                main += "<tr>" +
-                    "<td>" + products[i].id + "</td>" +
-                    "<td>" + products[i].name + "</td>" +
-                    "<td>" + products[i].description + "</td>" +
-                    "<td>" + products[i].price + "</td>" +
-                    "</tr>";
+                //making a new row in the table
+                //inserting the new row after the exising
+                const row = table.insertRow(table.rows.length)
+
+                //making the cells for the table
+                const idCell = row.insertCell(0);
+                const nameCell = row.insertCell(1);
+                const descriptionCell = row.insertCell(1);
+                const priceCell = row.insertCell(1);
+
+                //inserting information in the cells
+                idCell.innerHTML = products[i].id;
+                nameCell.innerHTML = products[i].name;
+                descriptionCell.innerHTML = products[i].description;
+                priceCell.innerHTML = products[i].price;
             }
-
-            const tableBottom = "</table>";
-            const table = tableTop + main + tableBottom;
-            document.getElementById("root").innerHTML = table;
-
         }
     };
     xmlHttp.send();
