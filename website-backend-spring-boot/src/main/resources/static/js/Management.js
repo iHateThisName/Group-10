@@ -2,49 +2,60 @@ const currentUrl = window.location.href;
 const productUrl = new URL(currentUrl.replace("management", "api/products"))
 const imageUrl = new URL(currentUrl.replace("management", "api/images/"))
 
-
+window.onload = function () {
+    loadProducts();
+}
 
 function loadProducts() {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", productUrl)
+    xmlHttp.send();
+
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
 
             let products = JSON.parse(xmlHttp.responseText);
-            let table = document.getElementById("table")
+            let card = document.querySelector(".productCard");
 
             for (let i = 0; i < products.length; i++) {
 
-                //making a new row in the table
-                //inserting the new row after the exising
-                const row = table.insertRow(table.rows.length)
+                //We make a clone of the .productCard element
+                let clonedCard = card.cloneNode(true);
 
-                //making the cells for the table
-                const idCell = row.insertCell(0);
-                const nameCell = row.insertCell(1);
-                const descriptionCell = row.insertCell(2);
-                const priceCell = row.insertCell(3);
-                const imageIdCell = row.insertCell(4)
-                const imageCell = row.insertCell(5)
+                //Image
+                let image = clonedCard.querySelector(".productCardImage");
+                image.src = imageUrl + products[i].imageId;
 
-                //inserting information in the cells
-                idCell.innerHTML = products[i].id;
-                nameCell.innerHTML = products[i].name;
-                descriptionCell.innerHTML = products[i].description;
-                priceCell.innerHTML = products[i].price;
-                imageIdCell.innerHTML = products[i].imageId;
+                //Title
+                let title = clonedCard.querySelector(".productCardName");
+                title.innerHTML = products[i].name;
 
-                const productImg = imageUrl + products[i].imageId;
-                const img = document.createElement("img");
-                img.src = productImg;
-                imageCell.appendChild(img);
+                //Price
+                let price = clonedCard.querySelector(".productCardPrice");
+                price.innerHTML = products[i].price + " kr";
+
+                //Description
+                let description = clonedCard.querySelector(".productCardDescription");
+                description.innerHTML = products[i].description;
+
+                //Checks if is the first loop
+                if (i === 0) {
+                    //we want to replace the cloned element
+                    //so there is no unused element.
+                    card.replaceWith(clonedCard);
+                }
+                //Adds the cloned element
+                let addButton = document.getElementById("addProductCard");
+                //we want to add the cloned element after the add button
+                document.querySelector("#root").insertBefore(clonedCard, addButton)
+
             }
         }
     };
-    xmlHttp.send();
 }
-window.onload = function () {
-    loadProducts();
-}
+
+
+
+
 
 

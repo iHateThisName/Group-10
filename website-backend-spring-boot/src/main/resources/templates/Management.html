@@ -8,37 +8,93 @@
 
   <link rel="icon" href="/static/images/favicon/favicon.ico" th:src="@{/images/favicon/favicon.ico}">
 
+
   <link rel="stylesheet" type="text/css" media="all" href="/static/css/management-stylesheet.css"
         th:href="@{/css/management-stylesheet.css}">
 
+  <!--Installing jQuery using Content Delivery Network-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--Linking to the JavaScript that loads the html files-->
+  <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
+
   <script type="application/javascript" th:src="@{/js/Management.js}" src="/static/js/Management.js"></script>
+
 
 </head>
 <body>
 
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+<noscript>You need to enable JavaScript to run this app.</noscript>
 
-  <h1>Product Manager</h1>
+<!--The Header.html will be loaded as the content of the header element below.-->
+<header id="header"></header>
 
-  <div>
-    <table id="table">
+<div id="root">
 
-      <tr >
+  <div class="productCard">
 
-        <th> Id </th>
-        <th> Name </th>
-        <th> Description </th>
-        <th> Price </th>
-        <th> ImageId</th>
-        <th> Image </th>
+    <div class="divProductCardImage">
+      <img class="productCardImage" alt="product" src="https://picsum.photos/400/300"/>
+    </div>
 
-      </tr>
+    <div class="divProductCardContent">
+      <h2 class="productCardName">Lorem ipsum.</h2>
+      <h3 class="productCardPrice">123 Kr</h3>
+      <h5 class="productCardDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nisi numquam veritatis?</h5>
+    </div>
 
-    </table>
+    <div class="divProductCardActions">
+
+      <div class="actionButtonEdit">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+             stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+          </path>
+        </svg>
+
+      </div>
+
+      <div class="actionButtonDelete">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="h-6 w-6"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+             stroke-width="2">
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+          </path>
+        </svg>
+
+      </div>
+    </div>
 
   </div>
+  <div id="addProductCard">
 
-  <div id="root"></div>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="h-6 w-6"
+         fill="none"
+         viewBox="0 0 24 24"
+         stroke="currentColor"
+         stroke-width="2">
+      <path stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
+
+      </path>
+    </svg>
+  </div>
+
+</div>
+
+<footer id="footer"></footer>
 
 
 </body>
