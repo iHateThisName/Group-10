@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="/static/css/store-stylesheet.css"
           th:href="@{/css/store-stylesheet.css}">
 
-    <link rel="icon" href="/static/images/favicon/favicon.ico" th:src="@{/images/favicon/favicon.ico}">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" th:href="@{/images/favicon.ico}">
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,7 +24,7 @@
 <header>
     <!-- navbar-->
     <div id="header_left">
-        <a class="main_header" href="home.html">XXS</a>
+        <a class="main_header" href="home.html" th:href="@{/home}">XXS</a>
         <h2>STORE</h2>
     </div>
 

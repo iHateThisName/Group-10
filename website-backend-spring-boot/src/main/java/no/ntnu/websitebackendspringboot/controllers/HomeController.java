@@ -47,6 +47,11 @@ public class HomeController {
     return "faq";
   }
 
+  @GetMapping(value = "/gallery")
+  public  String getGallery() {
+    return "gallery";
+  }
+
   @GetMapping(path = "/example")
   public String example(Model model) {
     String msg = "This is using a String variable from the backend";
