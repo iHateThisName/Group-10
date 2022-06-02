@@ -1,9 +1,7 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
-import no.ntnu.websitebackendspringboot.models.Product;
-import no.ntnu.websitebackendspringboot.models.User;
+import no.ntnu.websitebackendspringboot.entity.Product;
 import no.ntnu.websitebackendspringboot.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -40,6 +38,8 @@ public class ProductController {
 
             log.error("Product-loading thread interrupted!");
         }
+
+        productService.getAll().forEach(product -> log.info("image id " + product.toString()));
         return ResponseEntity.ok().body(productService.getAll());
     }
 

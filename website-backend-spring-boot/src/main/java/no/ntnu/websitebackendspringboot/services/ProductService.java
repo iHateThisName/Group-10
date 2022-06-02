@@ -1,6 +1,6 @@
 package no.ntnu.websitebackendspringboot.services;
 
-import no.ntnu.websitebackendspringboot.models.Product;
+import no.ntnu.websitebackendspringboot.entity.Product;
 
 import java.util.List;
 

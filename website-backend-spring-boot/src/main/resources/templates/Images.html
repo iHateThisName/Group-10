@@ -24,8 +24,8 @@
     </tr>
     <tr th:each="image : ${imageAttribute}">
         <td><span th:text="${image.getFileName()}"> Name </span></td>
-        <td><span th:text="${image.getId()}"> Id </span></td>
-        <td><img th:src="@{|/api/images/${image.getId()}|}"></td>
+        <td><span th:text="${image.getImageId()}"> Id </span></td>
+        <td><img th:src="@{|/api/images/${image.getImageId()}|}"></td>
     </tr>
     </tbody>
 </table>

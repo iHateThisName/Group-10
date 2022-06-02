@@ -1,6 +1,7 @@
-package no.ntnu.websitebackendspringboot.models;
+package no.ntnu.websitebackendspringboot.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,27 +10,25 @@ import java.util.List;
  *
  * This is a model/entity in the database.
  */
-@Entity(name = "product")
+@Entity
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "productId")
     private int id;
-    @Column(name = "Product_name")
+    @Column(name = "productName")
     private String name;
-    @Column(name = "Product_Description")
+    @Column(name = "productDescription")
     private String description;
-    @Column(name = "Price")
+    @Column(name = "productPrice")
     private double price;
-    @Column(name = "Image_Id")
-    private int imageId;
 
-    // The 'mappedBy = "product"' attribute specifies that
-    // the 'private Product product;' field in Image owns the
-    // relationship (i.e. contains the foreign key for the query to
-    // find all images for a product.)
-    @OneToMany(mappedBy = "product")
+    @OneToMany(targetEntity = Image.class, cascade = CascadeType.ALL)
+    @JoinTable(name = "productImages",
+            joinColumns = @JoinColumn(name = "productId", referencedColumnName = "productId"),
+            inverseJoinColumns = @JoinColumn(name = "imageId", referencedColumnName = "imageId"))
     private List<Image> images;
 
 
@@ -43,6 +42,8 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
+
+        this.images = new ArrayList<>();
     }
 
     public int getId() {
@@ -77,12 +78,25 @@ public class Product {
         this.price = price;
     }
 
-    public int getImageId() {
-        return imageId;
+    public List<Image> getImages() {
+        return images;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
+    /**
+     * Adds a image to the product.
+     *
+     * @param image the image to be added.
+     */
+    public void addImage(Image image) {
+
+        //Check that the image does not already exist
+        if (!images.contains(image)) {
+            images.add(image);
+        }
     }
 
     @Override
@@ -92,7 +106,6 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", imageId=" + imageId +
                 ", images=" + images +
                 '}';
     }

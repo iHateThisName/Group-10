@@ -1,4 +1,4 @@
-package no.ntnu.websitebackendspringboot.models;
+package no.ntnu.websitebackendspringboot.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

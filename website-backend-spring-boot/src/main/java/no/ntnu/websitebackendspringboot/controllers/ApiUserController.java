@@ -2,8 +2,8 @@ package no.ntnu.websitebackendspringboot.controllers;
 
 import java.net.URI;
 import java.util.List;
-import no.ntnu.websitebackendspringboot.models.Role;
-import no.ntnu.websitebackendspringboot.models.User;
+import no.ntnu.websitebackendspringboot.entity.Role;
+import no.ntnu.websitebackendspringboot.entity.User;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -27,6 +27,7 @@ public class ApiUserController {
   public ApiUserController(UserService userService) {
     this.userService = userService;
   }
+//Todo /user and /role should be there own classes
 
   @GetMapping("/users")
   @PreAuthorize("hasAnyRole('USER', 'MANAGER', 'ADMIN')")

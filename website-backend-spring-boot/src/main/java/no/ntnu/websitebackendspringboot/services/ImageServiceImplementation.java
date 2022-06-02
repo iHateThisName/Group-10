@@ -1,6 +1,6 @@
 package no.ntnu.websitebackendspringboot.services;
 
-import no.ntnu.websitebackendspringboot.models.Image;
+import no.ntnu.websitebackendspringboot.entity.Image;
 import no.ntnu.websitebackendspringboot.repositories.ImageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +47,7 @@ public class ImageServiceImplementation implements ImageService {
             return -1;
         }
 
-        return image.getId();
+        return image.getImageId();
     }
 
     /**

@@ -1,24 +1,12 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
-import no.ntnu.websitebackendspringboot.models.Image;
-import no.ntnu.websitebackendspringboot.models.Product;
+import no.ntnu.websitebackendspringboot.entity.Image;
 import no.ntnu.websitebackendspringboot.services.ImageService;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
 import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 /**
  * Controller for image handling endpoints
