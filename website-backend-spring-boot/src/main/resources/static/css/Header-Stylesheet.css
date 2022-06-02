@@ -13,6 +13,7 @@
     box-sizing: border-box; /* The box sizing we are used to */
 }
 
+
 /***************************
     Header general setup
 ***************************/
@@ -53,6 +54,13 @@ header {
     font-weight: 400;
     color: #8A8A8A;
     margin-top: -1rem;
+}
+@media all and (max-width: 1000px){
+
+    #header_left h2{
+        display: none;
+    }
+
 }
 
 /***************************
