@@ -24,7 +24,7 @@ function loadProducts() {
 
                 //Image
                 let image = clonedCard.querySelector(".productCardImage");
-                image.src = imageUrl + products[i].imageId;
+                image.src = imageUrl + products[i].images[0].imageId;
 
                 //Title
                 let title = clonedCard.querySelector(".productCardName");
