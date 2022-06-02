@@ -71,6 +71,17 @@ li {
     text-decoration: none;
 }
 
+@media all and (max-width: 1000px) {
+
+    #footer_links {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+
+}
+
 /***********************************
         Animation Section!
 ***********************************/

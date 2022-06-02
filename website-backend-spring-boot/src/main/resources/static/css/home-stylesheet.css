@@ -102,7 +102,6 @@ a {
 
 .popular-products{
     /*background-color: rgba(255, 255, 255, 0.2);*/
-    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -175,7 +174,6 @@ a {
     position: relative;
     flex-wrap: wrap;
     align-self: center;
-    background-color: #F8FFF5;
     gap: 6rem;
     padding: 10rem 7rem 10rem 7rem;
 }
@@ -215,7 +213,6 @@ a {
     align-items: center;
     position: relative;
     flex-wrap: wrap-reverse;
-    background-color: rgb(255, 255, 255);
     gap: 6rem;
     padding: 10rem 7rem 10rem 7rem;
 }
@@ -250,7 +247,6 @@ a {
 ***********************************/
 
 .Related_companies{
-    background-color: #F8FFF5;
     padding: 5rem 14rem 5rem 14rem;
     display: flex;
     justify-content: center;
@@ -291,12 +287,33 @@ a {
 .person_cards_section {
     display: flex;
     position: relative;
-    flex-wrap: wrap;
     gap: 2rem;
 
     column-gap: 24px;
     justify-content: space-evenly;
     padding-top: 7rem;
+}
+
+@media all and (max-width: 1300px){
+
+    .person_cards_section{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .Person_card {
+        height: 50%;
+        width: 40%;
+        padding-bottom: 4rem;
+    }
+
+    .Person_card h5 {
+        display: flex;
+        justify-content: flex-start;
+        align-self: center;
+
+    }
+    
 }
 
 .person_image{
@@ -308,7 +325,7 @@ a {
 }
 
 /***********************************
-     Customer feedback Section!
+          For dogs Section!
 ***********************************/
 
 .for_dogs{
@@ -317,8 +334,6 @@ a {
     align-items: center;
     padding-top: 20rem;
     padding-bottom: 20rem;
-
-    background-color: #F8FFF5;
     gap: 2rem;
 }
 
@@ -342,7 +357,7 @@ a {
 }
 
 /***********************************
-     Customer feedback Section!
+         Animation Section!
 ***********************************/
 
 button:hover {
