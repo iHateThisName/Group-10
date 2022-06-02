@@ -23,49 +23,62 @@ public class HomeController {
    * @return
    */
   @RequestMapping(value = "/")
+  @PreAuthorize("permitAll()")
   public ModelAndView redirectToHomePage() {
     return new ModelAndView("redirect:" + "/home");
   }
 
   @RequestMapping(value = "/home")
+  @PreAuthorize("permitAll()")
   public String getHome() {
     return "home";
   }
 
-
+  //todo make own class
   @RequestMapping("/about")
+  @PreAuthorize("permitAll()")
   public String getAbout() {
     return "about";
   }
 
+  //todo make own class
   @RequestMapping("/store")
+  @PreAuthorize("permitAll()")
   public String getStore() {
     return "store";
   }
 
+  //todo make own class
   @GetMapping(value = "/faq")
   public  String getFaq() {
     return "faq";
   }
 
+  //todo make own class
   @GetMapping(value = "/gallery")
+  @PreAuthorize("permitAll()")
   public  String getGallery() {
     return "gallery";
   }
 
   @GetMapping(path = "/example")
+  @PreAuthorize("permitAll()")
   public String example(Model model) {
     String msg = "This is using a String variable from the backend";
     model.addAttribute("message", msg);
     return "thymeleaf-example";
   }
 
+  //todo make own class
   @GetMapping(value = "/api/Header")
+  @PreAuthorize("permitAll()")
   public String getHeader() {
     return "Header";
   }
 
+  //todo make own class
   @GetMapping(value = "/api/Footer")
+  @PreAuthorize("permitAll()")
   public String getFooter() {
     return "Footer";
   }
