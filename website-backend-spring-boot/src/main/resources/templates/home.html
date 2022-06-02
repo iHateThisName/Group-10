@@ -7,20 +7,20 @@
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" th:href="@{/images/favicon.ico}">
 
 
-<!--
-    Setting the viewport for the website.
-    This gives the browser instructions on how to control the page's dimensions and scaling.
-    The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-    The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
--->
+    <!--
+        Setting the viewport for the website.
+        This gives the browser instructions on how to control the page's dimensions and scaling.
+        The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+        The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--    Linking to the home-stylesheet-->
+    <!--    Linking to the home-stylesheet-->
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/home-stylesheet.css" th:href="@{/css/home-stylesheet.css}">
 
-<!--Installing jQuery using Content Delivery Network-->
+    <!--Installing jQuery using Content Delivery Network-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--Linking to the JavaScript that loads the html files-->
+    <!--Linking to the JavaScript that loads the html files-->
     <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
 
 
@@ -42,7 +42,7 @@ Landing page section
     <div class="TextOnImage">
         <h1>Best quality of hiking equipment worldwide</h1>
         <a href="store.html" th:href="@{/store}">
-        <button type="button">To the shop</button>
+            <button type="button">To the shop</button>
         </a>
     </div>
 </div>
@@ -53,31 +53,31 @@ Popular products section
 <div class="popular-products">
     <h2>Popular products</h2>
     <div class="card_section">
-            <div class="cards">
-                <img class="product_image" src="https://i.imgur.com/qJTbRxF.png" alt="E9 Premium Backpack">
-                <h5>SALOMON</h5>
-                <p>E9 Premium Backpack</p>
-                <h2>599</h2>
-            </div>
-            <div class="cards">
-                <img class="product_image" src="https://i.imgur.com/xjhKakE.png" alt="Hiking boots">
-                <h5>MAMMUT</h5>
-                <p>X100 Hiking Boots 2022</p>
-                <h2>899</h2>
-            </div>
-            <div class="cards">
-                <img class="product_image" src="https://i.imgur.com/NdXQjPx.png" alt="All Weather jacket">
-                <h5>BERGANS</h5>
-                <p>ALLWEATHER Jacket</p>
-                <h2>999</h2>
-            </div>
-            <div class="cards">
-                <img class="product_image" src="https://i.imgur.com/vwNnW8s.png" alt="Winter sweater">
-                <h5>DEVOLD</h5>
-                <p>Winter Sweater 2021</p>
-                <h2>499</h2>
-            </div>
+        <div class="cards">
+            <img class="product_image" src="https://i.imgur.com/qJTbRxF.png" alt="E9 Premium Backpack">
+            <h5>SALOMON</h5>
+            <p>E9 Premium Backpack</p>
+            <h2>599</h2>
         </div>
+        <div class="cards">
+            <img class="product_image" src="https://i.imgur.com/xjhKakE.png" alt="Hiking boots">
+            <h5>MAMMUT</h5>
+            <p>X100 Hiking Boots 2022</p>
+            <h2>899</h2>
+        </div>
+        <div class="cards">
+            <img class="product_image" src="https://i.imgur.com/NdXQjPx.png" alt="All Weather jacket">
+            <h5>BERGANS</h5>
+            <p>ALLWEATHER Jacket</p>
+            <h2>999</h2>
+        </div>
+        <div class="cards">
+            <img class="product_image" src="https://i.imgur.com/vwNnW8s.png" alt="Winter sweater">
+            <h5>DEVOLD</h5>
+            <p>Winter Sweater 2021</p>
+            <h2>499</h2>
+        </div>
+    </div>
     <a href="store.html" th:href="@{/store}">
         <button class="popular_button" type="button">See more</button>
     </a>
@@ -93,7 +93,7 @@ Gallery section.
         <h3>Gallery</h3>
         <p>Check out our gallery of photos sent in from our customers!</p>
         <a href="gallery.html" th:href="@{/gallery}">
-        <button type="button">Go to gallery</button>
+            <button type="button">Go to gallery</button>
         </a>
     </div>
 </div>
@@ -107,7 +107,7 @@ About us section.
         <h3>About the company</h3>
         <p>Young or old, we help you reach the peaks of your lifetime.<br> With XXS your weekend is a success. Our team consists of<br> professional climbers as well as weekend hikers.</p>
         <a href="about.html" th:href="@{/about}">
-        <button type="button">More about us</button>
+            <button type="button">More about us</button>
         </a>
     </div>
     <img src="/static/images/home/photo-1548960071-38683381b592.webp" alt="Our Team">
@@ -144,63 +144,75 @@ customer feedback section.
 
 <div class="customer_feedback">
     <h2>You're in good company</h2>
-    <div class="person_cards_section">
-        <div class="Person_card">
+
+    <div class="reviews">
+
+        <div class="review_card">
+
             <img class="person_image" src="/static/images/home/anton.jpg" alt="Anton" th:src="@{/images/home/anton.jpg}">
-                <div class="persons">
-                    <p>“Hiking is a good way to use weekends<br> together with your family.
-                        <br>XXS is our go-to<br> place for the latest<br> hiking gear." <br> <br> <br> <br> </p>
-                    <h5>Anton Berg-Hansen</h5>
-                </div>
+
+            <div class="review_Text">
+                <p>“Hiking is a good way to use weekends<br> together with your family.
+                    <br>XXS is our go-to<br> place for the latest<br> hiking gear." <br> <br> <br> <br> </p>
+                <h5>Anton Berg-Hansen</h5>
+            </div>
 
         </div>
-        <div class="Person_card">
-            <img class="person_image" src="/static/images/home/chuck.jpg"
-                     alt="Chuck" th:src="@{/images/home/chuck.jpg}">
-                <div class="persons">
-                    <p>“We are a small IT company,<br> full of geeks.
-                        I had difficulty<br> getting
-                        the geeks out<br> of their
-                        chairs. XXS suggested<br>
-                        the latest water bottles
-                        as a<br> Christmas gift for
-                        all employees.<br>I was
-                        skeptical at first, but
-                        now I have difficulty<br>
-                        getting them back
-                        indoors.” <br> <br> </p>
-                    <h5>Chuck Vestre</h5>
-                </div>
 
+        <div class="review_card">
+
+            <img class="person_image" src="/static/images/home/chuck.jpg" alt="Chuck" th:src="@{/images/home/chuck.jpg}">
+
+            <div class="review_Text">
+
+                <p>“We are a small IT company,<br> full of geeks.
+                    I had difficulty<br> getting
+                    the geeks out<br> of their
+                    chairs. XXS suggested<br>
+                    the latest water bottles
+                    as a<br> Christmas gift for
+                    all employees.<br>I was
+                    skeptical at first, but
+                    now I have difficulty<br>
+                    getting them back
+                    indoors.” <br> <br> </p>
+                <h5>Chuck Vestre</h5>
+
+            </div>
         </div>
-        <div class="Person_card">
+
+        <div class="review_card">
+
             <img class="person_image" src="/static/images/home/pitbull.jpg" alt="MR WorldWide" th:src="@{/images/home/pitbull.jpg}">
-                <div class="persons">
-                    <p>“Got a matching<br> sweater for my<br> dog and myself.<br>
-                        We are out in<br> the mountains every Sunday since." <br> <br> <br> </p>
-                    <h5>Pitbull</h5>
-                </div>
+
+            <div class="review_Text">
+                <p>“Got a matching<br> sweater for my<br> dog and myself.<br>
+                    We are out in<br> the mountains every Sunday since." <br> <br> <br> </p>
+                <h5>Pitbull</h5>
+            </div>
         </div>
+
     </div>
+
+    <!--
+    for dogs section / bottom page section.
+    -->
+
+    <div class="for_dogs">
+        <h2>P.S. We have warm clothes for dogs.</h2>
+        <a href="store.html">
+            <button type="button">Check our products</button>
+        </a>
+    </div>
+
+
+    <!--
+    footer section
+    -->
+
+    <footer id="footer"></footer>
+
 </div>
-
-<!--
-for dogs section / bottom page section.
--->
-
-<div class="for_dogs">
-    <h2>P.S. We have warm clothes for dogs.</h2>
-    <a href="store.html">
-    <button type="button">Check our products</button>
-    </a>
-</div>
-
-
-<!--
-footer section
--->
-
-<footer id="footer"></footer>
 
 </body>
 </html>

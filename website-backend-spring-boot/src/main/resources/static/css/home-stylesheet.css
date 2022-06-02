@@ -273,56 +273,68 @@ a {
      Customer feedback Section!
 ***********************************/
 
-.customer_feedback{
-    padding-top: 5rem;
-    padding-bottom: 10rem;
+.customer_feedback {
+    text-align: center;
 }
 
-.customer_feedback h2{
-    padding-top: 3rem;
-    font-weight: lighter;
-    font-size: 3.5rem;
+.customer_feedback h2 {
+    padding-bottom: 2rem;
 }
 
-.person_cards_section {
-    display: flex;
-    position: relative;
-    gap: 2rem;
-
-    column-gap: 24px;
-    justify-content: space-evenly;
-    padding-top: 7rem;
-}
-
-@media all and (max-width: 1300px){
-
-    .person_cards_section{
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
-    .Person_card {
-        height: 50%;
-        width: 40%;
-        padding-bottom: 4rem;
-    }
-
-    .Person_card h5 {
-        display: flex;
-        justify-content: flex-start;
-        align-self: center;
-
-    }
-    
-}
-
-.person_image{
+.review_card img {
     max-height: 250px;
     max-width: 350px;
-    margin-right: 1rem;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    float: left;
 }
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+
+.review_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+.review_Text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+
+/*.Person_card {*/
+/*    flex-direction: column;*/
+/*}*/
+
+
+/*@media all and (max-width: 1300px){*/
+
+/*    .person_cards_section{*/
+/*        flex-direction: column-reverse;*/
+/*        align-items: center;*/
+/*    }*/
+
+/*    .Person_card {*/
+/*        height: 50%;*/
+/*        width: 40%;*/
+/*        padding-bottom: 4rem;*/
+/*    }*/
+
+/*    .Person_card h5 {*/
+/*        display: flex;*/
+/*        justify-content: flex-start;*/
+/*        align-self: center;*/
+
+/*    }*/
+/*    */
+/*}*/
+
 
 /***********************************
           For dogs Section!
