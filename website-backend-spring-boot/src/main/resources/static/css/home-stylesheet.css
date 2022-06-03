@@ -12,6 +12,8 @@
     padding: 0; /* Setting the default padding to 0 */
     box-sizing: border-box; /* The box sizing we are used to */
 
+
+
 }
 
 /*Default font size for p elements to 2rem*/
@@ -131,6 +133,7 @@ a {
     overflow: hidden;
     width: 20rem;
     height: 20rem;
+
 }
 
 .popular-products h2 {
@@ -183,6 +186,7 @@ a {
     width: 65rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.5rem;
+
 }
 
 .gallery_page h3 {
@@ -222,6 +226,7 @@ a {
     width: 65rem;
     border-radius: 2.5rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 .about_us h3{
@@ -363,7 +368,7 @@ a {
     height: 5rem;
     min-height: 5rem;
     min-width: 15rem;
-    
+
     border-radius: 1rem;
     margin-left: 20rem;
 }
