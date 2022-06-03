@@ -37,7 +37,6 @@ var cart = {
         cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
 
-
         // draw products list
         cart.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content,
@@ -53,16 +52,14 @@ var cart = {
             cart.hPdt.appendChild(item);
         }
 
-
-
-
-
         // load cart from previous session
         cart.load();
 
         // list current cart items
         cart.list();
+
     },
+
 
     // list current cart items in html
     list : () => {
@@ -93,7 +90,9 @@ var cart = {
                 item.querySelector(".c-del").onclick = () => { cart.remove(id); };
                 item.querySelector(".c-name").textContent = p.name + " " + p.desc;
                 item.querySelector(".c-qty").value = cart.items[id];
-                item.querySelector(".c-qty").onchange = function () { cart.change(id, this.value); };
+                item.querySelector(".c-qty").onchange = function () {
+                    cart.change(id, this.value);
+                };
                 cart.hItems.appendChild(item);
 
                 // subtotal
@@ -116,17 +115,24 @@ var cart = {
 
     // add item into cart
     add : (id) => {
-        if (cart.items[id] == undefined) { cart.items[id] = 1; }
-        else { cart.items[id]++; }
-        cart.save(); cart.list();
+        if (cart.items[id] == undefined) {
+            cart.items[id] = 1;
+        }
+        else {
+            cart.items[id]++;
+        }
+        cart.save();
+        cart.list();
     },
+
 
     // change quantity
     change : (pid, qty) => {
         // remove item
         if (qty <= 0) {
             delete cart.items[pid];
-            cart.save(); cart.list();
+            cart.save();
+            cart.list();
         }
 
         // update total only
@@ -154,5 +160,6 @@ var cart = {
         localStorage.removeItem("cart");
         cart.list();
     }
+
 };
 window.addEventListener("DOMContentLoaded", cart.init);

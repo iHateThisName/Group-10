@@ -1,40 +1,32 @@
 var cart2 = {
     // properties
-    hPdt2 : null, // html products list
+    hPdt : null, // html products list
     hItems : null,    // html current cart
     items : {},       // current items in cart
     iURL : "/website-backend-spring-boot/src/main/resources/static/images/products/", // product image url folder
 
+
     // localstorage cart
     // save current cart into storage
     save : () => {
-        localStorage.setItem("cart", JSON.stringify(cart2.items));
+        localStorage.setItem("cart2", JSON.stringify(cart.items));
     },
 
     // load cart from localstorage
     load : () => {
-        cart2.items = localStorage.getItem("cart");
-        if (cart2.items == null) { cart2.items = {}; }
-        else { cart2.items = JSON.parse(cart2.items); }
+        cart.items = localStorage.getItem("cart2");
+        if (cart.items == null) { cart.items = {}; }
+        else { cart.items = JSON.parse(cart.items); }
     },
-
-    // empty entire cart
-    nuke : () => {
-        if (confirm("Empty cart?")) {
-            cart2.items = {};
-            localStorage.removeItem("cart");
-            cart2.list();
-        }},
-
 
     // initialize
     init : () => {
         // get html elements
-        cart2.hPdt2 = document.getElementById("cart-products2");
+        cart2.hPdt = document.getElementById("cart-products2");
         cart2.hItems = document.getElementById("cart-items");
 
         // draw products list
-        cart2.hPdt2.innerHTML = "";
+        cart2.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content,
             p, item, part;
         for (let id in productsmen) {
@@ -45,7 +37,7 @@ var cart2 = {
             item.querySelector(".p-desc").textContent = p.desc;
             item.querySelector(".p-price").textContent = p.price + ",-";
             item.querySelector(".p-add").onclick = () => { cart2.add(id); };
-            cart2.hPdt2.appendChild(item);
+            cart2.hPdt.appendChild(item);
         }
 
 
@@ -60,33 +52,33 @@ var cart2 = {
     list : () => {
         // reset
         cart2.hItems.innerHTML = "";
-        let item, part, pdt, empty = true;
-        for (let key in cart2.items) {
-            if (cart2.items.hasOwnProperty(key)) {
+        let item2, part, pdt, empty = true;
+        for (let key in cart.items) {
+            if (cart.items.hasOwnProperty(key)) {
                 empty = false;
                 break; }
         }
 
         // cart is empty
         if (empty) {
-            item = document.createElement("div");
-            item.innerHTML = "Cart is empty";
-            cart2.hItems.appendChild(item);
+            item2 = document.createElement("div");
+            item2.innerHTML = "Cart is empty";
+            cart.hItems.appendChild(item2);
         }
 
         // cart is not empty - list items
         else {
             let template = document.getElementById("template-cart").content,
                 p, total = 0, subtotal = 0;
-            for (let id in cart2.items) {
+            for (let id in cart.items) {
                 // product item
                 p = productsmen[id];
-                item = template.cloneNode(true);
-                item.querySelector(".c-del").onclick = () => { cart2.remove(id); };
-                item.querySelector(".c-name").textContent = p.name + " " + p.desc;
-                item.querySelector(".c-qty").value = cart2.items[id];
-                item.querySelector(".c-qty").onchange = function () { cart2.change(id, this.value); };
-                cart2.hItems.appendChild(item);
+                item2 = template.cloneNode(true);
+                item2.querySelector(".c-del").onclick = () => { cart2.remove(id); };
+                item2.querySelector(".c-name").textContent = p.name + " " + p.desc;
+                item2.querySelector(".c-qty").value = cart2.items[id];
+                item2.querySelector(".c-qty").onchange = function () { cart2.change(id, this.value); };
+                cart.hItems.appendChild(item2);
 
                 // subtotal
                 subtotal = cart2.items[id] * p.price;
@@ -94,23 +86,28 @@ var cart2 = {
             }
 
             // total amount
-            item = document.createElement("div");
-            item.className = "c-total";
-            item.id = "c-total";
-            item.innerHTML ="TOTAL: " + total + "kr";
-            cart2.hItems.appendChild(item);
+            item2 = document.createElement("div");
+            item2.className = "c-total";
+            item2.id = "c-total";
+            item2.innerHTML ="TOTAL: " + total + "kr";
+            cart.hItems.appendChild(item2);
 
             // empty and checkout
-            item = document.getElementById("template-cart-checkout").content.cloneNode(true);
-            cart2.hItems.appendChild(item);
+            item2 = document.getElementById("template-cart-checkout").content.cloneNode(true);
+            cart.hItems.appendChild(item2);
         }
     },
 
     // add item into cart
     add : (id) => {
-        if (cart2.items[id] == undefined) { cart2.items[id] = 1; }
-        else { cart2.items[id]++; }
-        cart2.save(); cart2.list();
+        if (cart.items[id] == undefined) {
+            cart.items[id] = 1;
+        }
+        else {
+            cart.items[id]++;
+        }
+        cart.save();
+        cart.list();
     },
 
     // change quantity
@@ -126,7 +123,7 @@ var cart2 = {
             cart2.items[pid] = qty;
             var total = 0;
             for (let id in cart2.items) {
-                total += cart2.items[id] * productsmen[id].price /*|| productsmen[id].price*/;
+                total += cart2.items[id] * productsmen[id].price || productsmen[id].price;
                 document.getElementById("c-total").innerHTML ="TOTAL: kr" + total;
             }
         }
@@ -143,7 +140,7 @@ var cart2 = {
     checkout : () => {
         alert("Order has been placed.");
         cart2.items = {};
-        localStorage.removeItem("cart");
+        localStorage.removeItem("cart2");
         cart2.list();
     }
 

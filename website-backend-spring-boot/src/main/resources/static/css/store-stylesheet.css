@@ -43,7 +43,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
-    
+
 
 
 }
@@ -81,12 +81,12 @@ header {
 }
 
 #header_right h3 {
-    color: #476F57; 
+    color: #476F57;
 }
 
 #header_right h4 {
     font-weight: 500;
-    color: #476F57; 
+    color: #476F57;
 }
 
 #login {
@@ -105,7 +105,7 @@ header {
     background: white;
     color: #476F57;
     text-align: left;
-    
+
     font-size: 1.4rem;
 }
 
@@ -283,18 +283,22 @@ input.cart, button.cart {
 /* ---------- product list ------------- */
 #cart-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));*/
+    grid-template-columns: repeat(auto-fit, minmax(min(26rem, max(21rem, 100%/5)), 1fr));
     /*repeat(auto-fit, minmax(26rem, 1fr));*/
     /*grid-template-columns: repeat(4, minmax(0, 1fr));*/
     grid-gap: 0px;
     column-gap: 50px;
-    row-gap: 40px;
+    row-gap: 80px;
     min-width: 20rem;
     align-items: center;
-
     /*border-radius: 2.5rem;*/
     /*border: 0.2rem solid black;*/
+}
 
+
+#cart-products:nth-child(8){
+    margin-top: -50rem;
 }
 
 #cart-products2 {
@@ -392,6 +396,51 @@ button.cart.p-add {
     background: white;
 
 }
+
+.formennn {
+    position: absolute;
+    top: 146rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; /* Need a specific value to work */
+}
+
+
+.formennn h3 {
+    font-size: 4rem;
+    font-weight: lighter;
+}
+.forwomennn {
+    position: absolute;
+    top: 189rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; /* Need a specific value to work */
+}
+
+.forwomennn h3 {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+.fordogsss {
+    position: absolute;
+    top: 232rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; /* Need a specific value to work */
+}
+
+.fordogsss h3 {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
 .c-item {
     padding: 10px 0;
     display: flex;
@@ -436,7 +485,7 @@ button.c-del.cart {
 
 }
 
-/* responsive setting */
+
 /*@media screen and (max-width: 1200px) {
     #cart-products {
         grid-template-columns: 100%;
@@ -696,6 +745,7 @@ button.c-del.cart {
 
 .all_section img {
     width: 100%;
+    min-width: 70rem;
     position: relative;
 }
 
@@ -709,7 +759,7 @@ button.c-del.cart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
+    gap: 8rem;
 }
 
 .TextOnImage h1 {
@@ -749,6 +799,11 @@ button.c-del.cart {
     padding-top: 4rem;
     background-color: rgb(255, 255, 255);
     text-align: center;
+}
+
+.popular-products h3 {
+    font-weight: lighter;
+    font-size: 3rem;
 }
 
 
