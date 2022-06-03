@@ -280,10 +280,13 @@ a {
 
 .customer_feedback {
     text-align: center;
+
 }
 
-.customer_feedback h2 {
-    padding-bottom: 2rem;
+.customer_feedback h3 {
+    font-size: 4rem;
+    font-weight: lighter;
+    padding-bottom: 5rem;
 }
 
 .review_card img {
@@ -292,14 +295,13 @@ a {
 }
 .reviews {
     display: flex;
-    flex-direction: column;
     gap: 5rem;
 }
 
 
 .review_card {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 50%;
     margin: auto;
@@ -309,36 +311,34 @@ a {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 
-/*.Person_card {*/
-/*    flex-direction: column;*/
-/*}*/
+@media all and (max-width: 1600px){
+
+    .reviews{
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
 
 
-/*@media all and (max-width: 1300px){*/
+    .review_card {
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        margin: auto;
+    }
 
-/*    .person_cards_section{*/
-/*        flex-direction: column-reverse;*/
-/*        align-items: center;*/
-/*    }*/
+    .Person_card h5 {
+        display: flex;
+        justify-content: flex-start;
+        align-self: center;
 
-/*    .Person_card {*/
-/*        height: 50%;*/
-/*        width: 40%;*/
-/*        padding-bottom: 4rem;*/
-/*    }*/
+    }
 
-/*    .Person_card h5 {*/
-/*        display: flex;*/
-/*        justify-content: flex-start;*/
-/*        align-self: center;*/
-
-/*    }*/
-/*    */
-/*}*/
+}
 
 
 /***********************************
@@ -370,7 +370,7 @@ a {
     min-width: 15rem;
 
     border-radius: 1rem;
-    margin-left: 20rem;
+    margin: auto;
 }
 
 /***********************************
