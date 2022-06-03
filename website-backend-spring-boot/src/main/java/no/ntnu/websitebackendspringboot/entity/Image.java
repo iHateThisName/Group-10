@@ -1,4 +1,4 @@
-package no.ntnu.websitebackendspringboot.models;
+package no.ntnu.websitebackendspringboot.entity;
 
 import javax.persistence.*;
 import java.util.Arrays;
@@ -6,24 +6,25 @@ import java.util.Arrays;
 /**
  * Model/Entity for storing image data
  */
-@Entity(name = "Image")
+@Entity
+@Table(name = "image")
 public class Image {
 
     @Id
     @GeneratedValue
-    @Column(name = "Image_Id")
-    private Integer id;
+    @Column(name = "imageId")
+    private Integer imageId;
     @Lob
     private byte[] data;
     private String extension;
     private String contentType;
 
-    // Specifies the IMAGE table does not contain an owner column, but
-    // an PRODUCT_ID column with a foreign key. And creates a join to
-    // lazily fetch the owner
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PRODUCT_ID", nullable = true)
-    private Product product;
+//    // Specifies the IMAGE table does not contain an owner column, but
+//    // an PRODUCT_ID column with a foreign key. And creates a join to
+//    // lazily fetch the owner
+//    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Product.class)
+//    @JoinColumn(name = "productId", nullable = true)
+//    private Product product;
 
     public Image() {
     }
@@ -34,12 +35,12 @@ public class Image {
         this.contentType = contentType;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getImageId() {
+        return imageId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setImageId(Integer id) {
+        this.imageId = id;
     }
 
     public byte[] getData() {
@@ -59,7 +60,7 @@ public class Image {
     }
 
     public String getFileName() {
-        return id + "." + extension;
+        return imageId + "." + extension;
     }
 
     public String getContentType() {
@@ -73,11 +74,10 @@ public class Image {
     @Override
     public String toString() {
         return "Image{" +
-                "id=" + id +
+                "imageId=" + imageId +
                 ", data=" + Arrays.toString(data) +
                 ", extension='" + extension + '\'' +
                 ", contentType='" + contentType + '\'' +
-                ", product=" + product +
                 '}';
     }
 }

@@ -1,7 +1,9 @@
 package no.ntnu.websitebackendspringboot.repositories;
 
-import no.ntnu.websitebackendspringboot.models.Product;
+import no.ntnu.websitebackendspringboot.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
 
 
 /**
@@ -9,5 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    Product findByNameIgnoreCase(String name);
+    Optional<Product> findByNameIgnoreCase(String name);
 }

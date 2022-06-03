@@ -1,7 +1,7 @@
 package no.ntnu.websitebackendspringboot.repositories;
 
 import java.util.Optional;
-import no.ntnu.websitebackendspringboot.models.User;
+import no.ntnu.websitebackendspringboot.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

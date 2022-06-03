@@ -1,8 +1,8 @@
 package no.ntnu.websitebackendspringboot.services;
 
 import java.util.List;
-import no.ntnu.websitebackendspringboot.models.Role;
-import no.ntnu.websitebackendspringboot.models.User;
+import no.ntnu.websitebackendspringboot.entity.Role;
+import no.ntnu.websitebackendspringboot.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**

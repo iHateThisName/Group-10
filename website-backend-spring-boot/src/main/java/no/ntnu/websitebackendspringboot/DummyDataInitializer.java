@@ -4,17 +4,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Optional;
 
-import no.ntnu.websitebackendspringboot.models.Image;
-import no.ntnu.websitebackendspringboot.models.Product;
-import no.ntnu.websitebackendspringboot.models.Role;
-import no.ntnu.websitebackendspringboot.models.User;
+import no.ntnu.websitebackendspringboot.entity.Image;
+import no.ntnu.websitebackendspringboot.entity.Product;
+import no.ntnu.websitebackendspringboot.entity.Role;
+import no.ntnu.websitebackendspringboot.entity.User;
 import no.ntnu.websitebackendspringboot.repositories.ImageRepository;
 import no.ntnu.websitebackendspringboot.repositories.ProductRepository;
 import no.ntnu.websitebackendspringboot.repositories.RoleRepository;
@@ -24,7 +19,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
@@ -61,46 +55,29 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
   public void onApplicationEvent(ApplicationReadyEvent event) {
 
     Optional<User> arnold = userRepository.findByUsername("arnold");
-
     if (arnold.isEmpty()) {
+
       log.info("Adding users to database...");
       addData(password);
+      userRepository.flush();
       log.info("Done adding users to database");
-      StringBuilder stringBuilder = new StringBuilder();
-      userRepository.findAll().forEach(user -> {
-        stringBuilder
-                .append("\n----------------------------\n")
-                .append(user.getUsername())
-                .append("\n")
-                .append(user);
-      });
-      log.info("information about all the users: {}", stringBuilder);
 
     } else {
+
       log.info("Users already exist in the database");
     }
 
-    Product backpack = productRepository.findByNameIgnoreCase("SALOMON - Backpack");
-    if (backpack == null) {
+    Optional<Product> backpack = productRepository.findByNameIgnoreCase("SALOMON - Backpack");
+    if (backpack.isEmpty()) {
 
       log.info("Adding products to database...");
       addProducts();
+      productRepository.flush();
       log.info("Done adding products to database");
+
     } else {
       log.info("Products already exist in the database");
     }
-
-    StringBuilder imageStringBuilder = new StringBuilder();
-    imageRepository.findAll().forEach(image -> {
-      imageStringBuilder
-              .append("\n----------------------------\n")
-              .append(image.getId())
-              .append("\n")
-              .append(image.getFileName());
-    });
-    log.info("information about all the users: {}", imageStringBuilder);
-
-//    log.info(imageRepository.getAll().toString());
 
   }
 
@@ -135,50 +112,33 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
 
   private void addProducts() {
 
+    //Creating products
+    Product backpack = new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0);
+    Product boots = new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0);
+    Product jacket = new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00);
+    Product sweater = new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00);
 
-    productRepository.save(new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0));
+    //Adding images to the products
+    backpack.addImage(new Image(imageToByte("SALOMON_Backpack.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
+    boots.addImage(new Image(imageToByte("MAMMUT_Shoes.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
+    jacket.addImage(new Image(imageToByte("BERGANS_Jacket.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
+    sweater.addImage(new Image(imageToByte("DEVOLD_WinterSweater.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
 
-    productRepository.save(new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0));
-
-    productRepository.save(new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00));
-
-    productRepository.save(new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00));
-
-
-    Image SALOMON_Backpack_Image = null;
-    Image MAMMUT_Shoes_Image =null;
-    Image BERGANS_Jacket_Image = null;
-    Image DEVOLD_Winter_Sweater = null;
-    try {
-      SALOMON_Backpack_Image = new Image(imageToByte("SALOMON_Backpack.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
-      MAMMUT_Shoes_Image = new Image(imageToByte("MAMMUT_Shoes.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
-      BERGANS_Jacket_Image = new Image(imageToByte("BERGANS_Jacket.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
-      DEVOLD_Winter_Sweater = new Image(imageToByte("DEVOLD_WinterSweater.png", "png"), "png", MediaType.IMAGE_PNG_VALUE);
-
-
-
-
-
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    imageRepository.save(SALOMON_Backpack_Image);
-    imageRepository.save(MAMMUT_Shoes_Image);
-    imageRepository.save(BERGANS_Jacket_Image);
-    imageRepository.save(DEVOLD_Winter_Sweater);
-
-
+    //Saving the product to the database
+    productRepository.save(backpack);
+    productRepository.save(boots);
+    productRepository.save(jacket);
+    productRepository.save(sweater);
 
   }
 
-  private byte[] imageToByte(String imageName, String formatName) throws IOException {
+  private byte[] imageToByte(String imageName, String formatName) {
 
     String currentWorkingDir = System.getProperty("user.dir");
     String imageProductsDir = "/src/main/resources/static/images/products/";
     String fullPath = currentWorkingDir + imageProductsDir + imageName;
 
-
+    try {
     // read the image from the file
     BufferedImage bufferedImage = ImageIO.read(new File(fullPath));
 
@@ -189,14 +149,15 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
     ImageIO.write(bufferedImage, formatName, byteArrayOutputStream);
 
     // create the byte array from image
-    byte [] byteArray = byteArrayOutputStream.toByteArray();
+      byte [] byteArray = byteArrayOutputStream.toByteArray();
 
-//    ByteArrayResource inputStream = new ByteArrayResource(Files.readAllBytes(Paths.get(fullPath)));
+      return byteArray;
 
+    } catch (IOException ioException) {
+      log.warn("Failed to find image file");
+    }
 
-    System.out.println("erkgmegnegeig\n" + byteArray);
-
-    return byteArray;
+    return null;
   }
 
 }

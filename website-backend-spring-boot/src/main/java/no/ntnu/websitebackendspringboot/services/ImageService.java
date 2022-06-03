@@ -1,6 +1,6 @@
 package no.ntnu.websitebackendspringboot.services;
 
-import no.ntnu.websitebackendspringboot.models.Image;
+import no.ntnu.websitebackendspringboot.entity.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

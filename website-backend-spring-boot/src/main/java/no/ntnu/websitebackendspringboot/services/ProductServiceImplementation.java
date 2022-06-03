@@ -1,6 +1,6 @@
 package no.ntnu.websitebackendspringboot.services;
 
-import no.ntnu.websitebackendspringboot.models.Product;
+import no.ntnu.websitebackendspringboot.entity.Product;
 import no.ntnu.websitebackendspringboot.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
