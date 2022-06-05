@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access denied</title>
+
+
+    <!-----------------------
+    Access denied Link section
+    ----------------------->
+
+    <link rel="stylesheet" href="/static/css/access-denied.css"
+          th:href="@{/css/access-denied.css}">
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" th:href="@{/images/favicon.ico}">
+
+    <!-----------------------
+    Access denied Script section
+    ----------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
+
+</head>
+<body>
+
+<header id="header"></header>
+
+<h2>Sorry, you do not have permission to view this page.</h2>
+
+Click <a href="home.html" th:href="@{/home}">here</a>
+to go back to the Homepage.
+
+<footer id="footer"></footer>
+
+</body>
+</html>
