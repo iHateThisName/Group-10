@@ -41,8 +41,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
   private final Logger log = LoggerFactory.getLogger(getClass().getName());
 
   private final JwtService jwtService;
-  @Autowired
-  private UserService userService;
 
 
   public CustomAuthorizationFilter(JwtService jwtService) {
@@ -69,7 +67,8 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 
     //These are the request that we are not going to check the tokens on.
     if (request.getServletPath().equals("/login") ||
-        request.getServletPath().equals("/api/token/refresh")) {
+        request.getServletPath().equals("/api/token/refresh") ||
+        request.getServletPath().equals("/home")) {
       //we are just passing it along, as if the user has valid permissions.
       filterChain.doFilter(request, response);
     } else {

@@ -29,7 +29,6 @@ public class HomeController {
   }
 
   @RequestMapping(value = "/home")
-  @PreAuthorize("permitAll()")
   public String getHome() {
     return "home";
   }

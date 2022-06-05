@@ -5,6 +5,7 @@ import no.ntnu.websitebackendspringboot.filter.CustomAuthorizationFilter;
 import no.ntnu.websitebackendspringboot.services.JwtService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -53,11 +54,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
+
     http.authorizeRequests()
-            .antMatchers("/css/**", "/images/**", "/js/**", "/images/favicon/favicon.ico").permitAll()
-            .antMatchers("/api/Header", "/api/Footer", "/api/**").permitAll()
+            .antMatchers("/css/**", "/images/**", "/js/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/api/**").permitAll()
             .antMatchers("/", "/home", "/login", "/store", "/about", "/faq" , "/gallery").permitAll();
-//            .antMatchers("/api/products").permitAll()
 
     //We want everyone authenticated
     http.authorizeRequests().anyRequest().authenticated();
