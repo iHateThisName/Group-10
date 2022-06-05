@@ -6,6 +6,7 @@ import no.ntnu.websitebackendspringboot.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -68,7 +69,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
     //These are the request that we are not going to check the tokens on.
     if (request.getServletPath().equals("/login") ||
         request.getServletPath().equals("/api/token/refresh") ||
-        request.getServletPath().equals("/home")) {
+        request.getMethod().equalsIgnoreCase(HttpMethod.GET.name())) {
       //we are just passing it along, as if the user has valid permissions.
       filterChain.doFilter(request, response);
     } else {
