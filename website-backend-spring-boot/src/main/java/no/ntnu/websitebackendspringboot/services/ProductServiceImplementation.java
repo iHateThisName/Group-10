@@ -5,6 +5,7 @@ import no.ntnu.websitebackendspringboot.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +15,7 @@ import java.util.Optional;
  */
 @Service
 @Transactional
-public class ProductServiceImplementation implements ProductService{
+public class ProductServiceImplementation implements ProductService {
 
     private final ProductRepository productRepository;
 
@@ -105,4 +106,5 @@ public class ProductServiceImplementation implements ProductService{
         }
         return errorMessage;
     }
+
 }

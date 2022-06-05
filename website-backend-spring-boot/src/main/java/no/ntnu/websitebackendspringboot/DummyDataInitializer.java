@@ -124,6 +124,20 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
     jacket.addImage(new Image(imageToByte("BERGANS_Jacket.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
     sweater.addImage(new Image(imageToByte("DEVOLD_WinterSweater.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
 
+    //Adding Categories to the product
+    //All is applied as default
+    backpack.addCategory("men");
+    backpack.addCategory("women");
+    boots.addCategory("men");
+    jacket.addCategory("men");
+    sweater.addCategory("men");
+
+    //Adding the number of products
+    backpack.setProductAmount(4);
+    boots.setProductAmount(247);
+    jacket.setProductAmount(132);
+    sweater.setProductAmount(74);
+
     //Saving the product to the database
     productRepository.save(backpack);
     productRepository.save(boots);

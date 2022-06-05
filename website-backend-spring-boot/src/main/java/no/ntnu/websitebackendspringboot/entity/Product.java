@@ -1,5 +1,7 @@
 package no.ntnu.websitebackendspringboot.entity;
 
+import no.ntnu.websitebackendspringboot.services.ProductService;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,18 +20,29 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productId")
     private int id;
+
     @Column(name = "productName")
     private String name;
+
     @Column(name = "productDescription")
     private String description;
+
     @Column(name = "productPrice")
     private double price;
+
+    @Column(name = "productAmount")
+    private int productAmount;
+
+    @Column(name = "category")
+    @ElementCollection //The @ElementCollection is used to map non-entities
+    private List<String> categories;
 
     @OneToMany(targetEntity = Image.class, cascade = CascadeType.ALL)
     @JoinTable(name = "productImages",
             joinColumns = @JoinColumn(name = "productId", referencedColumnName = "productId"),
             inverseJoinColumns = @JoinColumn(name = "imageId", referencedColumnName = "imageId"))
     private List<Image> images;
+
 
 
     /**
@@ -42,8 +55,10 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-
+        this.categories = new ArrayList<>();
         this.images = new ArrayList<>();
+        categories.add("All");
+
     }
 
     public int getId() {
@@ -78,6 +93,22 @@ public class Product {
         this.price = price;
     }
 
+    public int getProductAmount() {
+        return productAmount;
+    }
+
+    public void setProductAmount(int productAmount) {
+        this.productAmount = productAmount;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<String> category) {
+        this.categories = category;
+    }
+
     public List<Image> getImages() {
         return images;
     }
@@ -87,7 +118,7 @@ public class Product {
     }
 
     /**
-     * Adds a image to the product.
+     * Adds an image to the product.
      *
      * @param image the image to be added.
      */
@@ -98,6 +129,20 @@ public class Product {
             images.add(image);
         }
     }
+
+    public void addCategory(String categoryName) {
+        final String[] everyCategory = {"All", "Men", "Women", "Dog"};
+
+        //Check if the category already exist
+        if (!categories.contains(categoryName)) {
+            for (String category : everyCategory) {
+                if (categoryName.equalsIgnoreCase(category)) {
+                    categories.add(category);
+                }
+            }
+        }
+    }
+
 
     @Override
     public String toString() {
