@@ -113,10 +113,10 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
   private void addProducts() {
 
     //Creating products
-    Product backpack = new Product("SALOMON - Backpack", "E9 Premium Backpack", 599.0);
-    Product boots = new Product("MAMMUT - Hiking Boots", "X100 Hiking Boots 2022", 899.0);
-    Product jacket = new Product("BERGANS - ALLWEATHER Jacket", "ALLWEATHER Jacket", 999.00);
-    Product sweater = new Product("DEVOLD - Winter Sweater", "Winter Sweater 2021", 499.00);
+    Product backpack = new Product("SALOMON", "E9 Premium Backpack", 599.0);
+    Product boots = new Product("MAMMUT", "X100 Hiking Boots 2022", 899.0);
+    Product jacket = new Product("BERGANS", "ALLWEATHER Jacket", 999.00);
+    Product sweater = new Product("DEVOLD", "Winter Sweater 2021", 499.00);
 
     //Adding images to the products
     backpack.addImage(new Image(imageToByte("SALOMON_Backpack.png", "png"), "png", MediaType.IMAGE_PNG_VALUE));
