@@ -63,7 +63,7 @@ label {
 
     font-size: 2rem;
     color: white;
-    background-color: #044c1f;
+    background-color: #476F57;
     border-radius: 1rem;
 
 }
@@ -73,7 +73,7 @@ label {
     bottom: 0;
 }
 
-.form_sign_in button:hover {
-    background-color: white;
+.form_sign_in #login-form-button:hover {
+    background-color: #47fc47;
     color: black;
 }
