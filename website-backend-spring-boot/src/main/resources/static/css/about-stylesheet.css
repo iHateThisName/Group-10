@@ -100,7 +100,8 @@ h2{
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 10rem;
+    margin: auto;
+    gap: 5rem;
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
