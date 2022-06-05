@@ -224,7 +224,7 @@ input.cart, button.cart {
 }
 
 /* ---------- product list ------------- */
-#template-product {
+#template-product, #template-product2, #template-product3 {
     display: flex;
     /*grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));*/
     /*grid-template-columns: repeat(auto-fit, minmax(min(26rem, max(21rem, 100%/5)), 1fr));*/
@@ -232,19 +232,29 @@ input.cart, button.cart {
     /*grid-template-columns: repeat(4, minmax(0, 1fr));*/
     /*grid-gap: 0px;*/
     /*column-gap: 50px;*/
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row;
-    padding-right: 15rem;
-    padding-left: 15rem;
-
-
-
-
-
+    padding: 5rem 15rem;
 }
 
+.h2all, .h2men, .h2men, .h2women, .h2dogs {
+    text-align: center;
+    font-size: 3rem;
+}
 
 .p-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 35rem;
+    min-width: 26rem;
+    max-width: 30rem;
+
+    background-color: #F0F0F0;
+    margin: 0.3rem 0;
+}
+
+.p-men {
     padding: 10px;
     border: 1px solid #ddd;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -254,11 +264,34 @@ input.cart, button.cart {
 
     background-color: #F0F0F0;
     margin: 0.3rem 0;
+}
+.p-women {
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 45rem;
+    height: 35rem;
+    min-width: 26rem;
 
+    background-color: #F0F0F0;
+    margin: 0.3rem 0;
+}
+.p-dogs {
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 45rem;
+    height: 35rem;
+    min-width: 26rem;
+
+    background-color: #F0F0F0;
+    margin: 0.3rem 0;
 }
 
 .p-img {
     max-width: 150px;
+    margin-left: 30%;
+    justify-content: center;
 }
 .p-name, .p-price {
     font-weight: 700;
@@ -310,49 +343,7 @@ button.cart.p-add {
 
 }
 
-.formennn {
-    position: absolute;
-    top: 146rem;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px; /* Need a specific value to work */
-}
 
-
-.formennn h3 {
-    font-size: 4rem;
-    font-weight: lighter;
-}
-.forwomennn {
-    position: absolute;
-    top: 189rem;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px; /* Need a specific value to work */
-}
-
-.forwomennn h3 {
-    font-size: 3rem;
-    font-weight: lighter;
-}
-.fordogsss {
-    position: absolute;
-    top: 232rem;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px; /* Need a specific value to work */
-}
-
-.fordogsss h3 {
-    font-size: 3rem;
-    font-weight: lighter;
-}
 
 .c-item {
     padding: 10px 0;

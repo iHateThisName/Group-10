@@ -55,20 +55,13 @@
 <div class="popular-products">
     <div class="headline_popular">
         <h2>Popular products</h2>
-        <h3>All</h3>
     </div>
+
 </div>
 
+
     <!-- cart -->
-    <div class="formennn">
-        <h3>For men</h3>
-    </div>
-    <div class="forwomennn">
-        <h3>For women</h3>
-    </div>
-    <div class="fordogsss">
-        <h3>For dogs</h3>
-    </div>
+
     <div id="cart-wrap">
         <!-- products list -->
         <div id="cart-products"></div>
@@ -77,9 +70,47 @@
 
     <!-- templates -->
     <!-- product cell -->
+<h2 class="h2all">All</h2>
+
 
     <div id="template-product">
         <div class="p-item">
+            <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
+            <div class="p-name">Lorem ipsum dolor sit.</div>
+            <div class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            <div class="p-price">123 kr</div>
+            <button class="cart p-add" name="">Add To Cart</button>
+        </div>
+    </div>
+
+<h2 class="h2men">For men</h2>
+
+    <div id="template-product2">
+        <div class="p-men">
+            <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
+            <div class="p-name">Lorem ipsum dolor sit.</div>
+            <div class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            <div class="p-price">123 kr</div>
+            <button class="cart p-add" name="">Add To Cart</button>
+        </div>
+    </div>
+
+<h2 class="h2women">For women</h2>
+
+    <div id="template-product3">
+        <div class="p-women">
+            <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
+            <div class="p-name">Lorem ipsum dolor sit.</div>
+            <div class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            <div class="p-price">123 kr</div>
+            <button class="cart p-add" name="">Add To Cart</button>
+        </div>
+    </div>
+
+<h2 class="h2dogs">For dogs</h2>
+    <div id="template-product4">
+
+        <div class="p-dogs">
             <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
             <div class="p-name">Lorem ipsum dolor sit.</div>
             <div class="p-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
@@ -100,6 +131,7 @@
         <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
         <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
     </template>
+
 
 <div class="favorite_brands">
     <div class="related_text">
