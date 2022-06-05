@@ -20,11 +20,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 @RestController
 @RequestMapping(path = "/api")
-public class ApiUserController {
+public class UserController {
 
   private UserService userService;
 
-  public ApiUserController(UserService userService) {
+  public UserController(UserService userService) {
     this.userService = userService;
   }
 //Todo /user and /role should be there own classes
@@ -36,12 +36,6 @@ public class ApiUserController {
     //the .ok tells the user it is code 200
     //all the is place in the body
     return ResponseEntity.ok().body(userService.getUsers());
-  }
-
-  @GetMapping("/roles")
-  @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
-  public ResponseEntity<List<Role>> getRoles() {
-    return ResponseEntity.ok().body(userService.getRoles());
   }
 
   @GetMapping("/admin")
@@ -59,47 +53,5 @@ public class ApiUserController {
         ServletUriComponentsBuilder
             .fromCurrentContextPath().path("/api/user/save").toUriString());
     return ResponseEntity.created(uri).body(userService.saveUser(user));
-  }
-
-  @PostMapping("/role/save")
-  @PreAuthorize("hasRole('ADMIN')")
-  public ResponseEntity<Role> saveRole(@RequestBody Role role) {
-    //.created will response with 201
-    //Which means a resource was created in the server.
-    URI uri = URI.create(
-        ServletUriComponentsBuilder
-            .fromCurrentContextPath().path("/api/role/save").toUriString());
-
-    return ResponseEntity.created(uri).body(userService.saveRole(role));
-  }
-
-  @PostMapping("/role/addRoleToUser")
-  @PreAuthorize("hasRole('ADMIN')")
-  public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
-
-    userService.addRoleToUser(form.getUsername(), form.getRoleName());
-    return ResponseEntity.ok().build();
-  }
-
-  static
-  class RoleToUserForm {
-    private String username;
-    private String roleName;
-
-    public String getUsername() {
-      return username;
-    }
-
-    public void setUsername(String username) {
-      this.username = username;
-    }
-
-    public String getRoleName() {
-      return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-      this.roleName = roleName;
-    }
   }
 }
