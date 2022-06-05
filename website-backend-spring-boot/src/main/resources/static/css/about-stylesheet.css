@@ -91,7 +91,7 @@ h2{
 
 .content img{
     border-radius: 2.5rem;
-    width: 50rem;
+    width: 60rem;
     height: 35rem;
 }
 
@@ -100,11 +100,55 @@ h2{
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 10rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    margin: auto;
+    gap: 5rem;
+    padding: 10rem;
 }
 
-#Location{
-   background-color: rgba(255, 255, 255, 0.73);
+
+
+
+
+/***********************************
+           mobile Section!
+***********************************/
+
+/* changing page layout when using a device with low width */
+
+@media screen and (max-device-width: 500px) {
+
+    .TextOnImage h1{
+        font-size: 9rem;
     }
+
+    .content_item{
+
+        flex-direction: column;
+        margin: 10rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+    }
+
+    .content_item img {
+        width: 80%;
+    }
+
+    .content_item h3 {
+        font-size: 6rem;
+    }
+
+    .content_item p {
+
+        font-size: 4rem;
+        padding-bottom: 5rem;
+    }
+
+    .content img{
+
+    }
+
+    #location img {
+        display: none;
+    }
+}

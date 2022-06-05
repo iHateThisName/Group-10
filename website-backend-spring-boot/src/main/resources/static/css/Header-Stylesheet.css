@@ -65,6 +65,8 @@ header {
 
 }
 
+
+
 /***************************
         Right setup
 ***************************/
@@ -124,3 +126,37 @@ header {
     background: #47fc47;
 }
 
+/**********************************
+         mobile setup setup
+***********************************/
+
+/*  When using a device with low with (phones etc) then we make some elements bigger for the user */
+
+
+@media screen and (max-device-width: 500px){
+
+    #header_left a {
+        font-size: 11rem;
+    }
+
+    .Link_Header {
+
+        font-size: 3.5rem;
+
+    }
+
+    #login, #register {
+        width: 130px;
+        height: 40px;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profileButton {
+        height: 4rem;
+        width: 4rem;
+    }
+
+}
