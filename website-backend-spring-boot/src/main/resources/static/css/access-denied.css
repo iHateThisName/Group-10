@@ -1,7 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 
-*{
-    justify-content: center;
+* {
+    /*This makes the css easier to work with*/
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
 }
 
-body{height: 100%}
+body{
+    height: 100%;
+}
+
+svg{
+
+}
+
+h1{
+    font-size: 5rem;
+    padding-bottom: 2rem;
+}
+
+h2{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+p{
+    font-size: 2.5rem;
+}
+
+#access-denied {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex-grow: 5;
+    margin: 10% 25%;
+}
+
+a{
+    font-size: 2.5rem;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+}
