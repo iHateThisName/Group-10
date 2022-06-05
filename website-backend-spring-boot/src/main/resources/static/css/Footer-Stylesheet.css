@@ -12,6 +12,9 @@ footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
     color: white;
+    position:relative;
+    width: 100%;
+    bottom: 0;
 }
 
 footer h1 {
@@ -38,6 +41,11 @@ footer h2 {
     flex-wrap: wrap;
     padding-top: 2rem;
     gap: 5rem;
+}
+
+.contact_info h3 {
+
+    font-size: 1.8rem;
 }
 
 li {
