@@ -113,14 +113,9 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
           //token is expired.
 
           log.error("Error logging in: {}", exception.getMessage());
-          response.setHeader("error ", exception.getMessage());
           response.setStatus(FORBIDDEN.value());
+          response.sendRedirect(request.getContextPath() + "/access-denied");
 
-          //Creating own custom error message
-          Map<String, String> error = new HashMap<>();
-          error.put("errorMessage", exception.getMessage());
-          response.setContentType(APPLICATION_JSON_VALUE);
-          new ObjectMapper().writeValue(response.getOutputStream(), error);
 
         }
 
