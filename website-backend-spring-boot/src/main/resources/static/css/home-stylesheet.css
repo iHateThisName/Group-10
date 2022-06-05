@@ -16,6 +16,10 @@
 
 }
 
+body{
+    height: 100%;
+}
+
 /*Default font size for p elements to 2rem*/
 p {
     font-size: 2rem;
