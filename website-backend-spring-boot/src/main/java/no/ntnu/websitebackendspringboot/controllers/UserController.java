@@ -7,11 +7,7 @@ import no.ntnu.websitebackendspringboot.entity.User;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 /**
@@ -54,4 +50,12 @@ public class UserController {
             .fromCurrentContextPath().path("/api/user/save").toUriString());
     return ResponseEntity.created(uri).body(userService.saveUser(user));
   }
+
+  @GetMapping("/user/whoami")
+  @PreAuthorize("hasAnyRole('USER', 'MANAGER', 'ADMIN')")
+  public ResponseEntity<User> getCurrentUser(@CookieValue(value = "access_Token") String token) {
+
+    return ResponseEntity.ok().body(userService.getUserByToken(token));
+  }
+
 }

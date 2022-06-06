@@ -29,13 +29,15 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
 
   private final RoleRepository roleRepository;
   private final UserRepository userRepository;
+  private JwtService jwtService;
   private final Logger log = LoggerFactory.getLogger(getClass().getName());
 
   public UserServiceImplementation(UserRepository userRepository,
-      RoleRepository roleRepository) {
+      RoleRepository roleRepository, JwtService jwtService) {
 
     this.userRepository = userRepository;
     this.roleRepository = roleRepository;
+    this.jwtService = jwtService;
   }
 
   @Override
@@ -126,5 +128,11 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
   public List<Role> getRoles() {
     log.info("Fetching all roles");
     return roleRepository.findAll();
+  }
+
+  @Override
+  public User getUserByToken(String token) {
+
+    return userRepository.findByUsername(jwtService.extractUsername(token)).get();
   }
 }

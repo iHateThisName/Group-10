@@ -26,4 +26,6 @@ public interface UserService {
   //Retrieve the UserDetails about a user with the username
   UserDetails loadUserByUsername(String username);
 
+  User getUserByToken(String token);
+
 }
