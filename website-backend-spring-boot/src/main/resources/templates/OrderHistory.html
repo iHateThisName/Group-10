@@ -5,30 +5,29 @@
     <title>XXS - Profile</title>
 
     <!-----------------------
-    profile page Link section
+    Order history page Link section
     ----------------------->
 
-    <link rel="stylesheet" href="/static/css/Profile-Stylesheet.css"
-          th:href="@{/css/Profile-Stylesheet.css}">
+    <link rel="stylesheet" href="/static/css/OrderHistory-Stylesheet.css"
+          th:href="@{/css/OrderHistory-Stylesheet.css}">
 
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" th:href="@{/images/favicon.ico}">
 
     <!-----------------------
-    Profile page Script section
+    Order history Script section
     ----------------------->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
 
-    <script type="application/javascript" th:src="@{/js/Profile.js}" src="/static/js/Profile.js"></script>
-
-
+    <script type="application/javascript" th:src="@{/js/OrderHistory.js}" src="/static/js/OrderHistory.js"></script>
 
 </head>
 <body>
 
 <header id="header"></header>
+
 
 <div id="container">
 
@@ -48,25 +47,10 @@
     <div id="RightSide">
 
 
-        <div id="Profile-settings">
-            <h2>Profile settings</h2>
-            <h3>Here you can view your profile settings and change password</h3>
-
-            <p class="Parameter">Name: </p>
-            <p class="Value" id="nameValue">John Cena</p>
-            <p class="Parameter">Username: </p>
-            <p class="Value" id="usernameValue">John</p>
-            <p class="Parameter">Password: </p>
-            <p class="Value">********</p>
-        </div>
 
     </div>
 
 </div>
-
-
-
-
 
 
 <footer id="footer"></footer>

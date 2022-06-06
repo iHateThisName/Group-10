@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+
+
+* {
+    /*This makes the css easier to work with*/
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
+}
+
+body{
+    height: 100%;
+}
+
+
+h1{
+    font-size: 4rem;
+    margin: 1% 3% 1%;
+}
+
+#Profile{
+    font-weight: bold;
+}
+
+.Link{
+    font-size: 2rem;
+    margin: 1% 3%;
+    color: black;
+}
+
+.Parameter{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.Value{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 3%;
+}
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    margin: 5% 5%;
+}
