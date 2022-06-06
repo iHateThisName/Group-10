@@ -1,23 +1,30 @@
 
+
+* {
+    /*This makes the css easier to work with*/
+
+    font-size: 62.5%; /* This will reset 1rem to 10px, default 16px */
+    margin: 0; /* Setting the default margin to 0 */
+    padding: 0; /* Setting the default padding to 0 */
+    box-sizing: border-box; /* The box sizing we are used to */
+    font-family: 'Montserrat', sans-serif;
+
+}
+
 body {
-    height: 100%;
-}
-
-.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10rem 0 10rem 0;
-    height: 70vh;
+    flex-direction: column;
+    height: 100%;
+
 }
 
-.container h2 {
-    font-size: 5rem;
+.register_form h2 {
+    font-size: 8rem;
     padding-bottom: 10rem;
 }
 
 em {
-    font-size: 5rem;
+    font-size: 8rem;
     color: #044c1f;
     font-family: 'Montserrat', sans-serif;
 }
@@ -26,6 +33,12 @@ em {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+
+
+    padding: 10rem 0 10rem 0;
+
+
 
 }
 
@@ -36,11 +49,26 @@ em {
     align-items: flex-start;
 
     width: 75rem;
-    gap: 1rem;
-    padding-bottom: 4rem;
+    padding-bottom: 8rem;
+
 
 
 }
+
+.register_form_element_password {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 75rem;
+    gap: 1rem;
+    padding-bottom: 2rem;
+
+
+
+}
+
+
 
 label {
     font-size: 4rem;
@@ -61,6 +89,9 @@ label {
     width: 30rem;
     height: 5rem;
 
+    margin-top: 10rem;
+
+
     font-size: 2rem;
     color: white;
     background-color: #476F57;
@@ -68,12 +99,23 @@ label {
 
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
+.register_location {
+    display: flex;
+    border-top: 20rem;
 }
+
+
 
 .register_form #register-form-button:hover {
     background-color: #47fc47;
     color: black;
 }
+
+#footer {
+
+
+
+}
+
+
+
