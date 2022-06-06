@@ -9,6 +9,6 @@ public class StoreController {
     @RequestMapping("/store")
     @PreAuthorize("permitAll()")
     public String getStore() {
-        return "store";
+        return "Store";
     }
 }
