@@ -1,15 +1,20 @@
 /* Global styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-html {
-    font-size: 62.5%; /* Reset 1rem to 10px */
-    font-family: 'Roboto', sans-serif;
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-size: 62.5%; /* Reset 1rem to 10px */
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    height: 100%;
+}
+
 
 #root {
 
@@ -30,8 +35,7 @@ html {
 .divProductCardImage {
 
     flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 20rem;
+    flex-basis: 80%;
 
     max-height: 15rem;
     max-width: 25rem;
@@ -48,13 +52,13 @@ html {
 
 
 
-.productCard {
+.productCard, .productAddCard {
 
     display: flex;
     /*row is default*/
     flex-direction: row;
 
-    overflow: hidden;
+    overflow: visible;
     border-radius: 1rem;
 
     margin: 2rem auto;
@@ -64,13 +68,13 @@ html {
     /*cool animation for when the css gets applied*/
     transition-duration: 0.5s;
 
-    min-width: 90rem;
+    min-width: 50%;
     max-width: 120rem;
 
 
 }
 
-.productCard:hover {
+.productCard:hover, .productAddCard:hover {
     box-shadow: 0 0 3rem 0 #696969;
 }
 
@@ -101,10 +105,6 @@ html {
     overflow: hidden;
 }
 
-svg {
-    width: 45px;
-    height: 45px;
-}
 .divProductCardActions {
     display: flex;
     flex-direction: column;
@@ -112,6 +112,112 @@ svg {
     margin-right: 1rem;
     right: 1rem;
 }
+
+.actionButtonEdit, .actionButtonDelete, #addProductCard {
+
+    transition-duration: 0.5s;
+    cursor: pointer;
+    width: 5rem;
+}
+
+.actionButtonEdit:hover  {
+    width: 6rem;
+    color: #476F57;
+}
+.actionButtonDelete:hover {
+    width: 6rem;
+    color: #476F57;
+}
+
+#addProductCard:hover {
+    width: 6rem;
+    color: #476F57;
+}
+
+
+/*********************
+Product Add Card Style
+*******************/
+
+.productAddCard {
+    gap: 5rem;
+    min-height: 30rem;
+
+}
+
+.image-editor-preview svg{
+
+    max-height: 15rem;
+    max-width: 25rem;
+}
+
+.image-editor-preview img {
+    max-height: 20rem;
+    max-width: 20rem;
+    margin: auto;
+}
+
+.image-editor-preview {
+    width: 20rem;
+    margin: auto auto 2rem;
+}
+
+.image-editor-preview-image {
+    display: block;
+    max-width: 100%;
+    max-height: 20rem;
+}
+
+.image-editor-action-label {
+
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition-duration: 0.2s;
+    width: 15rem;
+    display: block;
+    margin: auto;
+    font-size: 1.6rem;
+}
+
+.image-editor-action-label:hover {
+    background-color: #476F57;
+    color: white;
+}
+
+.product-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.product-card-editable {
+
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    gap: 1rem;
+    height: 20%;
+
+
+}
+
+.product-card-editable input, .product-card-editable textarea {
+    border-radius: .5rem;
+    width: 20rem;
+    height: 3rem;
+}
+
+.product-card-editable textarea  {
+    height: 7rem;
+}
+
+
+
+
+
+
 
 
 
