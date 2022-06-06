@@ -9,6 +9,6 @@ public class AboutController {
     @RequestMapping("/about")
     @PreAuthorize("permitAll()")
     public String getAbout() {
-        return "about";
+        return "About";
     }
 }

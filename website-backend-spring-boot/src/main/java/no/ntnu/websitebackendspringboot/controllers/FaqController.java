@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FaqController {
     @GetMapping(value = "/faq")
     @PreAuthorize("permitAll()")
-    public  String getFaq() {return "faq";}
+    public  String getFaq() {return "Faq";}
 }

@@ -9,5 +9,5 @@ public class AccessDeniedController {
 
     @GetMapping("/access-denied")
     public String getAccessDenied() {
-        return "accessDenied";}
+        return "AccessDenied";}
 }

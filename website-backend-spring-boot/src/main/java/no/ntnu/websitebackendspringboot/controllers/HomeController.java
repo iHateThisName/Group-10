@@ -38,7 +38,7 @@ public class HomeController {
   public String example(Model model) {
     String msg = "This is using a String variable from the backend";
     model.addAttribute("message", msg);
-    return "thymeleaf-example";
+    return "Thymeleaf-example";
   }
 
 }

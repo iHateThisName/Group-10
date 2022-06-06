@@ -15,7 +15,7 @@ public class ProfileController {
   @PreAuthorize("isAuthenticated()")
   @RequestMapping(value = "/profile")
   public String getProfile() {
-    return "profile";
+    return "Profile";
   }
 
 }
