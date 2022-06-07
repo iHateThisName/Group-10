@@ -63,3 +63,13 @@ h3{
     gap: 10%;
     margin: 5% 5%;
 }
+
+#leftSide{
+    display: flex;
+    flex-direction: column;
+}
+
+#LogoutButton{
+    font-size: 3rem;
+    margin-top: 3rem;
+}
