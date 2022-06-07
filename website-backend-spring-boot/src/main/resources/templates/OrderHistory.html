@@ -23,6 +23,10 @@
 
     <script type="application/javascript" th:src="@{/js/OrderHistory.js}" src="/static/js/OrderHistory.js"></script>
 
+    <script type="application/javascript" th:src="@{/js/logoutButton.js}" src="/static/js/logoutButton.js"></script>
+
+
+
 </head>
 <body>
 
@@ -44,7 +48,7 @@
         <a class="Link" href="Faq.html" th:href="@{/faq}">FAQ</a>
 
 
-        <button id="LogoutButton">Log out</button>
+        <button id="LogoutButton" onclick="onLogout()">Log out</button>
 
     </div>
     <div id="RightSide">

@@ -23,6 +23,8 @@
 
     <script type="application/javascript" th:src="@{/js/Profile.js}" src="/static/js/Profile.js"></script>
 
+    <script type="application/javascript" th:src="@{/js/logoutButton.js}" src="/static/js/logoutButton.js"></script>
+
 
 
 </head>
@@ -46,7 +48,7 @@
 
 
 
-        <button id="LogoutButton">Log out</button>
+        <button id="LogoutButton" onclick="onLogout()">Log out</button>
 
     </div>
     <div id="RightSide">
