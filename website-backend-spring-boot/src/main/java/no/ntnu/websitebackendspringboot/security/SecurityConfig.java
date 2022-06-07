@@ -3,9 +3,9 @@ package no.ntnu.websitebackendspringboot.security;
 import no.ntnu.websitebackendspringboot.filter.CustomAuthenticationFilter;
 import no.ntnu.websitebackendspringboot.filter.CustomAuthorizationFilter;
 import no.ntnu.websitebackendspringboot.services.JwtService;
+import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -28,12 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private final UserDetailsService userDetailsService;
   private final JwtService jwtService;
+  private final UserService userService;
 
 
   public SecurityConfig(
-      UserDetailsService userDetailsService, JwtService jwtService) {
+          UserDetailsService userDetailsService, JwtService jwtService, UserService userService) {
     this.userDetailsService = userDetailsService;
     this.jwtService = jwtService;
+    this.userService = userService;
   }
 
   /**
@@ -72,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.addFilter(customAuthenticationFilter);
 
     //Want to authorize (Authorization) before we authenticate (Authentication)
-    http.addFilterBefore(new CustomAuthorizationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
+    http.addFilterBefore(new CustomAuthorizationFilter(jwtService, userService), UsernamePasswordAuthenticationFilter.class);
 
 
   }
