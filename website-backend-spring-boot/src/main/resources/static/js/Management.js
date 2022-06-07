@@ -1,7 +1,11 @@
 const currentUrl = window.location.href;
 const productUrl = new URL(currentUrl.replace("management", "api/products"))
 const imageUrl = new URL(currentUrl.replace("management", "api/images/"))
-let card = document.querySelector(".productCard");
+
+
+let previewImageElement = null;
+let chosenImage = null;
+
 
 
 window.onload = function () {
@@ -18,6 +22,7 @@ function loadProducts() {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
 
             let products = JSON.parse(xmlHttp.responseText);
+            let card = document.querySelector(".productCard");
 
             for (let i = 0; i < products.length; i++) {
 
@@ -40,10 +45,6 @@ function loadProducts() {
                 let description = clonedCard.querySelector(".productCardDescription");
                 description.innerHTML = products[i].description;
 
-                //Action Button
-                let edit = clonedCard.querySelector(".actionButtonEdit");
-                edit.addEventListener("click", editClick(this, products[i].id))
-
                 //Checks if is the first loop
                 if (i === 0) {
                     //we want to replace the cloned element
@@ -58,10 +59,6 @@ function loadProducts() {
             }
         }
     };
-}
-
-function editClick(event, productId) {
-
 }
 
 function addClick() {
@@ -80,22 +77,35 @@ function addClick() {
 
     document.getElementById("addProductCard").style.display = "none"
 
+    let newAddCard = document.getElementById("displayedAddProduct");
+
+    //Hide the save button
+    newAddCard.querySelector(".save-button-add-production-card").style.display = "none"
+
+    //Setting up event listener for the 3 input areas and the save button
+    setUpEventForProductCardEditable(newAddCard);
+
 }
 
+//Letting the user view a preview
 function inputImage(event) {
 
+    let addCard = document.getElementById("displayedAddProduct");
+
     if (event.target.files.length > 0) {
-        let chosenImage = event.target.files[0];
+        chosenImage = event.target.files[0];
+        console.log(chosenImage.name);
         let src = URL.createObjectURL(chosenImage)
+
+        console.log(src)
 
 
         console.log("Image changed");
 
-        let previewImageElement = document.createElement("img")
+        previewImageElement = document.createElement("img")
         previewImageElement.src = src;
         previewImageElement.style.display = "block";
 
-        let addCard = document.getElementById("displayedAddProduct");
         let previewDiv = addCard.querySelector(".image-editor-preview")
 
         while (previewDiv.firstChild) {
@@ -104,10 +114,98 @@ function inputImage(event) {
 
         previewDiv.appendChild(previewImageElement);
 
-
     }
 
 }
+
+function setUpEventForProductCardEditable(newAddCard) {
+
+    let element = newAddCard.querySelector(".product-card-content");
+
+    let textName = false;
+    let textPrice = false;
+    let textDesc = false;
+
+    //Setting up event listener for the save button
+    eventSaveProduct()
+
+
+    let nameInput = element.querySelector("#name-input");
+    nameInput.oninput = function () {
+
+        if (nameInput.value.length > 0) {
+            textName = true
+            showSaveButton()
+        }
+    }
+
+    let priceInput = element.querySelector("#price-input");
+    priceInput.oninput = function () {
+
+        if (priceInput.value.length > 0) {
+            textPrice = true;
+            showSaveButton()
+        }
+    }
+
+
+    let desInput = element.querySelector("#description-input")
+    desInput.oninput = function () {
+
+        if (desInput.value.length > 0) {
+            textDesc = true;
+            showSaveButton()
+        }
+    }
+
+
+    function showSaveButton() {
+
+        if (textName && textPrice && textDesc) {
+
+            newAddCard.querySelector(".product-card-content").style.marginRight = 0;
+            newAddCard.querySelector(".save-button-add-production-card").style.display = "block"
+
+        }
+    }
+
+    function eventSaveProduct() {
+
+        let saveButton = newAddCard.querySelector(".save-button-add-production-card");
+
+        console.log(new Uint8Array(chosenImage));
+
+        saveButton.onclick = function () {
+
+            //Check if the save button is visible
+            if (newAddCard.querySelector(".save-button-add-production-card").style.display === "block") {
+
+                let http = new XMLHttpRequest();
+                http.open("POST", productUrl);
+
+                http.setRequestHeader("Accept", "application/json");
+                http.setRequestHeader("Content-Type", "application/json");
+
+                let data = {
+
+                    name: nameInput.value,
+                    description: desInput.value,
+                    price: priceInput.value,
+                    categories: ["All"],
+                    images: [{
+                        extension: chosenImage.name.split(".").pop(),
+                        contentType: ("image/" + chosenImage.name.split(".").pop())
+                    }]
+                }
+                http.send(JSON.stringify(data));
+            }
+        }
+    }
+}
+
+
+
+
 
 
 
