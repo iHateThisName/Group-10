@@ -68,23 +68,28 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       log.info("Password is: {}", password);
 
 
-        UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(
-                        username, password);
+      if (username == null) {
 
-        try {
-          return authenticationManager.authenticate(authenticationToken);
-        } catch (AuthenticationException authenticationException) {
-          log.info(authenticationException.getMessage());
+        log.warn("Return null in attemptAuthentication");
+        return null;
+      }
 
-        }
+      UsernamePasswordAuthenticationToken authenticationToken =
+              new UsernamePasswordAuthenticationToken(
+                      username, password);
+
+      return authenticationManager.authenticate(authenticationToken);
+
+    } else {
+
+      return authenticationManager.authenticate(null);
 
     }
-
-    log.warn("Return null in attemptAuthentication");
-    return null;
-
   }
+
+
+
+
 
   /**
    * This methode will send the access token and the refresh token.
@@ -109,21 +114,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     //here we are going to generate the token using the jwtService
     String accessToken = jwtService.generateAccessToken(user, request);
-    String refreshToken = jwtService.generateRefreshToken(user, request);
-
-    //This is a way to use ResponseEntity to set a header
-    HttpHeaders headers = new HttpHeaders();
-    headers.add("access_Token", accessToken);
-    headers.add("refresh_Token",refreshToken);
-
-
-    //This will make it stay in the response header
-    response.addHeader("access_Token", accessToken);
-    response.addHeader("refresh_Token", refreshToken);
-
-    //cookie
-    Cookie cookie = new Cookie("access_Token", accessToken);
-    response.addCookie(cookie);
 
     //Cookie
     Cookie cookieJwt = new Cookie("access_Token", accessToken);

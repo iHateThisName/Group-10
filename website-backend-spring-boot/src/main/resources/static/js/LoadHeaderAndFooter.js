@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
     $(function(){
-        $("#header").load("/api/Header", function (response, status, xhr) {
+        $("#header").load("/api/header", function (response, status, xhr) {
             if (status === "error"){
                 //It failed to receive from Get from "/api/Header"
                 //Assume that it is because work on frontend with no backend support
@@ -11,7 +11,7 @@ $(document).ready(function () {
                 $("#header").load("Header.html");
             }
         });
-        $("#footer").load("/api/Footer", function (response, status, xhr) {
+        $("#footer").load("/api/footer", function (response, status, xhr) {
             if (status === "error") {
                 //The same reason as the Header
                 $("#footer").load("Footer.html");

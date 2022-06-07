@@ -23,18 +23,16 @@ public class HomeController {
    * @return
    */
   @RequestMapping(value = "/")
-  @PreAuthorize("permitAll()")
   public ModelAndView redirectToHomePage() {
     return new ModelAndView("redirect:" + "/home");
   }
 
   @RequestMapping(value = "/home")
   public String getHome() {
-    return "home";
+    return "Home";
   }
 
   @GetMapping(path = "/example")
-  @PreAuthorize("permitAll()")
   public String example(Model model) {
     String msg = "This is using a String variable from the backend";
     model.addAttribute("message", msg);

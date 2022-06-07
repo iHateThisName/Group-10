@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HeaderController {
-    @GetMapping(value = "/api/Header")
-    @PreAuthorize("permitAll()")
+    @GetMapping(value = "/api/header")
     public String getHeader() {
         return "Header";
     }

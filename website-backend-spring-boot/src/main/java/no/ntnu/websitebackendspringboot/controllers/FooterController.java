@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class FooterController {
-    @GetMapping(value = "/api/Footer")
-    @PreAuthorize("permitAll()")
+    @GetMapping(value = "/api/footer")
     public String getFooter() {
         return "Footer";
     }
