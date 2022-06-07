@@ -73,6 +73,8 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
       //Right now we are using cookie
       String authorizationToken = readAccessCookie(request);
 
+      log.info("Discovered token: " + authorizationToken);
+
 
       if (authorizationToken == null) {
 
@@ -81,8 +83,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
 
       } else {
-
-        log.info("Discovered token: " + authorizationToken);
 
         //This if statement will be true if the request starts with "Bearer ".
         if (authorizationToken.startsWith("Bearer ")) {
@@ -95,6 +95,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
             response.sendRedirect(request.getContextPath() + "/access-denied");
 
           } else {
+
 
             Collection<SimpleGrantedAuthority> authorities = null;
 

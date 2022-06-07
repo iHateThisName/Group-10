@@ -61,9 +61,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       HttpServletResponse response) throws AuthenticationException {
 
 
-
-    if (request.getServletPath().equals("/login")) {
-
       String username = request.getParameter("username");
       String password = request.getParameter("password");
       log.info("Username is: {}", username);
@@ -72,8 +69,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
       return authenticationManager.authenticate(authenticationToken);
     }
-    return authenticationManager.authenticate(null);
-  }
 
 
 
@@ -124,7 +119,5 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     log.info("failed authentication while attempting to access "
             + request.getServletPath());
 
-    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-    response.sendRedirect("/access-denied");
   }
 }
