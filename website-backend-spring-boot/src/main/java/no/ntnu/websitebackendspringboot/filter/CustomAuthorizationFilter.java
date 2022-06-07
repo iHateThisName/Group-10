@@ -96,8 +96,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 
           } else {
 
-            log.info(request.getAuthType());
-
             Collection<SimpleGrantedAuthority> authorities = null;
 
             authorities = jwtService.extractClaim(authorizationToken);
