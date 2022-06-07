@@ -56,7 +56,7 @@ public class ProductController {
         ResponseEntity<String> response;
         String errorMessage = productService.add(product);
         if (errorMessage == null) {
-            response = new ResponseEntity<>("" + product.getId(), HttpStatus.OK);
+            response = new ResponseEntity<>("" + product.toString(), HttpStatus.OK);
         } else {
             response = new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
         }
