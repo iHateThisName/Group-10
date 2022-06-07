@@ -4,6 +4,7 @@ import no.ntnu.websitebackendspringboot.entity.Product;
 import no.ntnu.websitebackendspringboot.services.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
@@ -50,6 +51,7 @@ public class ProductController {
      * @return HTTP OK on success and product ID in the body, BAD REQUEST on error
      */
     @PostMapping("/products")
+    @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
     public ResponseEntity<String> add(@RequestBody Product product) {
         ResponseEntity<String> response;
         String errorMessage = productService.add(product);
@@ -69,6 +71,7 @@ public class ProductController {
      * @return HTTP OK on success, BAD REQUEST on error
      */
     @PutMapping("/products/{id}")
+    @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
     public ResponseEntity<String> update(@RequestBody Product product, @PathVariable Integer id) {
         ResponseEntity<String> response;
         String errorMessage = productService.update(id, product);
@@ -87,6 +90,7 @@ public class ProductController {
      * @return HTTP OK on success, BAD REQUEST on error
      */
     @DeleteMapping("/products/{id}")
+    @PreAuthorize("hasAnyRole('MANAGER', 'ADMIN')")
     public ResponseEntity<String> delete(@PathVariable Integer id) {
         ResponseEntity<String> response;
         String errorMessage = productService.delete(id);
