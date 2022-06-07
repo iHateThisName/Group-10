@@ -27,7 +27,7 @@ public class ProductController {
     }
 
     /**
-     * Get all products stored in the database
+     * Get all products stored in the database. Called on HTTP GET.
      *
      * @return List of all products
      */
