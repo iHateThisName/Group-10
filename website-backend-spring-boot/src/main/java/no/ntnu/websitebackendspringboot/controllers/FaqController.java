@@ -12,3 +12,13 @@ public class FaqController {
         return "Faq";
     }
 }
+
+
+
+
+
+
+
+
+
+
