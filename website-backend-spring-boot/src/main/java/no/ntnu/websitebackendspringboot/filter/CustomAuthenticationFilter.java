@@ -67,9 +67,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       log.info("Username is: {}", username);
       log.info("Password is: {}", password);
 
-      if (username == null) {
-        return null;
-      } else {
 
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(
@@ -79,8 +76,9 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
           return authenticationManager.authenticate(authenticationToken);
         } catch (AuthenticationException authenticationException) {
           log.info(authenticationException.getMessage());
+
         }
-      }
+
     }
 
     log.warn("Return null in attemptAuthentication");
@@ -127,15 +125,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     Cookie cookie = new Cookie("access_Token", accessToken);
     response.addCookie(cookie);
 
-//    response.sendRedirect("/home");
-
-
-
-
-
     //Cookie
     Cookie cookieJwt = new Cookie("access_Token", accessToken);
-    Cookie cookieRefreshJwt = new Cookie("refresh_Token", accessToken);
 
     cookieJwt.setMaxAge(60*30);
 
@@ -144,11 +135,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     response.addCookie(cookieJwt);
 
     response.sendRedirect("/home");
-
-
-
-    //this will just give the ResponseEntity as a json to the user when successfully to login
-//    new ObjectMapper().writeValue(response.getOutputStream(), ResponseEntity.ok().headers(headers).body("👍"));
 
   }
 

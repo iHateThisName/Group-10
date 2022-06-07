@@ -75,7 +75,6 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 
       //We only retrieve the date from the header with the type authorization
       //so if this is null then there was non information in the request's authorization header
-//      String authorizationToken = request.getHeader(AUTHORIZATION);
 
       //Right now we are using cookie
       String authorizationToken = readAccessCookie(request);

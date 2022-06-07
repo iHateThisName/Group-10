@@ -51,6 +51,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
+    //Want to have the CustomAuthenticationFilter to override the default login url path
+    CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
+            authenticationManagerBean(), jwtService);
+//    customAuthenticationFilter.setFilterProcessesUrl("/login");
+
     //Disable cross site request forgery to allow JWT authentication
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -66,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests().anyRequest().authenticated();
 
     //Adding a filter.
-    http.addFilter(new CustomAuthenticationFilter(authenticationManagerBean(), jwtService));
+    http.addFilter(customAuthenticationFilter);
 
     //Want to authorize (Authorization) before we authenticate (Authentication)
     http.addFilterBefore(new CustomAuthorizationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);

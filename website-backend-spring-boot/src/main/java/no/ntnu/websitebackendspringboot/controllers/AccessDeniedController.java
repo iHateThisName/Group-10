@@ -12,7 +12,6 @@ public class AccessDeniedController {
     @GetMapping("/access-denied")
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
     public String getAccessDenied() {
-
         return "AccessDenied";}
 }
 

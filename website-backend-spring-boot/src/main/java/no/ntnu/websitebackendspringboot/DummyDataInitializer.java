@@ -10,7 +10,6 @@ import no.ntnu.websitebackendspringboot.entity.Image;
 import no.ntnu.websitebackendspringboot.entity.Product;
 import no.ntnu.websitebackendspringboot.entity.Role;
 import no.ntnu.websitebackendspringboot.entity.User;
-import no.ntnu.websitebackendspringboot.repositories.ImageRepository;
 import no.ntnu.websitebackendspringboot.repositories.ProductRepository;
 import no.ntnu.websitebackendspringboot.repositories.RoleRepository;
 import no.ntnu.websitebackendspringboot.repositories.UserRepository;
@@ -39,15 +38,13 @@ public class DummyDataInitializer implements ApplicationListener<ApplicationRead
   private final UserRepository userRepository;
   private final RoleRepository roleRepository;
   private final ProductRepository productRepository;
-  private final ImageRepository imageRepository;
 
   public DummyDataInitializer(UserRepository userRepository,
-                              RoleRepository roleRepository, ProductRepository productRepository, ImageRepository imageRepository) {
+                              RoleRepository roleRepository, ProductRepository productRepository) {
 
     this.userRepository = userRepository;
     this.roleRepository = roleRepository;
     this.productRepository = productRepository;
-    this.imageRepository = imageRepository;
   }
 
 

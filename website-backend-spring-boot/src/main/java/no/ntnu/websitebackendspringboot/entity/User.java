@@ -34,7 +34,6 @@ public class User {
   private String username;
   @Column(length = 60, name = "Password")
   private String password;
-  private boolean active = true;
 
   //Eager makes it load all the roles whenever it loads the user
   //so when it loads the user it will also load all the roles in the db
@@ -100,14 +99,6 @@ public class User {
 
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
-  }
-
-  public boolean isActive() {
-    return active;
-  }
-
-  public void setActive(boolean active) {
-    this.active = active;
   }
 
   /**
