@@ -44,12 +44,13 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
 
   private String readAccessCookie(HttpServletRequest request) {
 
+    if (request.getCookies() != null) {
+      Cookie[] cookies = request.getCookies();
 
-    Cookie[] cookies = request.getCookies();
-
-    for (Cookie cookie : cookies) {
-      if (cookie.getName().equalsIgnoreCase("access_Token")) {
-        return "Bearer " + cookie.getValue();
+      for (Cookie cookie : cookies) {
+        if (cookie.getName().equalsIgnoreCase("access_Token")) {
+          return "Bearer " + cookie.getValue();
+        }
       }
     }
     return null;
