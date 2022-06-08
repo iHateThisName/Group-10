@@ -4,12 +4,16 @@ let imageUrl = new URL(currentUrl.replace("store", "api/images/"))
 
 let products = null;
 
+/**
+ * We want to wait for the window to first load
+ */
 window.onload = function () {
     getProducts()
 }
 
-
-
+/**
+ *
+ */
 function getProducts() {
     let httpRequest = new XMLHttpRequest();
     httpRequest.open("GET", productUrl)
