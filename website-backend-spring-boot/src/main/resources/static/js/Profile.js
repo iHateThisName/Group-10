@@ -1,7 +1,9 @@
+const currentUrl = window.location.href;
+const whoAmIUrl = new URL(currentUrl.replace("profile", "api/user/whoami"))
 
 async function fetchUser(){
     try {
-        const response = await fetch('http://localhost:8080/api/user/whoami');
+        const response = await fetch(whoAmIUrl.toString());
 
         if (!response.ok) {
             throw new Error(`failed to fetch users: ${response.status}`)
