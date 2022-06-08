@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "88579137-75b9-4f38-aa54-de2ca60d01d0",
+		"name": "Admin Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21322693"
+	},
+	"item": [
+		{
+			"name": "Login as Jim (ROLE = ADMIN)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"access_Token is present\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"access_Token\")).to.be.true;\r",
+							"});\r",
+							"\r",
+							"const access_Token = postman.getResponseCookie(\"access_Token\").value;\r",
+							"pm.environment.set(\"Admin_Token\", access_Token);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "jim",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/login",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "User tries to log in with valid credentials, role=ADMIN, gets a JWT token"
+			},
+			"response": []
+		},
+		{
+			"name": "Access test - Access to /api/admin as Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Admin_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "gr10.appdev.cloudns.ph/api/admin",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"admin"
+					]
+				},
+				"description": "User tries to use the token access admin site."
+			},
+			"response": []
+		},
+		{
+			"name": "User controller - Add user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 ok\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\":\"Steffen\", \r\n    \"username\":\"Steff\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/user/save",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"user",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access test - User / who am i",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/user/whoami",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"user",
+						"whoami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role Controller test - Save Role (Add role to server)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 ok\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Steffen Made THIS\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/role/save",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"role",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role Controller test - Add role to user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 3,\r\n\"name\": \"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/role/addRoleToUser",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"role",
+						"addRoleToUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

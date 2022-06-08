@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "f2e9989d-33ac-4b9b-a8ae-5bf0db1abaa7",
+		"name": "Manager Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21322693"
+	},
+	"item": [
+		{
+			"name": "Login as Will",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"access_Token is present\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"access_Token\")).to.be.true;\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "will",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/login",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "User tries to log in with valid credentials, role=MANAGER, gets a JWT token"
+			},
+			"response": []
+		},
+		{
+			"name": "Access test - Get users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body have information about John Travolta\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"John Travolta\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{User_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "gr10.appdev.cloudns.ph/api/users",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "User tries to use the token to access the user site"
+			},
+			"response": []
+		},
+		{
+			"name": "Acces site test - Management Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Username",
+						"value": "{{Admin_Token}}",
+						"type": "text"
+					},
+					{
+						"key": "Password",
+						"value": "{{userPasswords}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/management",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"management"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controller test - post products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"steffen tester dette\",\r\n    \"description\": \"postmanDescription\",\r\n    \"price\": \"123\",\r\n    \"categories\": [\"All\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controlller test - put products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"daniel er kul\",\r\n    \"description\": \"manager har endret denne\",\r\n    \"price\": \"123\",\r\n    \"categories\": [\"All\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products/11",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controlller test - Delete products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products/5",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role controller test - get roles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/roles",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access test - Denied to /api/admin as Manager / User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 ok\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Admin_Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "gr10.appdev.cloudns.ph/api/admin",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"admin"
+					]
+				},
+				"description": "User tries to use the token access admin site."
+			},
+			"response": []
+		},
+		{
+			"name": "User controller - add user Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 ok\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\":\"can't\", \r\n    \"username\":\"add me\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/user/save",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"user",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role Controller test - Save Role/ (Add role) Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 ok\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"YOU MUST BE ADMIN TO ADD A ROLE!!!\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/role/save",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"role",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role Controller test - Add role to user Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 ok\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/role/addRoleToUser",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"role",
+						"addRoleToUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

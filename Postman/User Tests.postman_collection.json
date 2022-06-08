@@ -1,0 +1,911 @@
+{
+	"info": {
+		"_postman_id": "7cc09a54-c5e6-48f4-9998-0c2dde83e4f6",
+		"name": "User Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21322693"
+	},
+	"item": [
+		{
+			"name": "Access site test - Register Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/register",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Login Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/login",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access denied test - Denied access to /api/users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 Forbidden\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "gr10.appdev.cloudns.ph/api/users",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Use tries to access a site without authorization"
+			},
+			"response": []
+		},
+		{
+			"name": "Login using incorrect credencials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 Forbidden\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "john",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "passwordThatIsWrong",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/login",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "User tries to log in with invalid credentials"
+			},
+			"response": []
+		},
+		{
+			"name": "Login as John (ROLE = USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"access_Token is present\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"access_Token\")).to.be.true;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"const access_Token = postman.getResponseCookie(\"access_Token\").value;\r",
+							"pm.environment.set(\"User_Token\", access_Token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "john",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/login",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "User tries to log in with valid credentials, role=USER, gets a JWT token"
+			},
+			"response": []
+		},
+		{
+			"name": "Access denied test - Invalid JWT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 Forbidden\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body contains a errorMessage\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"errorMessage\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbCciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9iYWNrZW5kL2xvZ2luIiwiZXhwIjoxNjUwNjcyMDAwLCJpYXQiOjE2NTAwNjcyMDB9.TEnTzrcL_xoTwwI1YyxKnbEAOzTNiBC3tBqprl0SN2M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "gr10.appdev.cloudns.ph/api/users",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "User tries to use invalid JWT token to access a section."
+			},
+			"response": []
+		},
+		{
+			"name": "Access denied test - Denied access to api/roles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403 Forbidden\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{User_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/roles",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"roles"
+					]
+				},
+				"description": "User tries to use the token access admin site."
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - about us",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/about",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"about"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Access Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/access-denied",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"access-denied"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - FAQ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/faq",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"faq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Footer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/footer",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"footer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acces site test - Gallery",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/gallery",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"gallery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acces site test - Header",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/header",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"header"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Home Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/home",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Home Page 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/profile",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Order History",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/order-history",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"order-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access site test - Store Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/store",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controller test - Post Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Error man\",\r\n    \"description\": \"This wont be submited\",\r\n    \"price\": \"123\",\r\n    \"categories\": [\"All\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controller test - Put Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"vegard\",\r\n    \"description\": \"klarer ikke å forandre på produkt  info\",\r\n    \"price\": \"123\",\r\n    \"categories\": [\"All\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products/9",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controller test - Delete Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products/9",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product controller test - Get  Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/products",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role controller test - get roles Denied",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gr10.appdev.cloudns.ph/api/roles",
+					"protocol": "https",
+					"host": [
+						"gr10",
+						"appdev",
+						"cloudns",
+						"ph"
+					],
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
