@@ -7,12 +7,17 @@ let previewImageElement = null;
 let chosenImage = null;
 
 
-
+/**
+ * We wait for the window to load before we load the products.
+ */
 window.onload = function () {
 
     loadProducts();
 }
 
+/**
+ * We load the products
+ */
 function loadProducts() {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", productUrl)
@@ -66,6 +71,9 @@ function loadProducts() {
     };
 }
 
+/**
+ * We want the possibility to add a product through clicking the plus icon in the management page.
+ */
 function addClick() {
     console.log("Add button was pressed")
 
@@ -92,6 +100,10 @@ function addClick() {
 
 }
 
+/**
+ * A preview of the product image that we wanna add to the product.
+ * @param event
+ */
 //Letting the user view a preview
 function inputImage(event) {
 

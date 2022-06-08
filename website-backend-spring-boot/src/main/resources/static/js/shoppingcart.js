@@ -1,18 +1,27 @@
 let imageApi = currentUrl.replace("store", "api/images/")
 
 var cart = {
-    // properties
+    /**
+     * Properties of the cart.
+     */
     hPdt : null, // html products list
     hItems : null,    // html current cart
     items : {},       // current items in cart
     iURL : imageApi, // product image url folder
 
+
+    /**
+     * We want to save the cart to the localstorage so that the products can be stored through browser sessions.
+     */
     // localstorage cart
     // save current cart into storage
     save : () => {
         localStorage.setItem("cart", JSON.stringify(cart.items));
     },
 
+    /**
+     * We want to load the cart from the localstorage so that the cart items can be accessed through browser sessions.
+     */
     // load cart from localstorage
     load : () => {
         cart.items = localStorage.getItem("cart");
@@ -20,6 +29,11 @@ var cart = {
         else { cart.items = JSON.parse(cart.items); }
     },
 
+
+    /**
+     * Empties the entire cart when user clicks the empty button.
+     * This is so if the user has a lot of products, instead of removing each product, he can remove them all.
+     */
     // empty entire cart
     nuke : () => {
         if (confirm("Empty cart?")) {
@@ -29,6 +43,9 @@ var cart = {
     }},
 
 
+    /**
+     * Initializes the product items so they are displayed in the product elements in the store.
+     */
     // initialize
     init : () => {
         // get html elements
@@ -59,6 +76,9 @@ var cart = {
     },
 
 
+    /**
+     * We list the cart items.
+     */
     // list current cart items in html
     list : () => {
         // reset
@@ -111,6 +131,10 @@ var cart = {
         }
     },
 
+    /**
+     * Made a function so that user is able to add a product into the cart that he might want to order.
+     * @param id
+     */
     // add item into cart
     add : (id) => {
         if (cart.items[id] == undefined) {
@@ -124,6 +148,11 @@ var cart = {
     },
 
 
+    /**
+     * Gives the user the possibility of changing quantities of the products in the shopping cart.
+     * @param pid
+     * @param qty
+     */
     // change quantity
     change : (pid, qty) => {
         // remove item
@@ -144,6 +173,10 @@ var cart = {
         }
     },
 
+    /**
+     * Gives user a function to be able to remove single products from the cart.
+     * @param id
+     */
     // remove item from cart
     remove : (id) => {
         delete cart.items[id];
@@ -151,6 +184,9 @@ var cart = {
         cart.list();
     },
 
+    /**
+     * When user clicks checkout, he will get an alert that his order has been placed, then the cart will go away.
+     */
     // checkout
     checkout : () => {
         alert("Order has been placed.");
@@ -160,4 +196,8 @@ var cart = {
     }
 
 };
+
+/**
+ * Adds an event listener that waits for the DOM to load before the cart initializes.
+ */
 window.addEventListener("DOMContentLoaded", cart.init);

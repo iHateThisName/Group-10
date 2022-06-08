@@ -1,5 +1,6 @@
-
-
+/**
+ * A function that removes the cookie of the user when he logs out. Returns him to the home page.
+ */
 function onLogout(){
     let cookies = document.cookie.split(";");
 

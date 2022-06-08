@@ -1,6 +1,10 @@
 const currentUrl = window.location.href;
 const whoAmIUrl = new URL(currentUrl.replace("profile", "api/user/whoami"))
 
+/**
+ * Fetches the user from the whoami endpoint depending on which user is logged in.
+ * @returns {Promise<any>}
+ */
 async function fetchUser(){
     try {
         const response = await fetch(whoAmIUrl.toString());
@@ -14,6 +18,10 @@ async function fetchUser(){
         console.log(e)
     }
 }
+
+/**
+ * Adds the user details to the profile page.
+ */
 
 function showUserDetails(){
 
@@ -46,7 +54,9 @@ function showUserDetails(){
 
 
 }
-
+/**
+ * We wait for the window to load before it shows the user details.
+ */
 window.onload = function () {
 
     showUserDetails();
