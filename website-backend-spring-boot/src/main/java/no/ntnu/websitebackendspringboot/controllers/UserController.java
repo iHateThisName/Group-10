@@ -17,12 +17,11 @@ import java.util.List;
 @RequestMapping(path = "/api")
 public class UserController {
 
-  private UserService userService;
+  private final UserService userService;
 
   public UserController(UserService userService) {
     this.userService = userService;
   }
-//Todo /user and /role should be there own classes
 
   @GetMapping("/users")
   @PreAuthorize("hasAnyRole('USER', 'MANAGER', 'ADMIN')")

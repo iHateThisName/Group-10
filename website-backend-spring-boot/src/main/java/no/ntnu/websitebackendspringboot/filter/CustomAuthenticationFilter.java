@@ -1,34 +1,28 @@
 package no.ntnu.websitebackendspringboot.filter;
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.Arrays;
 import no.ntnu.websitebackendspringboot.services.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.web.DefaultRedirectStrategy;
-import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
+ *
+ * This class handles the log in authentication on the website.
  */
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -51,6 +45,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
    * user try to authenticate
    * This methode is going to be called because we are going to try to attempt to authenticate.
    * if the authentication is not successful, spring is just going to spit out an error to the user
+   * if the authentication is not successful, because of "the user was not found" we will call unsuccessfulAuthentication
    * But if the authentication is successful, then it's going to call the successfulAuthentication methode.
    *
    * @throws AuthenticationException throws an error when the authentication was not successful.
@@ -64,10 +59,25 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
       String username = request.getParameter("username");
       String password = request.getParameter("password");
       log.info("Username is: {}", username);
-      log.info("Password is: {}", password);
 
-      UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-      return authenticationManager.authenticate(authenticationToken);
+      if (username != null) {
+
+        try {
+
+          UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+          return authenticationManager.authenticate(authenticationToken);
+
+        } catch (InternalAuthenticationServiceException exception) {
+          //user tried to log in with wrong authentication
+          log.warn("A user tried to log in with the wrong authentication");
+          try {
+            unsuccessfulAuthentication(request, response, exception);
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+      }
+      return null;
     }
 
 
@@ -118,6 +128,13 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     log.info("failed authentication while attempting to access "
             + request.getServletPath());
+
+    if (!request.getMethod().equals("Get")) {
+      log.info("User get sent UNAUTHORIZED message");
+      response.setStatus(HttpStatus.UNAUTHORIZED.value());
+      response.getWriter().write("User dose not exist");
+
+    }
 
   }
 }
