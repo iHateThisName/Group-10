@@ -65,6 +65,9 @@ h3{
 #RightSide {
     width: 50%;
     gap: 2rem;
+    border: 0.1rem solid black;
+    padding: 1rem;
+
 }
 
 #RightSide h3 {
