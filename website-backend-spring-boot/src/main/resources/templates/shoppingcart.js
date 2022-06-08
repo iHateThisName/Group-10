@@ -1,7 +1,3 @@
-/*const currentURL = window.location.href;
-const productURL = new URL(currentURL.replace("store", "api/products"))
-productURL.toJSON()*/
-
 var cart = {
     // properties
     hPdt : null, // html products list
@@ -41,8 +37,8 @@ var cart = {
         cart.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content,
             p, item, part;
-        for (let id in products) {
-            p = products[id];
+        for (let id in storeproducts) {
+            p = storeproducts[id];
             item = template.cloneNode(true);
             item.querySelector(".p-img").src = cart.iURL + p.img;
             item.querySelector(".p-name").textContent = p.name;
@@ -85,7 +81,7 @@ var cart = {
                 p, total = 0, subtotal = 0;
             for (let id in cart.items) {
                 // product item
-                p = products[id];
+                p = storeproducts[id];
                 item = template.cloneNode(true);
                 item.querySelector(".c-del").onclick = () => { cart.remove(id); };
                 item.querySelector(".c-name").textContent = p.name + " " + p.desc;

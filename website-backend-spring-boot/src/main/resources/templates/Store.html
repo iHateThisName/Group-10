@@ -15,6 +15,8 @@
 
 <!--    <script src="shoppingcart.js"></script>-->
     <script type="application/javascript" th:src="@{/js/Store.js}" src="/static/js/Store.js"></script>
+    <script src="shoppingcart.js"></script>
+    <script src="products.js"></script>
 
 
     <script type="application/javascript" src="/static/js/LoadHeaderAndFooter.js" th:src="@{/js/LoadHeaderAndFooter.js}"></script>
@@ -28,12 +30,8 @@
     </div>
 
     <div id="header_right">
-        <h3>All</h3>
-        <h4>For men</h4>
-        <h4>For women</h4>
-        <h4>For dogs</h4>
         <a class="Link_Header" href="Login.html" th:href="@{/login}">
-            <button id="login" type="button">Log in</button>
+            <button class="Login_and_Register" id="login" type="button">Log in</button>
         </a>
         <button id="shoppingcart" type="button">
             <i class="fas fa-shopping-cart"></i>
@@ -71,11 +69,24 @@
     </div>
 
     <!-- templates -->
+
+
+<template id="template-product">
+    <div class="p-item">
+        <img class="p-img"/>
+        <div class="p-name"></div>
+        <div class="p-desc"></div>
+        <div class="p-price"></div>
+        <button class="cart p-add">Add To Cart</button>
+    </div>
+</template>
+
+
     <!-- product cell -->
 <h2 class="h2all">All</h2>
 
 
-    <div id="template-product">
+    <div id="template-product2">
         <div class="p-item">
             <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
             <div class="p-name">Lorem ipsum dolor sit.</div>
@@ -87,7 +98,7 @@
 
 <h2 class="h2men">For men</h2>
 
-    <div id="template-product2">
+    <div id="template-product3">
         <div class="p-men">
             <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
             <div class="p-name">Lorem ipsum dolor sit.</div>
@@ -99,7 +110,7 @@
 
 <h2 class="h2women">For women</h2>
 
-    <div id="template-product3">
+    <div id="template-product4">
         <div class="p-women">
             <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>
             <div class="p-name">Lorem ipsum dolor sit.</div>
@@ -110,7 +121,7 @@
     </div>
 
 <h2 class="h2dogs">For dogs</h2>
-    <div id="template-product4">
+    <div id="template-product5">
 
         <div class="p-dogs">
             <img class="p-img" alt="product" src="https://picsum.photos/400/300"/>

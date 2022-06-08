@@ -33,10 +33,10 @@ function nextStep() {
     const forMen = "Men";
     const forWomen = "Women";
 
-    const templateAll = "#template-product"
+    const templateAll = "#template-product2"
     addProducts(cloneAll, forAll, templateAll)
-    addProducts(".p-men", "Men", "#template-product2")
-    addProducts(".p-women", "Women", "#template-product3")
+    addProducts(".p-men", "Men", "#template-product3")
+    addProducts(".p-women", "Women", "#template-product4")
 }
 
 function addProducts(CloneName, nameOfCategory, templateName) {
