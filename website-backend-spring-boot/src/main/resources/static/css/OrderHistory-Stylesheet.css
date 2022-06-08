@@ -52,6 +52,7 @@ h3{
 #container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 10%;
     margin: 5% 5%;
 }
@@ -59,6 +60,31 @@ h3{
 #leftSide{
     display: flex;
     flex-direction: column;
+}
+
+#RightSide {
+    width: 50%;
+    gap: 2rem;
+}
+
+#RightSide h3 {
+    font-size: 3rem;
+    padding-top: 2rem;
+}
+
+#RightSide ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+#RightSide li{
+    font-size: 2rem;
+}
+
+#RightSide li:nth-child(6){
+    font-size: 2.5rem;
+
 }
 
 #LogoutButton{
