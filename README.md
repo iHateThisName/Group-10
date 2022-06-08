@@ -65,18 +65,23 @@ some of the products are delivered to the page through the back end of out progr
 this is quite important because we cant add users to the site via register. but we have created users of each role that you can use to
 navigate our site. here they are
 
-## Arnold - Super user (Has all roles)
-### username: arnold
-### password: 1234
+-------------------------------------------------
+### Arnold - Super user (Has all roles)
+#### username: arnold
+#### password: 1234
+-------------------------------------------------
 
-## Jim - Admin
-### username: jim
-### password: 1234
+### Jim - Admin
+#### username: jim
+#### password: 1234
+-------------------------------------------------
 
-## Will - Manager
-### username: will
-### password: 1234
+### Will - Manager
+#### username: will
+#### password: 1234
+-------------------------------------------------
 
-## John - User
-### username: john
-### password: 1234
+### John - User
+#### username: john
+#### password: 1234
+-------------------------------------------------
