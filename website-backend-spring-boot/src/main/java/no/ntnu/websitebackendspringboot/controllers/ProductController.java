@@ -2,20 +2,19 @@ package no.ntnu.websitebackendspringboot.controllers;
 
 import no.ntnu.websitebackendspringboot.entity.Product;
 import no.ntnu.websitebackendspringboot.services.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 /**
  * A REST API for products
  */
-@Controller
+@RestController
 @RequestMapping(path = "/api")
 public class ProductController {
 
@@ -33,12 +32,6 @@ public class ProductController {
      */
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAll() {
-        try {
-            Thread.sleep(2000); // Imitate long loading of data...
-        } catch (InterruptedException e) {
-
-            log.error("Product-loading thread interrupted!");
-        }
 
         productService.getAll().forEach(product -> log.info("image id " + product.toString()));
         return ResponseEntity.ok().body(productService.getAll());

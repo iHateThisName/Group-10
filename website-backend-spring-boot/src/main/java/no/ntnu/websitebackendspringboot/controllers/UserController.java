@@ -1,14 +1,13 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
-import java.net.URI;
-import java.util.List;
-import no.ntnu.websitebackendspringboot.entity.Role;
 import no.ntnu.websitebackendspringboot.entity.User;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import java.net.URI;
+import java.util.List;
 
 /**
  * @author "https://github.com/iHateThisName/Group-10"

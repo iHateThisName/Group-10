@@ -4,13 +4,8 @@ import no.ntnu.websitebackendspringboot.entity.Role;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 
@@ -18,7 +13,7 @@ import java.util.List;
  * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
  */
-@Controller
+@RestController
 @RequestMapping(path = "/api")
 public class RoleController {
 
