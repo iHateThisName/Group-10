@@ -30,8 +30,12 @@ function loadProducts() {
                 let clonedCard = card.cloneNode(true);
 
                 //Image
-                let image = clonedCard.querySelector(".productCardImage");
-                image.src = imageUrl + products[i].images[0].imageId;
+                    let image = clonedCard.querySelector(".productCardImage");
+                if (products[i].images.length > 0) {
+                    image.src = imageUrl + products[i].images[0].imageId;
+                } else {
+                    image.src = "";
+                }
 
                 //Title
                 let title = clonedCard.querySelector(".productCardName");
@@ -51,6 +55,7 @@ function loadProducts() {
                     //so there is no unused element.
                     card.replaceWith(clonedCard);
                 }
+
                 //Adds the cloned element
                 let addButton = document.getElementById("addProductCard");
                 //we want to add the cloned element after the add button
@@ -186,21 +191,64 @@ function setUpEventForProductCardEditable(newAddCard) {
                 http.setRequestHeader("Accept", "application/json");
                 http.setRequestHeader("Content-Type", "application/json");
 
-                let data = {
+                let productData = null;
 
-                    name: nameInput.value,
-                    description: desInput.value,
-                    price: priceInput.value,
-                    categories: ["All"],
-                    images: [{
-                        extension: chosenImage.name.split(".").pop(),
-                        contentType: ("image/" + chosenImage.name.split(".").pop())
-                    }]
+                if (chosenImage != null) {
+                    const imageExtension = chosenImage.name.split(".").pop();
+                    const imageType = "image/" + imageExtension;
+
+                    console.log(imageExtension);
+
+                    productData = {
+
+                        name: nameInput.value,
+                        description: desInput.value,
+                        price: priceInput.value,
+                        categories: ["All"],
+                        images: [{
+                            extension: imageExtension.toString(),
+                            contentType: imageType.toString()
+                        }]
+                    }
+                } else {
+
+                    productData = {
+
+                        name: nameInput.value,
+                        description: desInput.value,
+                        price: priceInput.value,
+                        categories: ["All"],
+                    }
                 }
-                http.send(JSON.stringify(data));
+                http.send(JSON.stringify(productData));
+                removeAddElementAndShowAddButton(newAddCard);
             }
         }
     }
+}
+
+function removeAddElementAndShowAddButton(cardToDelete) {
+
+    //removing the add card
+    cardToDelete.remove();
+    //displaying the + button
+    document.getElementById("addProductCard").style.display = "block"
+
+    //Get a collection of the product cards
+    let productCards = document.querySelectorAll(".productCard");
+
+    let keepFirstElement = true;
+    //deleting every productCard, but not the first one
+    productCards.forEach(value => {
+
+        if (!keepFirstElement) {
+            value.remove()
+        } else {
+            keepFirstElement = false;
+        }
+    })
+
+    loadProducts();
 }
 
 
