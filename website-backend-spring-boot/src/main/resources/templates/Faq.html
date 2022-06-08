@@ -40,10 +40,13 @@
 
 <div class="faq_hero_section">
     <picture>
-        <source srcset="/static/images/faq/Stage_1.jpeg" media="(min-width: 2150px)">
-        <source srcset="/static/images/faq/Stage_2.jpeg" media="(min-width: 900px)">
-        <source srcset="/static/images/faq/Stage_3.jpeg" media="(min-width: 400px)">
-        <img src = "https://i.imgur.com/0rnLiLf.jpeg"  alt="FAQ picture">
+        <source media="(min-width: 2150px)" srcset="/static/images/faq/Stage_1.jpeg"
+                th:attr="srcset=@{/images/faq/Stage_1.jpeg}">
+        <source srcset="/static/images/faq/Stage_2.jpeg" media="(min-width: 900px)"
+                th:attr="srcset=@{/images/faq/Stage_2.jpeg}">
+        <source srcset="/static/images/faq/Stage_3.jpeg" media="(min-width: 400px)"
+                th:attr="srcset=@{/images/faq/Stage_3.jpeg}">
+        <img src = "https://i.imgur.com/0rnLiLf.jpeg"  alt="FAQ picture" th:src="@{https://i.imgur.com/0rnLiLf.jpeg}">
     </picture>
     <div class="TextOnImage">
         <h1>FREQUENTLY ASKED QUESTIONS</h1>
