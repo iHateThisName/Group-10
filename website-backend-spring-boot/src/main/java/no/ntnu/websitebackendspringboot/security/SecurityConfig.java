@@ -6,6 +6,7 @@ import no.ntnu.websitebackendspringboot.services.JwtService;
 import no.ntnu.websitebackendspringboot.services.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -19,6 +20,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 /**
  * @author "https://github.com/iHateThisName/Group-10"
  * @version 1.0
+ *
+ * This class is where we will configure the http security of the website.
  */
 @Configuration
 @EnableWebSecurity //tells that this is a class for configuring web security
@@ -42,42 +45,39 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    * Here we tell that we want to load users from a database
    *
    * @param auth Authentication builder
-   * @throws Exception
    */
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.userDetailsService(userDetailsService);
   }
 
+  /**
+   * Here we are able to configure the http security of the website.
+   *
+   * @param http an object the represents the security of the website.
+   */
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
-    //Want to have the CustomAuthenticationFilter to override the default login url path
-    CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
-            authenticationManagerBean(), jwtService);
-//    customAuthenticationFilter.setFilterProcessesUrl("/login");
-
-    //Disable cross site request forgery to allow JWT authentication
+    //Disable cross site request forgery since we are using JWT authentication
     http.csrf().disable();
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-
+    //Certain path should be public
     http.authorizeRequests()
             .antMatchers("/", "/home", "/login", "/store", "/about", "/faq" , "/gallery", "/register").permitAll()
-            .antMatchers("/css/**", "/images/**", "/js/**", "/api/footer", "/api/header").permitAll();
-
-
-    //, "/css/**", "/images/**", "/js/**", "/api/**"
+            .antMatchers("/css/**", "/images/**", "/js/**", "/api/footer", "/api/header" ).permitAll()
+            //If it is a get request to the api we will let everyone view the item(view product in store)
+            .antMatchers(HttpMethod.GET, "/api/products", "api/images").permitAll();
 
     //We want everyone authenticated
     http.authorizeRequests().anyRequest().authenticated();
 
     //Adding a filter.
-    http.addFilter(customAuthenticationFilter);
+    http.addFilter(new CustomAuthenticationFilter(authenticationManagerBean(), jwtService));
 
     //Want to authorize (Authorization) before we authenticate (Authentication)
     http.addFilterBefore(new CustomAuthorizationFilter(jwtService, userService), UsernamePasswordAuthenticationFilter.class);
-
 
   }
 

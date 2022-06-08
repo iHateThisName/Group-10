@@ -1,12 +1,9 @@
 package no.ntnu.websitebackendspringboot.controllers;
 
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -22,12 +19,12 @@ public class HomeController {
    *
    * @return
    */
-  @RequestMapping(value = "/")
+  @GetMapping(value = "/")
   public ModelAndView redirectToHomePage() {
     return new ModelAndView("redirect:" + "/home");
   }
 
-  @RequestMapping(value = "/home")
+  @GetMapping(value = "/home")
   public String getHome() {
     return "Home";
   }
