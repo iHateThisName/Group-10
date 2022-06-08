@@ -56,7 +56,11 @@ function addProducts(CloneName, nameOfCategory, templateName) {
 
                 //Image
                 let image = clonedItemCard.querySelector(".p-img");
-                image.src = (imageUrl + products[i].images[0].imageId);
+                if (products[i].images.length > 0) {
+                    image.src = (imageUrl + products[i].images[0].imageId);
+                } else {
+                    image.src = "";
+                }
 
                 //Name
                 let name = clonedItemCard.querySelector(".p-name");
