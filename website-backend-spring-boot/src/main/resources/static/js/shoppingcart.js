@@ -1,9 +1,11 @@
+let imageApi = currentUrl.replace("store", "api/images/")
+
 var cart = {
     // properties
     hPdt : null, // html products list
     hItems : null,    // html current cart
     items : {},       // current items in cart
-    iURL : "/website-backend-spring-boot/src/main/resources/static/images/products/", // product image url folder
+    iURL : imageApi, // product image url folder
 
     // localstorage cart
     // save current cart into storage
@@ -36,15 +38,15 @@ var cart = {
         // draw products list
         cart.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content,
-            p, item, part;
+            i, item, part;
         for (let id in storeproducts) {
-            p = storeproducts[id];
+            i = storeproducts[id];
             item = template.cloneNode(true);
-            item.querySelector(".p-img").src = cart.iURL + p.img;
-            item.querySelector(".p-name").textContent = p.name;
-            item.querySelector(".p-desc").textContent = p.desc;
-            item.querySelector(".p-price").textContent = p.price + ",-";
-            item.querySelector(".p-add").onclick = () => { cart.add(id); };
+            item.querySelector(".i-img").src = cart.iURL + i.img;
+            item.querySelector(".i-name").textContent = i.name;
+            item.querySelector(".i-desc").textContent = i.desc;
+            item.querySelector(".i-price").textContent = i.price + ",-";
+            item.querySelector(".i-add").onclick = () => { cart.add(id); };
             cart.hPdt.appendChild(item);
         }
 
@@ -78,13 +80,13 @@ var cart = {
         // cart is not empty - list items
         else {
             let template = document.getElementById("template-cart").content,
-                p, total = 0, subtotal = 0;
+                i, total = 0, subtotal = 0;
             for (let id in cart.items) {
                 // product item
-                p = storeproducts[id];
+                i = storeproducts[id];
                 item = template.cloneNode(true);
                 item.querySelector(".c-del").onclick = () => { cart.remove(id); };
-                item.querySelector(".c-name").textContent = p.name + " " + p.desc;
+                item.querySelector(".c-name").textContent = i.name + " " + i.desc;
                 item.querySelector(".c-qty").value = cart.items[id];
                 item.querySelector(".c-qty").onchange = function () {
                     cart.change(id, this.value);
@@ -92,7 +94,7 @@ var cart = {
                 cart.hItems.appendChild(item);
 
                 // subtotal
-                subtotal = cart.items[id] * p.price;
+                subtotal = cart.items[id] * i.price;
                 total += subtotal;
             }
 
