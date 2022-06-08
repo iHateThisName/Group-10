@@ -21,7 +21,7 @@ What needs to be configured:
 
 # Functions on the site
 
-the site is sadly not fully complete with back end support. but it still has a few functions to show of.
+the site is complete with back-end support, but the front-end dose not implement everything.
 
 
 ### Navigation
