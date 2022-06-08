@@ -35,7 +35,7 @@ function loadProducts() {
                 let clonedCard = card.cloneNode(true);
 
                 //Image
-                    let image = clonedCard.querySelector(".productCardImage");
+                let image = clonedCard.querySelector(".productCardImage");
                 if (products[i].images.length > 0) {
                     image.src = imageUrl + products[i].images[0].imageId;
                 } else {
@@ -53,6 +53,10 @@ function loadProducts() {
                 //Description
                 let description = clonedCard.querySelector(".productCardDescription");
                 description.innerHTML = products[i].description;
+
+                //Delete button
+                let delButton = clonedCard.querySelector(".actionButtonDelete");
+                delButton.title = ("Delete " + products[i].name + " with the id " + products[i].id).toString()
 
                 //Checks if is the first loop
                 if (i === 0) {
@@ -72,22 +76,28 @@ function loadProducts() {
 }
 
 /**
- * We want the possibility to add a product through clicking the plus icon in the management page.
+ * OnClick event listener for the plus button.
+ * It will create the new card called the addProductCard.
+ * On this card the user can provide information on a new product.
+ * When it is finished it will call the method setUpEventForProductCardEditable.
  */
 function addClick() {
     console.log("Add button was pressed")
 
+    //Retrieve the template that is hidden.
     let addCard = document.querySelector(".productAddCard");
 
     //We make a clone of the .productAddCard element
     let clonedAddCard = addCard.cloneNode(true);
+    //We change the display style so it is visible
     clonedAddCard.style.display = "inherit";
-
+    //We change the id, so it should be easier to retrieve later
     clonedAddCard.id = "displayedAddProduct"
-
+    //We add the "AddCard" before the plus button
     document.querySelector("#root")
         .insertBefore(clonedAddCard, (document.getElementById("addProductCard")));
 
+    //Hiding the plus button
     document.getElementById("addProductCard").style.display = "none"
 
     let newAddCard = document.getElementById("displayedAddProduct");
@@ -101,7 +111,8 @@ function addClick() {
 }
 
 /**
- * A preview of the product image that we wanna add to the product.
+ * OnClick event listener for the "Choose image" button.
+ * The method will provide a preview of the image the user selects on the add product card.
  * @param event
  */
 //Letting the user view a preview
@@ -113,9 +124,6 @@ function inputImage(event) {
         chosenImage = event.target.files[0];
         console.log(chosenImage.name);
         let src = URL.createObjectURL(chosenImage)
-
-        console.log(src)
-
 
         console.log("Image changed");
 
@@ -186,7 +194,14 @@ function setUpEventForProductCardEditable(newAddCard) {
         }
     }
 
+    /**
+     * This is setting up an event listener
+     * for the save button on the add product card.
+     */
+
     function eventSaveProduct() {
+
+        console.log("Saving product...")
 
         let saveButton = newAddCard.querySelector(".save-button-add-production-card");
 
@@ -208,8 +223,6 @@ function setUpEventForProductCardEditable(newAddCard) {
                 if (chosenImage != null) {
                     const imageExtension = chosenImage.name.split(".").pop();
                     const imageType = "image/" + imageExtension;
-
-                    console.log(imageExtension);
 
                     productData = {
 
@@ -233,34 +246,59 @@ function setUpEventForProductCardEditable(newAddCard) {
                     }
                 }
                 http.send(JSON.stringify(productData));
-                removeAddElementAndShowAddButton(newAddCard);
+
+                http.onreadystatechange = function removeAddElementAndShowAddButton() {
+                    if (http.readyState === 4 && http.status === 200) {
+
+                        console.log("Product is stored")
+
+                        //removing the add card
+                        newAddCard.remove();
+                        //displaying the + button
+                        document.getElementById("addProductCard").style.display = "block"
+
+                        //Get a collection of the product cards
+                        let productCards = document.querySelectorAll(".productCard");
+
+                        let keepFirstElement = true;
+                        //deleting every productCard, but not the first one
+                        productCards.forEach(value => {
+
+                            if (!keepFirstElement) {
+                                value.remove()
+                            } else {
+                                keepFirstElement = false;
+                            }
+                        })
+
+                        loadProducts();
+                    }
+                }
             }
         }
     }
+
+
+
 }
 
-function removeAddElementAndShowAddButton(cardToDelete) {
+function handleClickForDelete (title) {
 
-    //removing the add card
-    cardToDelete.remove();
-    //displaying the + button
-    document.getElementById("addProductCard").style.display = "block"
+    console.log("Deleting " + title);
 
-    //Get a collection of the product cards
-    let productCards = document.querySelectorAll(".productCard");
+    //the id is the last char in the string
+    let productId = title.charAt(title.length - 1);
+    //the api address to delete a product
+    let deleteProductString = currentUrl.replace("management", "api/products/");
+    //adding the product id
+    deleteProductString = deleteProductString + productId;
 
-    let keepFirstElement = true;
-    //deleting every productCard, but not the first one
-    productCards.forEach(value => {
+    let http = new XMLHttpRequest();
+    http.open("DELETE", deleteProductString);
+    http.send();
 
-        if (!keepFirstElement) {
-            value.remove()
-        } else {
-            keepFirstElement = false;
-        }
-    })
+    location.reload();
 
-    loadProducts();
 }
 
 
