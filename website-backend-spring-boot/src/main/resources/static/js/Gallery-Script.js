@@ -1,5 +1,9 @@
-const buttons = document.querySelectorAll("[data-carousel-button]")
+/**
+ * Adds a gallery of images to the gallery page.
+ * @type {NodeListOf<Element>}
+ */
 
+const buttons = document.querySelectorAll("[data-carousel-button]")
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {

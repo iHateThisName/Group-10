@@ -10,4 +10,9 @@ It should have the functionalities that a web shop usually has, where you can ac
 add products to cart, checkout and so on.
 
 #Setup instructions
+The way to launch the project, is that you launch the WebsiteApplication-class within the project. It will start the website
+application, so that you can reach a functioning website at localhost:8080 in a browser.
+If not, you can go to the domain of our web server, which is at https://gr10.appdev.cloudns.ph/.
+
+What needs to be configured:
 

@@ -1,5 +1,7 @@
-
-// JavaScript that uses jQuery to load html files in a html file
+/**
+ * JavaScript that uses jQuery to load html files in a html file
+ * This is to prevent unnecessary HTML files on each page, when we use the same header and footer anyways.
+ */
 
 $(document).ready(function () {
     $(function(){

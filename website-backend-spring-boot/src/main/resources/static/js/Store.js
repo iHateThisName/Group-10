@@ -12,7 +12,7 @@ window.onload = function () {
 }
 
 /**
- *
+ *We want to get the products from the products endpoint in tbe backend, so that we can view them in the Store page.
  */
 function getProducts() {
     let httpRequest = new XMLHttpRequest();
@@ -28,6 +28,11 @@ function getProducts() {
     }
 }
 
+/**
+ * We make this function so that we can fill each template div in the HTML that are supposed to hold the products,
+ * and then call the addProducts function which clones each div depending on how many products there are,
+ * and inserts all the info.
+ */
 function nextStep() {
     const cloneAll = ".p-item"
     const templateMen = ".p-men"
@@ -42,6 +47,14 @@ function nextStep() {
     addProducts(".p-men", "Men", "#template-product3")
     addProducts(".p-women", "Women", "#template-product4")
 }
+
+/**
+ * We made this function to be able to add products to the store.
+ * Called by nextStep() to add them to the HTML.
+ * @param CloneName
+ * @param nameOfCategory
+ * @param templateName
+ */
 
 function addProducts(CloneName, nameOfCategory, templateName) {
 
