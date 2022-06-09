@@ -58,6 +58,10 @@ function loadProducts() {
                 let delButton = clonedCard.querySelector(".actionButtonDelete");
                 delButton.title = ("Delete " + products[i].name + " with the id " + products[i].id).toString()
 
+                //Edit button
+                let editButton = clonedCard.querySelector(".actionButtonEdit");
+                editButton.title = ("Edit " + products[i].name + "with the id " + products[i].id);
+
                 //Checks if is the first loop
                 if (i === 0) {
                     //we want to replace the cloned element
@@ -82,7 +86,6 @@ function loadProducts() {
  * When it is finished it will call the method setUpEventForProductCardEditable.
  */
 function addClick() {
-    console.log("Add button was pressed")
 
     //Retrieve the template that is hidden.
     let addCard = document.querySelector(".productAddCard");
@@ -122,10 +125,7 @@ function inputImage(event) {
 
     if (event.target.files.length > 0) {
         chosenImage = event.target.files[0];
-        console.log(chosenImage.name);
         let src = URL.createObjectURL(chosenImage)
-
-        console.log("Image changed");
 
         previewImageElement = document.createElement("img")
         previewImageElement.src = src;
@@ -188,7 +188,7 @@ function setUpEventForProductCardEditable(newAddCard) {
 
         if (textName && textPrice && textDesc) {
 
-            newAddCard.querySelector(".product-card-content").style.marginRight = 0;
+            newAddCard.querySelector(".product-card-content").style.marginRight = "0";
             newAddCard.querySelector(".save-button-add-production-card").style.display = "block"
 
         }
@@ -201,16 +201,14 @@ function setUpEventForProductCardEditable(newAddCard) {
 
     function eventSaveProduct() {
 
-        console.log("Saving product...")
-
         let saveButton = newAddCard.querySelector(".save-button-add-production-card");
-
-        console.log(new Uint8Array(chosenImage));
 
         saveButton.onclick = function () {
 
             //Check if the save button is visible
             if (newAddCard.querySelector(".save-button-add-production-card").style.display === "block") {
+
+                console.log("Saving product")
 
                 let http = new XMLHttpRequest();
                 http.open("POST", productUrl);
@@ -218,7 +216,7 @@ function setUpEventForProductCardEditable(newAddCard) {
                 http.setRequestHeader("Accept", "application/json");
                 http.setRequestHeader("Content-Type", "application/json");
 
-                let productData = null;
+                let productData;
 
                 if (chosenImage != null) {
                     const imageExtension = chosenImage.name.split(".").pop();
@@ -247,10 +245,8 @@ function setUpEventForProductCardEditable(newAddCard) {
                 }
                 http.send(JSON.stringify(productData));
 
-                http.onreadystatechange = function removeAddElementAndShowAddButton() {
+                http.onreadystatechange = function () {
                     if (http.readyState === 4 && http.status === 200) {
-
-                        console.log("Product is stored")
 
                         //removing the add card
                         newAddCard.remove();
@@ -272,19 +268,18 @@ function setUpEventForProductCardEditable(newAddCard) {
                         })
 
                         loadProducts();
+
+                        console.log("Product is stored")
                     }
                 }
             }
         }
     }
-
-
-
 }
 
-function handleClickForDelete (title) {
+function handleClickDelete (title) {
 
-    console.log("Deleting " + title);
+    console.log(title.replace("Delete", "Deleting"));
 
     //the id is the last char in the string
     let productId = title.charAt(title.length - 1);
@@ -300,6 +295,15 @@ function handleClickForDelete (title) {
     location.reload();
 
 }
+
+function handleClickEdit(title) {
+
+    console.log(title.replace("Edit", "Editing"));
+
+    alert("We are sorry to inform you that the edit function are not implemented")
+}
+
+
 
 
 
